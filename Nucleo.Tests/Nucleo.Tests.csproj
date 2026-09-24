@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Nucleo\Nucleo.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Modelos\" />
-  </ItemGroup>
-
 </Project>

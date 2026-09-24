@@ -21,7 +21,7 @@ public class ServicioContrasenasTests
     [TestMethod]
     public void ServicioContrasenas_Espacios()
     {
-        string contrasena = " ";
+        string contrasena = "    ";
         Assert.IsTrue(string.IsNullOrWhiteSpace(contrasena), "La contraseña no puede contener solo espacios en blanco.");
     }
 
@@ -29,7 +29,7 @@ public class ServicioContrasenasTests
     public void ServicioContrasenas_LongitudInvalida()
     {
         string contrasena = "1234@Ae";
-        Assert.IsFalse(contrasena.Length >= 8, "La contraseña debe tener al menos 8 caracteres.");
+        Assert.IsLessThan(8, contrasena.Length, "La contraseña debe tener al menos 8 caracteres.");
     }
 
     [TestMethod]

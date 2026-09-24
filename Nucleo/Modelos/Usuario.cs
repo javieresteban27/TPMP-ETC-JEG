@@ -8,38 +8,53 @@ namespace Nucleo.Modelos
     public class Usuario
     {
         // Atributos referentes al usuario
-        public int id { get; set; }
-        public string nombre_usuario { get; set; }
-        public string mail { get; set; }
-        public string password;
+        public int Id { get; set; }
+        public required string Nombre_usuario { get; set; }
+        public required string Mail { get; set; }
+        public required string Password { get; set; }
 
         // Atributos referentes al control de bloqueo
-        public int intentos_fallidos { get; set; } = 0;
-        public DateTime? bloqueado_hasta { get; set; } = null;
+        public int Intentos_fallidos { get; set; } = 0;
+        public DateTime? Bloqueado_hasta { get; set; } = null;
 
         // Método para comprobar si la cuenta está bloqueada
-        public bool estaBloqueado()
+        public bool EstaBloqueado()
         {
-            if (bloqueado_hasta.HasValue && DateTime.Now < bloqueado_hasta.Value)
+            if (Bloqueado_hasta.HasValue && DateTime.Now < Bloqueado_hasta.Value)
             {
                 return true; // Sigue bloqueado
             }
-            return false; // El bloqueo ya expiró o nunca se bloqueó
 
+            // Si el tiempo de bloqueo ya pasó, limpiamos el estado automáticamente
+            if (Bloqueado_hasta.HasValue && DateTime.Now >= Bloqueado_hasta.Value)
+            {
+                Bloqueado_hasta = null; // Limpiamos el estado de bloqueo
+                Intentos_fallidos = 0; // Reiniciamos el contador de intentos fallidos
+            }
+
+            return false; // El bloqueo ya expiró o nunca se bloqueó
         }
 
         // Método que se ejecuta al fallar la contraseña
-        public void registrarFallo()
+        public void RegistrarFallo()
         {
-            intentos_fallidos++;
+            // Si ya está bloqueado pero expiró, nos aseguramos de resetear antes de sumar
+            if (EstaBloqueado()) return;
 
-            // Si llega a 3 intentos fallidos, bloqueamos la cuenta por 5 minutos
-            if (intentos_fallidos >= 3)
+            Intentos_fallidos++;
+
+            // Si llega a 3 intentos fallidos, bloqueamos la cuenta 5 minutos
+            if (Intentos_fallidos >= 3)
             {
-                bloqueado_hasta = DateTime.Now.AddMinutes(5);
-                intentos_fallidos = 0; // Reiniciamos el contador de intentos fallidos
-                bloqueado_hasta = null; // Reiniciamos el bloqueo después de que expire
+                Bloqueado_hasta = DateTime.Now.AddMinutes(5);
             }
+        }
+
+        // Método opcional para cuando el usuario acierta la contraseña
+        public void RegistrarExito()
+        {
+            Intentos_fallidos = 0;
+            Bloqueado_hasta = null;
         }
     }
 }
