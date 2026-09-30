@@ -172,5 +172,122 @@ namespace NucleoTest.Seguridad
                 // Éxito
             }
         }
+
+        [TestMethod]
+        public void Cifrar_TextoNulo_LanzaArgumentException()
+        {
+            string clave = ServicioCifrado.GenerarClave();
+
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Cifrar(null!, clave));
+        }
+
+        [TestMethod]
+        [DataRow("")]
+        [DataRow(" ")]
+        [DataRow("\t")]
+        public void Cifrar_TextoEnBlanco_LanzaArgumentException(string texto)
+        {
+            string clave = ServicioCifrado.GenerarClave();
+
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Cifrar(texto, clave));
+        }
+
+        [TestMethod]
+        public void Cifrar_ClaveNula_LanzaArgumentException()
+        {
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Cifrar("mensaje", null!));
+        }
+
+        [TestMethod]
+        [DataRow("")]
+        [DataRow(" ")]
+        [DataRow("\t")]
+        public void Cifrar_ClaveEnBlanco_LanzaArgumentException(string clave)
+        {
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Cifrar("mensaje", clave));
+        }
+
+        [TestMethod]
+        public void Cifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException()
+        {
+            string claveCorta = Convert.ToBase64String(new byte[16]);
+
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Cifrar("mensaje", claveCorta));
+        }
+
+        [TestMethod]
+        public void Descifrar_ContenidoNulo_LanzaArgumentException()
+        {
+            string clave = ServicioCifrado.GenerarClave();
+
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Descifrar(null!, clave));
+        }
+
+        [TestMethod]
+        [DataRow("")]
+        [DataRow(" ")]
+        [DataRow("\t")]
+        public void Descifrar_ContenidoEnBlanco_LanzaArgumentException(
+            string contenido)
+        {
+            string clave = ServicioCifrado.GenerarClave();
+
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Descifrar(contenido, clave));
+        }
+
+        [TestMethod]
+        public void Descifrar_ContenidoNoBase64_LanzaFormatException()
+        {
+            string clave = ServicioCifrado.GenerarClave();
+
+            VerificarExcepcion<FormatException>(
+                () => ServicioCifrado.Descifrar("no-es-base64!!", clave));
+        }
+
+        [TestMethod]
+        public void Descifrar_ContenidoConSoloNonceYEtiqueta_LanzaArgumentException()
+        {
+            string clave = ServicioCifrado.GenerarClave();
+            string contenido = Convert.ToBase64String(
+                new byte[TamanoNonce + TamanoEtiqueta]);
+
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Descifrar(contenido, clave));
+        }
+
+        [TestMethod]
+        public void Descifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException()
+        {
+            string claveCorta = Convert.ToBase64String(new byte[16]);
+            string contenido = ServicioCifrado.Cifrar(
+                "mensaje",
+                ServicioCifrado.GenerarClave());
+
+            VerificarExcepcion<ArgumentException>(
+                () => ServicioCifrado.Descifrar(contenido, claveCorta));
+        }
+
+        private static void VerificarExcepcion<TExcepcion>(Action accion)
+            where TExcepcion : Exception
+        {
+            try
+            {
+                accion();
+            }
+            catch (TExcepcion)
+            {
+                return;
+            }
+
+            Assert.Fail(
+                $"Se esperaba una excepción de tipo {typeof(TExcepcion).Name}.");
+        }
     }
 }

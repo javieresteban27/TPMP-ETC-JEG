@@ -1,60 +1,137 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
+﻿using Nucleo.Seguridad;
 
 namespace Nucleo.Modelos
 {
     public class Usuario
     {
-        // Atributos referentes al usuario
         public int Id { get; set; }
         public required string Nombre_usuario { get; set; }
         public required string Mail { get; set; }
-        public required string Password { get; set; }
 
-        // Atributos referentes al control de bloqueo
-        public int Intentos_fallidos { get; set; } = 0;
-        public DateTime? Bloqueado_hasta { get; set; } = null;
+        // Se almacena el resultado del hash, no la contraseña en texto plano.
+        public ResultadoHash Password { get; set; } = new();
 
-        // Método para comprobar si la cuenta está bloqueada
+        public int Intentos_fallidos { get; set; }
+        public DateTime? Bloqueado_hasta { get; set; }
+
+        // Propiedades usadas por los métodos de contraseña.
+        public bool SinContraseña { get; set; }
+        public DateTime? Ultimo_cambio_password { get; set; }
+        public DateTime? Fecha_ultimo_acceso { get; set; }
+        public DateTime? Fecha_acceso_actual { get; set; }
+
+        private readonly List<ResultadoHash> _listaPasswords = new();
+
         public bool EstaBloqueado()
         {
-            if (Bloqueado_hasta.HasValue && DateTime.Now < Bloqueado_hasta.Value)
+            if (Bloqueado_hasta.HasValue &&
+                DateTime.Now < Bloqueado_hasta.Value)
             {
-                return true; // Sigue bloqueado
+                return true;
             }
 
-            // Si el tiempo de bloqueo ya pasó, limpiamos el estado automáticamente
-            if (Bloqueado_hasta.HasValue && DateTime.Now >= Bloqueado_hasta.Value)
+            if (Bloqueado_hasta.HasValue)
             {
-                Bloqueado_hasta = null; // Limpiamos el estado de bloqueo
-                Intentos_fallidos = 0; // Reiniciamos el contador de intentos fallidos
+                Bloqueado_hasta = null;
+                Intentos_fallidos = 0;
             }
 
-            return false; // El bloqueo ya expiró o nunca se bloqueó
+            return false;
         }
 
-        // Método que se ejecuta al fallar la contraseña
         public void RegistrarFallo()
         {
-            // Si ya está bloqueado pero expiró, nos aseguramos de resetear antes de sumar
-            if (EstaBloqueado()) return;
+            if (EstaBloqueado())
+            {
+                return;
+            }
 
             Intentos_fallidos++;
 
-            // Si llega a 3 intentos fallidos, bloqueamos la cuenta 5 minutos
             if (Intentos_fallidos >= 3)
             {
                 Bloqueado_hasta = DateTime.Now.AddMinutes(5);
             }
         }
 
-        // Método opcional para cuando el usuario acierta la contraseña
         public void RegistrarExito()
         {
             Intentos_fallidos = 0;
             Bloqueado_hasta = null;
+        }
+
+        public bool CompruebaPassword(string password)
+        {
+            if (EstaBloqueado() || SinContraseña)
+            {
+                return false;
+            }
+
+            if (!ServicioHash.Verificar(password, Password))
+            {
+                RegistrarFallo();
+                return false;
+            }
+
+            RegistrarExito();
+            Fecha_ultimo_acceso = Fecha_acceso_actual;
+            Fecha_acceso_actual = DateTime.Now;
+
+            return true;
+        }
+
+        public bool CambiaPassword(string nueva)
+        {
+            if (!SinContraseña || string.IsNullOrWhiteSpace(nueva))
+            {
+                return false;
+            }
+
+            Password = ServicioHash.Generar(nueva);
+            Ultimo_cambio_password = DateTime.Now;
+            SinContraseña = false;
+
+            if (_listaPasswords.Count > 10)
+            {
+                _listaPasswords.RemoveAt(0);
+            }
+
+            _listaPasswords.Add(Password);
+            return true;
+        }
+
+        public bool CambiaPassword(string anterior, string nueva)
+        {
+            if (string.IsNullOrWhiteSpace(nueva) ||
+                anterior == nueva ||
+                !CompruebaPassword(anterior))
+            {
+                return false;
+            }
+
+            bool puedeCambiar = true;
+
+            foreach (ResultadoHash passwordAnterior in _listaPasswords)
+            {
+                puedeCambiar &= !ServicioHash.Verificar(nueva, passwordAnterior);
+            }
+
+            if (!puedeCambiar)
+            {
+                return false;
+            }
+
+            ResultadoHash passwordActual = Password;
+            Password = ServicioHash.Generar(nueva);
+            Ultimo_cambio_password = DateTime.Now;
+
+            if (_listaPasswords.Count > 10)
+            {
+                _listaPasswords.RemoveAt(0);
+            }
+
+            _listaPasswords.Add(passwordActual);
+            return true;
         }
     }
 }

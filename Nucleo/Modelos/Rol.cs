@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nucleo.Modelos
+﻿namespace Nucleo.Modelos
 {
-    internal class Rol
+    public class Rol
     {
+        public int Id { get; set; }
+
+        public required string Nombre { get; set; }
+
+        public string? Descripcion { get; set; }
     }
 }
