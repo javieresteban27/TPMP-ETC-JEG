@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Nucleo.Modelos
 {
-    internal class Roles
+    internal class Rol
     {
     }
 }

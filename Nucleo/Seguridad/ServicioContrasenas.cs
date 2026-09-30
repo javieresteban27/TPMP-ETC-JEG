@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestProjectManagementPlatform.Nucleo.Seguridad;
+namespace Nucleo.Seguridad;
 
 /// <summary>
 /// Proporciona operaciones relacionadas con contraseñas.

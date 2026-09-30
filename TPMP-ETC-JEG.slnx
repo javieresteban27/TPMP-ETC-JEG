@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="Nucleo.Tests/Nucleo.Tests.csproj" Id="190fe22b-5915-44fe-92f1-85fbd9d955f1" />
+  <Project Path="Nucleo.Tests/NucleoTests.csproj" Id="190fe22b-5915-44fe-92f1-85fbd9d955f1" />
   <Project Path="Nucleo/Nucleo.csproj" />
 </Solution>

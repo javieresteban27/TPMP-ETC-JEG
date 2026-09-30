@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Nucleo.Tests.Modelos
 {
     [TestClass]
-    public class UsuarioTests
+    public class UsuarioTest
     {
         [TestMethod]
         public void UsuarioNuevo_NoDebeEstarBloqueado()
