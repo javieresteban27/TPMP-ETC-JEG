@@ -13,65 +13,164 @@ public class Datos : IDatos
 
     public List<EntradaLog> Logs => throw new NotImplementedException();
 
-    public void AgregarLog(EntradaLog log)
-    {
-        throw new NotImplementedException();
-    }
+    private int SiguienteIdUsuario = 1;
+    private int SiguienteIdRol = 1;
+    private int SiguienteIdProyecto = 1;
 
-    public Proyecto? EliminarProyecto(int idProyecto)
+    #region USUARIOS
+    public Usuario? GuardarUsuario(Usuario usuario)
     {
-        throw new NotImplementedException();
-    }
+        if (usuario.IdUsuario < 0)
+        {
+            usuario.IdUsuario = SiguienteIdUsuario++;
+            Usuarios.Add(usuario.IdUsuario, usuario);
+            AgregarLog(new EntradaLog($"Usuario añadido: {usuario.Mail}"));
+        }
+        else
+        {
+            Usuarios[usuario.IdUsuario] = usuario;
+            AgregarLog(new EntradaLog($"Usuario actualizado: {usuario.Mail}"));
+        }
 
-    public Rol? EliminarRol(int idRol)
-    {
-        throw new NotImplementedException();
+        return usuario;
+
     }
 
     public Usuario? EliminarUsuario(int idUsuario)
     {
-        throw new NotImplementedException();
-    }
+        if (!Usuarios.Remove(idUsuario, out Usuario? usuario))
+        {
+            return null;
+        }
 
-    public Proyecto? GuardarProyecto(Proyecto proyecto)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Rol? GuardarRol(Rol rol)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Usuario? GuardarUsuario(Usuario usuario)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Proyecto? LeerProyecto(int idProyecto)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Rol? LeerRol(int idRol)
-    {
-        throw new NotImplementedException();
+        AgregarLog(new EntradaLog($"Usuario eliminado: {usuario.Mail}"));
+        return usuario;
     }
 
     public Usuario? LeerUsuario(int idUsuario)
     {
-        throw new NotImplementedException();
+        return Usuarios.TryGetValue(idUsuario, out Usuario? usuario)
+            ? usuario
+            : null;
     }
 
     public Usuario? LeerUsuario(string eMail)
     {
-        throw new NotImplementedException();
+        foreach (Usuario usuario in Usuarios.Values)
+        {
+            if (string.Equals(usuario.Mail, eMail, StringComparison.OrdinalIgnoreCase))
+            {
+                return usuario;
+            }
+        }
+
+        return null;
+    }
+
+    #endregion
+
+    #region LOGS
+    public void AgregarLog(EntradaLog log)
+    {
+        Logs.Add(log);
     }
 
     public int LimpiarLog()
     {
-        throw new NotImplementedException();
+        int cantidadEliminada = Logs.Count;
+        Logs.Clear();
+        return cantidadEliminada;
     }
+
+    #endregion
+
+    #region PROYECTOS
+    public Proyecto? EliminarProyecto(int idProyecto)
+    {
+        if (!Proyectos.Remove(idProyecto, out Proyecto? proyecto))
+        {
+            return null;
+        }
+
+        AgregarLog(new EntradaLog($"Proyecto eliminado: {proyecto.Nombre}"));
+        return proyecto;
+    }
+
+    public Proyecto? GuardarProyecto(Proyecto proyecto)
+    {
+        if (proyecto.Id <= 0)
+        {
+            while (Proyectos.ContainsKey(SiguienteIdProyecto))
+            {
+                SiguienteIdProyecto++;
+            }
+
+            proyecto.Id = SiguienteIdProyecto++;
+            Proyectos.Add(proyecto.Id, proyecto);
+            AgregarLog(new EntradaLog($"Proyecto añadido: {proyecto.Nombre}"));
+        }
+        else
+        {
+            Proyectos[proyecto.Id] = proyecto;
+            SiguienteIdProyecto = Math.Max(SiguienteIdProyecto, proyecto.Id + 1);
+            AgregarLog(new EntradaLog($"Proyecto actualizado: {proyecto.Nombre}"));
+        }
+
+        return proyecto;
+    }
+
+    public Proyecto? LeerProyecto(int idProyecto)
+    {
+        return Proyectos.TryGetValue(idProyecto, out Proyecto? proyecto)
+            ? proyecto
+            : null;
+    }
+
+    #endregion
+
+    #region ROLES
+    public Rol? EliminarRol(int idRol)
+    {
+        if (!Roles.Remove(idRol, out Rol? rol))
+        {
+            return null;
+        }
+
+        AgregarLog(new EntradaLog($"Rol eliminado: {rol.Nombre}"));
+        return rol;
+    }
+
+    public Rol? GuardarRol(Rol rol)
+    {
+        if (rol.Id <= 0)
+        {
+            while (Roles.ContainsKey(SiguienteIdRol))
+            {
+                SiguienteIdRol++;
+            }
+
+            rol.Id = SiguienteIdRol++;
+            Roles.Add(rol.Id, rol);
+            AgregarLog(new EntradaLog($"Rol añadido: {rol.Nombre}"));
+        }
+        else
+        {
+            Roles[rol.Id] = rol;
+            SiguienteIdRol = Math.Max(SiguienteIdRol, rol.Id + 1);
+            AgregarLog(new EntradaLog($"Rol actualizado: {rol.Nombre}"));
+        }
+
+        return rol;
+    }
+
+    public Rol? LeerRol(int idRol)
+    {
+        return Roles.TryGetValue(idRol, out Rol? rol)
+               ? rol
+               : null;
+    }
+
+    #endregion
 
     public void Reiniciar()
     {

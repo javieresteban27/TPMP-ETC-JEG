@@ -4,7 +4,7 @@ namespace Nucleo.Modelos
 {
     public class Usuario
     {
-        public int Id { get; set; }
+        public int IdUsuario { get; set; }
         public required string Nombre_usuario { get; set; }
         public required string Mail { get; set; }
 
