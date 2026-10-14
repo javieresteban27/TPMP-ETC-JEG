@@ -1,63 +1,68 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nucleo.Modelos;
 
 namespace NucleoTest.Modelos
 {
     [TestClass]
-    public class EntradaLogTest
+    public class EntradaLogSeleccionadaTests
     {
         [TestMethod]
-        public void EntradaNueva_InicializaValoresPredeterminados()
+        public void ConstructorCompleto_ConservaLosValoresRecibidos()
         {
-            var antes = DateTime.UtcNow;
-
-            var entrada = new EntradaLog
+            var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
+            var usuario = new Usuario
             {
-                Accion = AccionLog.UsuarioCreado
+                Nombre_usuario = "usuario_prueba",
+                Mail = "usuario@example.com"
             };
 
-            var despues = DateTime.UtcNow;
+            var entrada = new EntradaLog(fecha, "WARN", "Mensaje de prueba", usuario);
 
-            Assert.AreEqual(0, entrada.Id);
-            Assert.AreEqual(AccionLog.UsuarioCreado, entrada.Accion);
-            Assert.AreEqual(DateTimeKind.Utc, entrada.FechaUtc.Kind);
-            Assert.IsTrue(entrada.FechaUtc >= antes && entrada.FechaUtc <= despues);
-            Assert.IsNull(entrada.UsuarioId);
-            Assert.IsNull(entrada.NombreUsuario);
-            Assert.IsNull(entrada.ActorUsuarioId);
-            Assert.IsNull(entrada.ValorAnterior);
-            Assert.IsNull(entrada.ValorNuevo);
-            Assert.IsNull(entrada.Detalles);
+            Assert.AreEqual(fecha, entrada.FechaHora);
+            Assert.AreEqual("WARN", entrada.Nivel);
+            Assert.AreEqual("Mensaje de prueba", entrada.Mensaje);
+            Assert.AreSame(usuario, entrada.Usuario);
         }
 
         [TestMethod]
-        public void EntradaNueva_ConservaLosValoresAsignados()
+        public void ConstructorConMensaje_UsaValoresPredeterminados()
         {
-            var fecha = new DateTime(2026, 9, 30, 12, 30, 0, DateTimeKind.Utc);
+            var inicio = DateTime.Now;
 
-            var entrada = new EntradaLog
+            var entrada = new EntradaLog("Mensaje de prueba");
+
+            var fin = DateTime.Now;
+            Assert.IsTrue(entrada.FechaHora >= inicio && entrada.FechaHora <= fin);
+            Assert.AreEqual("INFO", entrada.Nivel);
+            Assert.AreEqual("Mensaje de prueba", entrada.Mensaje);
+            Assert.IsNull(entrada.Usuario);
+        }
+
+        [TestMethod]
+        public void ToString_SinUsuario_IndicaSistema()
+        {
+            var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
+            var entrada = new EntradaLog(fecha, "INFO", "Inicio", null);
+
+            var resultado = entrada.ToString();
+
+            Assert.AreEqual($"{fecha:dd/MM/yyyy HH:mm:ss} [INFO] Inicio - Sistema", resultado);
+        }
+
+        [TestMethod]
+        public void ToString_ConUsuario_IncluyeSuRepresentacion()
+        {
+            var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
+            var usuario = new Usuario
             {
-                Id = 42,
-                FechaUtc = fecha,
-                Accion = AccionLog.MailAñadido,
-                UsuarioId = 7,
-                NombreUsuario = "usuario_prueba",
-                ActorUsuarioId = 3,
-                ValorAnterior = "anterior@example.com",
-                ValorNuevo = "nuevo@example.com",
-                Detalles = "Actualización de correo"
+                Nombre_usuario = "usuario_prueba",
+                Mail = "usuario@example.com"
             };
+            var entrada = new EntradaLog(fecha, "ERROR", "Fallo", usuario);
 
-            Assert.AreEqual(42, entrada.Id);
-            Assert.AreEqual(fecha, entrada.FechaUtc);
-            Assert.AreEqual(AccionLog.MailAñadido, entrada.Accion);
-            Assert.AreEqual(7, entrada.UsuarioId);
-            Assert.AreEqual("usuario_prueba", entrada.NombreUsuario);
-            Assert.AreEqual(3, entrada.ActorUsuarioId);
-            Assert.AreEqual("anterior@example.com", entrada.ValorAnterior);
-            Assert.AreEqual("nuevo@example.com", entrada.ValorNuevo);
-            Assert.AreEqual("Actualización de correo", entrada.Detalles);
+            var resultado = entrada.ToString();
+
+            Assert.AreEqual($"{fecha:dd/MM/yyyy HH:mm:ss} [ERROR] Fallo - {usuario}", resultado);
         }
     }
 }
