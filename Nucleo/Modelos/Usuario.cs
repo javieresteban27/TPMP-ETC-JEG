@@ -133,5 +133,15 @@ namespace Nucleo.Modelos
             _listaPasswords.Add(passwordActual);
             return true;
         }
+
+        public override string ToString()
+        {
+            return $"Usuario {{ IdUsuario: {IdUsuario}, Nombre_usuario: {Nombre_usuario}, Mail: {Mail} }}";
+        }
+
+        public static implicit operator Usuario(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

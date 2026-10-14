@@ -4,7 +4,7 @@ namespace Nucleo.Modelos
 {
     public class EntradaLog
     {
-        public EntradaLog(DateTime fechaHora, string nivel, string mensaje, Usuario? usuario)
+        public EntradaLog(DateTime fechaHora, string nivel, string mensaje, string usuario)
         {
             FechaHora = fechaHora;
             Nivel = nivel;

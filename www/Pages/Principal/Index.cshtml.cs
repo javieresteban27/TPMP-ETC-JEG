@@ -37,7 +37,7 @@ public class IndexModel : PageModel
             return RedirectToPage("/Login/Index");
         }
 
-        NombreUsuario = UsuarioActual.EMail; // Sustituir por tu propiedad real
+        NombreUsuario = UsuarioActual.Mail; // Sustituir por tu propiedad real
 
         return Page();
     }
@@ -49,7 +49,7 @@ public class IndexModel : PageModel
             var usuario = _datos.LeerUsuario(idUsuario.Value);
             if (usuario is not null)
             { // Registrar el evento antes de limpiar la sesión.
-                _datos.AgregarLog(new EntradaLog(DateTime.Now, "Inicio de Sesión", $"Cierre de Sesión {usuario.EMail}", usuario.ToString()));
+                _datos.AgregarLog(new EntradaLog(DateTime.Now, "Inicio de Sesión", $"Cierre de Sesión {usuario.Mail}", usuario.ToString()));
             }
         }
         EliminarDatosSesion();

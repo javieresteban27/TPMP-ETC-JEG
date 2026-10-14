@@ -16,9 +16,9 @@ namespace BackEnd
         public List<EntradaLog> Logs { get; }
             = new List<EntradaLog>();
 
-        private int SiguienteIdUsuario = 1;
-        private int SiguienteIdRol = 1;
-        private int SiguienteIdProyecto = 1;
+        private int SiguienteIdUsuario = -1;
+        private int SiguienteIdRol = -1;
+        private int SiguienteIdProyecto = -1;
 
         #region USUARIOS
 
