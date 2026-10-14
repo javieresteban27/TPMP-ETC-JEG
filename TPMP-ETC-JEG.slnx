@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="../../../../../../source/repos/TPMP-ETC-JEG/BackEnd/BackEnd.csproj" Id="5102084f-b133-4f6e-8f60-2f53f5caed7f" />
-  <Project Path="../../../../../../source/repos/TPMP-ETC-JEG/BackEndTests/BackEndTests.csproj" Id="03cfc187-48a8-4b5d-acaa-c1a8cfcfc799" />
-  <Project Path="../../../../../../source/repos/TPMP-ETC-JEG/Nucleo.Tests/NucleoTests.csproj" Id="190fe22b-5915-44fe-92f1-85fbd9d955f1" />
-  <Project Path="../../../../../../source/repos/TPMP-ETC-JEG/Nucleo/Nucleo.csproj" />
+  <Project Path="BackEnd/BackEnd.csproj" />
+  <Project Path="BackEndTests/BackEndTests.csproj" />
+  <Project Path="Nucleo.Tests/NucleoTests.csproj" />
+  <Project Path="Nucleo/Nucleo.csproj" />
 </Solution>
