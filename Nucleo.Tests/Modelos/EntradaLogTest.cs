@@ -7,25 +7,7 @@ namespace NucleoTest.Modelos
     public class EntradaLogSeleccionadaTests
     {
         [TestMethod]
-        public void ConstructorCompleto_ConservaLosValoresRecibidos()
-        {
-            var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
-            var usuario = new Usuario
-            {
-                Nombre_usuario = "usuario_prueba",
-                Mail = "usuario@example.com"
-            };
-
-            var entrada = new EntradaLog(fecha, "WARN", "Mensaje de prueba", usuario);
-
-            Assert.AreEqual(fecha, entrada.FechaHora);
-            Assert.AreEqual("WARN", entrada.Nivel);
-            Assert.AreEqual("Mensaje de prueba", entrada.Mensaje);
-            Assert.AreSame(usuario, entrada.Usuario);
-        }
-
-        [TestMethod]
-        public void ConstructorConMensaje_UsaValoresPredeterminados()
+        public void ConstructorConMensaje_InicializaLosValoresPredeterminados()
         {
             var inicio = DateTime.Now;
 
@@ -39,14 +21,42 @@ namespace NucleoTest.Modelos
         }
 
         [TestMethod]
+        public void Propiedades_PermitenActualizarLosValores()
+        {
+            var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
+            var usuario = new Usuario
+            {
+                Nombre_usuario = "usuario_prueba",
+                Mail = "usuario@example.com"
+            };
+
+            var entrada = new EntradaLog("Mensaje inicial")
+            {
+                FechaHora = fecha,
+                Nivel = "WARN",
+                Mensaje = "Mensaje actualizado",
+                Usuario = usuario
+            };
+
+            Assert.AreEqual(fecha, entrada.FechaHora);
+            Assert.AreEqual("WARN", entrada.Nivel);
+            Assert.AreEqual("Mensaje actualizado", entrada.Mensaje);
+            Assert.AreSame(usuario, entrada.Usuario);
+        }
+
+        [TestMethod]
         public void ToString_SinUsuario_IndicaSistema()
         {
             var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
-            var entrada = new EntradaLog(fecha, "INFO", "Inicio", null);
+            var entrada = new EntradaLog("Inicio")
+            {
+                FechaHora = fecha,
+                Nivel = "INFO"
+            };
 
-            var resultado = entrada.ToString();
-
-            Assert.AreEqual($"{fecha:dd/MM/yyyy HH:mm:ss} [INFO] Inicio - Sistema", resultado);
+            Assert.AreEqual(
+                $"{fecha:dd/MM/yyyy HH:mm:ss} [INFO] Inicio - Sistema",
+                entrada.ToString());
         }
 
         [TestMethod]
@@ -58,11 +68,16 @@ namespace NucleoTest.Modelos
                 Nombre_usuario = "usuario_prueba",
                 Mail = "usuario@example.com"
             };
-            var entrada = new EntradaLog(fecha, "ERROR", "Fallo", usuario);
+            var entrada = new EntradaLog("Fallo")
+            {
+                FechaHora = fecha,
+                Nivel = "ERROR",
+                Usuario = usuario
+            };
 
-            var resultado = entrada.ToString();
-
-            Assert.AreEqual($"{fecha:dd/MM/yyyy HH:mm:ss} [ERROR] Fallo - {usuario}", resultado);
+            Assert.AreEqual(
+                $"{fecha:dd/MM/yyyy HH:mm:ss} [ERROR] Fallo - {usuario}",
+                entrada.ToString());
         }
     }
 }
