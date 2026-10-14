@@ -1,4 +1,5 @@
 ﻿using Nucleo.Modelos;
+using Nucleo.Seguridad;
 
 namespace BackEnd
 {
@@ -20,6 +21,20 @@ namespace BackEnd
         private int SiguienteIdRol = -1;
         private int SiguienteIdProyecto = -1;
 
+        public Datos()
+        {
+            var usuarioPrueba = new Usuario
+            {
+                IdUsuario = 1,
+                Nombre_usuario = "Usuario de prueba",
+                Mail = "usuario@test.com",
+                Password = ServicioHash.Generar("Clave123!")
+            };
+
+            Usuarios.Add(usuarioPrueba.IdUsuario, usuarioPrueba);
+
+            SiguienteIdUsuario = 2;
+        }
         #region USUARIOS
 
         public Usuario? GuardarUsuario(Usuario usuario)
