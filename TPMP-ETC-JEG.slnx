@@ -3,5 +3,5 @@
   <Project Path="BackEndTests/BackEndTests.csproj" />
   <Project Path="Nucleo.Tests/NucleoTests.csproj" />
   <Project Path="Nucleo/Nucleo.csproj" />
-  <Project Path="WebApplication1/www.csproj" Id="2b1d9266-0d09-4661-b6c2-1c0b711f6d7c" />
+  <Project Path="www/www.csproj" />
 </Solution>
