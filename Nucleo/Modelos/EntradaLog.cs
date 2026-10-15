@@ -17,17 +17,17 @@ namespace Nucleo.Modelos
             FechaHora = DateTime.Now;
             Nivel = "INFO";
             Mensaje = mensaje;
-            Usuario = null;
+            Usuario = "Sistema";
         }
+
         public DateTime FechaHora { get; set; }
         public string Nivel { get; set; } = string.Empty;
         public string Mensaje { get; set; } = string.Empty;
-        public Usuario? Usuario { get; set; }
+        public string Usuario { get; set; } = "Sistema";
 
         public override string ToString()
         {
-            string usuario = Usuario?.ToString() ?? "Sistema";
-            return $"{FechaHora:dd/MM/yyyy HH:mm:ss} [{Nivel}] {Mensaje} - {usuario}";
+            return $"{FechaHora:dd/MM/yyyy HH:mm:ss} [{Nivel}] {Mensaje} - {Usuario}";
         }
     }
 }

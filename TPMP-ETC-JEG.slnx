@@ -4,4 +4,5 @@
   <Project Path="Nucleo.Tests/NucleoTests.csproj" />
   <Project Path="Nucleo/Nucleo.csproj" />
   <Project Path="www/www.csproj" Id="dd3f45bf-79ce-464c-81b8-a62bdfe6df93" />
+  <Project Path="wwwTest/wwwTest.csproj" Id="ded9b195-acd2-49b6-986b-964d0ba0f74d" />
 </Solution>

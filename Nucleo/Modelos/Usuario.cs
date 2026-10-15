@@ -139,9 +139,6 @@ namespace Nucleo.Modelos
             return $"Usuario {{ IdUsuario: {IdUsuario}, Nombre_usuario: {Nombre_usuario}, Mail: {Mail} }}";
         }
 
-        public static implicit operator Usuario(string v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

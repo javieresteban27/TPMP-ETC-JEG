@@ -7,111 +7,161 @@ namespace Nucleo.Tests;
 public class DatosTests
 {
     [TestMethod]
-    public void Constructor_InicializaLasColeccionesVacias()
+    public void Constructor_CreaUsuarioDePruebaYColeccionesVacias()
     {
         var datos = new Datos();
 
-        Assert.AreEqual(0, datos.Usuarios.Count);
+        Assert.AreEqual(1, datos.Usuarios.Count);
         Assert.AreEqual(0, datos.Roles.Count);
         Assert.AreEqual(0, datos.Proyectos.Count);
         Assert.AreEqual(0, datos.Logs.Count);
+
+        Usuario usuario = datos.LeerUsuario(1)!;
+        Assert.IsNotNull(usuario);
+        Assert.AreEqual("usuario@test.com", usuario.Mail);
+        Assert.AreSame(usuario, datos.LeerUsuario("USUARIO@TEST.COM"));
     }
 
     [TestMethod]
-    public void Usuario_PermiteGuardarBuscarActualizarYEliminar()
+    public void GuardarUsuario_SinIdAsignaIdsDisponiblesYRegistraLaOperacion()
     {
         var datos = new Datos();
-        var usuario = CrearUsuario(-1, "ana@example.com");
+        var primero = CrearUsuario(-1, "ana@example.com");
+        var segundo = CrearUsuario(-1, "bea@example.com");
 
-        Usuario guardado = datos.GuardarUsuario(usuario)!;
+        Usuario? guardadoPrimero = datos.GuardarUsuario(primero);
+        Usuario? guardadoSegundo = datos.GuardarUsuario(segundo);
 
-        Assert.AreEqual(1, guardado.IdUsuario);
-        Assert.AreSame(usuario, datos.LeerUsuario(guardado.IdUsuario));
-        Assert.AreSame(usuario, datos.LeerUsuario("ANA@EXAMPLE.COM"));
+        Assert.AreSame(primero, guardadoPrimero);
+        Assert.AreEqual(2, primero.IdUsuario);
+        Assert.AreEqual(3, segundo.IdUsuario);
+        Assert.AreSame(primero, datos.LeerUsuario(2));
+        Assert.AreSame(segundo, datos.LeerUsuario("BEA@example.com"));
         Assert.AreEqual("Usuario añadido: ana@example.com", datos.Logs[0].Mensaje);
+        Assert.AreEqual("Usuario añadido: bea@example.com", datos.Logs[1].Mensaje);
+    }
 
-        var actualizado = CrearUsuario(guardado.IdUsuario, "nueva@example.com");
+    [TestMethod]
+    public void GuardarUsuario_ActualizaYAvanzaElSiguienteId()
+    {
+        var datos = new Datos();
+        var usuarioExistente = CrearUsuario(10, "ana@example.com");
+
+        datos.GuardarUsuario(usuarioExistente);
+
+        var actualizado = CrearUsuario(10, "nueva@example.com");
         datos.GuardarUsuario(actualizado);
 
-        Assert.AreSame(actualizado, datos.LeerUsuario(guardado.IdUsuario));
+        var nuevo = CrearUsuario(-1, "bea@example.com");
+        datos.GuardarUsuario(nuevo);
+
+        Assert.AreSame(actualizado, datos.LeerUsuario(10));
+        Assert.AreEqual(11, nuevo.IdUsuario);
+        Assert.AreEqual("Usuario actualizado: ana@example.com", datos.Logs[0].Mensaje);
         Assert.AreEqual("Usuario actualizado: nueva@example.com", datos.Logs[1].Mensaje);
+        Assert.AreEqual("Usuario añadido: bea@example.com", datos.Logs[2].Mensaje);
+    }
 
-        Usuario? eliminado = datos.EliminarUsuario(guardado.IdUsuario);
+    [TestMethod]
+    public void EliminarUsuario_EliminaYRegistraLaOperacion()
+    {
+        var datos = new Datos();
+        var usuario = CrearUsuario(10, "ana@example.com");
+        datos.GuardarUsuario(usuario);
 
-        Assert.AreSame(actualizado, eliminado);
-        Assert.IsNull(datos.LeerUsuario(guardado.IdUsuario));
-        Assert.IsNull(datos.LeerUsuario("nueva@example.com"));
-        Assert.AreEqual("Usuario eliminado: nueva@example.com", datos.Logs[2].Mensaje);
-        Assert.IsNull(datos.EliminarUsuario(guardado.IdUsuario));
+        Usuario? eliminado = datos.EliminarUsuario(10);
+
+        Assert.AreSame(usuario, eliminado);
+        Assert.IsNull(datos.LeerUsuario(10));
+        Assert.IsNull(datos.LeerUsuario("ana@example.com"));
+        Assert.AreEqual("Usuario eliminado: ana@example.com", datos.Logs[1].Mensaje);
+        Assert.IsNull(datos.EliminarUsuario(10));
     }
 
     [TestMethod]
     public void Rol_PermiteGuardarBuscarActualizarYEliminar()
     {
         var datos = new Datos();
-        var rol = new Rol { Nombre = "Lector" };
+        var rol = new Rol { Id = 10, Nombre = "Lector" };
 
-        Rol guardado = datos.GuardarRol(rol)!;
+        datos.GuardarRol(rol);
 
-        Assert.AreEqual(1, guardado.Id);
-        Assert.AreSame(rol, datos.LeerRol(guardado.Id));
-        Assert.AreEqual("Rol añadido: Lector", datos.Logs[0].Mensaje);
+        Assert.AreSame(rol, datos.LeerRol(10));
+        Assert.AreEqual("Rol actualizado: Lector", datos.Logs[0].Mensaje);
 
-        var actualizado = new Rol { Id = guardado.Id, Nombre = "Editor" };
+        var actualizado = new Rol { Id = 10, Nombre = "Editor" };
         datos.GuardarRol(actualizado);
 
-        Assert.AreSame(actualizado, datos.LeerRol(guardado.Id));
+        Assert.AreSame(actualizado, datos.LeerRol(10));
         Assert.AreEqual("Rol actualizado: Editor", datos.Logs[1].Mensaje);
 
-        Rol? eliminado = datos.EliminarRol(guardado.Id);
+        var siguiente = new Rol { Nombre = "Administrador" };
+        datos.GuardarRol(siguiente);
+
+        Assert.AreEqual(11, siguiente.Id);
+        Assert.AreSame(siguiente, datos.LeerRol(11));
+        Assert.AreEqual("Rol añadido: Administrador", datos.Logs[2].Mensaje);
+
+        Rol? eliminado = datos.EliminarRol(10);
 
         Assert.AreSame(actualizado, eliminado);
-        Assert.IsNull(datos.LeerRol(guardado.Id));
-        Assert.AreEqual("Rol eliminado: Editor", datos.Logs[2].Mensaje);
-        Assert.IsNull(datos.EliminarRol(guardado.Id));
+        Assert.IsNull(datos.LeerRol(10));
+        Assert.AreEqual("Rol eliminado: Editor", datos.Logs[3].Mensaje);
+        Assert.IsNull(datos.EliminarRol(10));
+        Assert.IsNull(datos.LeerRol(999));
     }
 
     [TestMethod]
     public void Proyecto_PermiteGuardarBuscarActualizarYEliminar()
     {
         var datos = new Datos();
-        var proyecto = new Proyecto { Nombre = "Proyecto A" };
+        var proyecto = new Proyecto { Id = 10, Nombre = "Proyecto A" };
 
-        Proyecto guardado = datos.GuardarProyecto(proyecto)!;
+        datos.GuardarProyecto(proyecto);
 
-        Assert.AreEqual(1, guardado.Id);
-        Assert.AreSame(proyecto, datos.LeerProyecto(guardado.Id));
-        Assert.AreEqual("Proyecto añadido: Proyecto A", datos.Logs[0].Mensaje);
+        Assert.AreSame(proyecto, datos.LeerProyecto(10));
+        Assert.AreEqual("Proyecto actualizado: Proyecto A", datos.Logs[0].Mensaje);
 
         var actualizado = new Proyecto
         {
-            Id = guardado.Id,
+            Id = 10,
             Nombre = "Proyecto actualizado"
         };
         datos.GuardarProyecto(actualizado);
 
-        Assert.AreSame(actualizado, datos.LeerProyecto(guardado.Id));
+        Assert.AreSame(actualizado, datos.LeerProyecto(10));
         Assert.AreEqual(
             "Proyecto actualizado: Proyecto actualizado",
             datos.Logs[1].Mensaje);
 
-        Proyecto? eliminado = datos.EliminarProyecto(guardado.Id);
+        var siguiente = new Proyecto { Nombre = "Proyecto B" };
+        datos.GuardarProyecto(siguiente);
+
+        Assert.AreEqual(11, siguiente.Id);
+        Assert.AreSame(siguiente, datos.LeerProyecto(11));
+        Assert.AreEqual("Proyecto añadido: Proyecto B", datos.Logs[2].Mensaje);
+
+        Proyecto? eliminado = datos.EliminarProyecto(10);
 
         Assert.AreSame(actualizado, eliminado);
-        Assert.IsNull(datos.LeerProyecto(guardado.Id));
-        Assert.AreEqual(
-            "Proyecto eliminado: Proyecto actualizado",
-            datos.Logs[2].Mensaje);
-        Assert.IsNull(datos.EliminarProyecto(guardado.Id));
+        Assert.IsNull(datos.LeerProyecto(10));
+        Assert.AreEqual("Proyecto eliminado: Proyecto actualizado", datos.Logs[3].Mensaje);
+        Assert.IsNull(datos.EliminarProyecto(10));
+        Assert.IsNull(datos.LeerProyecto(999));
     }
 
     [TestMethod]
-    public void LimpiarLog_DevuelveLaCantidadEliminadaYVaciaLaLista()
+    public void AgregarLogYLimpiarLog_DevuelveLaCantidadEliminada()
     {
         var datos = new Datos();
-        datos.AgregarLog(new EntradaLog("Primero"));
-        datos.AgregarLog(new EntradaLog("Segundo"));
+        var primero = new EntradaLog("Primero");
+        var segundo = new EntradaLog("Segundo");
 
+        datos.AgregarLog(primero);
+        datos.AgregarLog(segundo);
+
+        Assert.AreSame(primero, datos.Logs[0]);
+        Assert.AreSame(segundo, datos.Logs[1]);
         Assert.AreEqual(2, datos.LimpiarLog());
         Assert.AreEqual(0, datos.Logs.Count);
         Assert.AreEqual(0, datos.LimpiarLog());

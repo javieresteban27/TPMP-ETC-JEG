@@ -17,31 +17,26 @@ namespace NucleoTest.Modelos
             Assert.IsTrue(entrada.FechaHora >= inicio && entrada.FechaHora <= fin);
             Assert.AreEqual("INFO", entrada.Nivel);
             Assert.AreEqual("Mensaje de prueba", entrada.Mensaje);
-            Assert.IsNull(entrada.Usuario);
+            Assert.AreEqual("Sistema", entrada.Usuario);
         }
 
         [TestMethod]
         public void Propiedades_PermitenActualizarLosValores()
         {
             var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
-            var usuario = new Usuario
-            {
-                Nombre_usuario = "usuario_prueba",
-                Mail = "usuario@example.com"
-            };
 
             var entrada = new EntradaLog("Mensaje inicial")
             {
                 FechaHora = fecha,
                 Nivel = "WARN",
                 Mensaje = "Mensaje actualizado",
-                Usuario = usuario
+                Usuario = "usuario_prueba"
             };
 
             Assert.AreEqual(fecha, entrada.FechaHora);
             Assert.AreEqual("WARN", entrada.Nivel);
             Assert.AreEqual("Mensaje actualizado", entrada.Mensaje);
-            Assert.AreSame(usuario, entrada.Usuario);
+            Assert.AreEqual("usuario_prueba", entrada.Usuario);
         }
 
         [TestMethod]
@@ -63,20 +58,15 @@ namespace NucleoTest.Modelos
         public void ToString_ConUsuario_IncluyeSuRepresentacion()
         {
             var fecha = new DateTime(2026, 9, 30, 12, 30, 0);
-            var usuario = new Usuario
-            {
-                Nombre_usuario = "usuario_prueba",
-                Mail = "usuario@example.com"
-            };
             var entrada = new EntradaLog("Fallo")
             {
                 FechaHora = fecha,
                 Nivel = "ERROR",
-                Usuario = usuario
+                Usuario = "usuario_prueba"
             };
 
             Assert.AreEqual(
-                $"{fecha:dd/MM/yyyy HH:mm:ss} [ERROR] Fallo - {usuario}",
+                $"{fecha:dd/MM/yyyy HH:mm:ss} [ERROR] Fallo - usuario_prueba",
                 entrada.ToString());
         }
     }
