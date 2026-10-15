@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Validacion\" />
     <Folder Include="Utilidades\" />
-    <Folder Include="Servicios\" />
   </ItemGroup>
 
 </Project>

@@ -27,6 +27,8 @@ namespace BackEnd
             {
                 IdUsuario = 1,
                 Nombre_usuario = "Usuario de prueba",
+                Nombre = "Usuario",
+                Apellidos = "de prueba",
                 Mail = "usuario@test.com",
                 Password = ServicioHash.Generar("Clave123!")
             };

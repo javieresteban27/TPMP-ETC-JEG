@@ -201,6 +201,8 @@ public class DatosTests
         {
             IdUsuario = id,
             Nombre_usuario = "Usuario de prueba",
+            Nombre = "Usuario",
+            Apellidos = "de prueba",
             Mail = correo
         };
     }

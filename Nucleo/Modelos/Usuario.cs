@@ -6,35 +6,41 @@ namespace Nucleo.Modelos
     {
         public int IdUsuario { get; set; }
         public required string Nombre_usuario { get; set; }
+        public required string Nombre { get; set; }
+        public required string Apellidos { get; set; }
         public required string Mail { get; set; }
 
         // Se almacena el resultado del hash, no la contraseña en texto plano.
         public ResultadoHash Password { get; set; } = new();
 
-        public int Intentos_fallidos { get; set; }
-        public DateTime? Bloqueado_hasta { get; set; }
+        public bool TieneCredencialesConfiguradas { get; set; }
+        public bool Activa { get; set; } = true;
+        public int IntentosErroneos { get; set; }
+        public int ListaPasswordsCount => _listaPasswords.Count;
 
-        // Propiedades usadas por los métodos de contraseña.
-        public bool SinContraseña { get; set; }
-        public DateTime? Ultimo_cambio_password { get; set; }
-        public DateTime? Fecha_ultimo_acceso { get; set; }
-        public DateTime? Fecha_acceso_actual { get; set; }
+        // DateTime.MinValue representa una fecha aún no registrada.
+        public DateTime FechaUltimoAcceso { get; set; } = DateTime.MinValue;
+        public DateTime FechaAccesoActual { get; set; } = DateTime.MinValue;
+        public DateTime UltimoCambioPassword { get; set; } = DateTime.MinValue;
+        public DateTime BloquearAccesoHasta { get; set; } = DateTime.MinValue;
+        public DateTime CaducidadCuenta { get; set; } = DateTime.MinValue;
 
         private readonly List<ResultadoHash> _listaPasswords = new();
 
         public bool EstaBloqueado()
         {
-            if (Bloqueado_hasta.HasValue &&
-                DateTime.Now < Bloqueado_hasta.Value)
+            if (BloquearAccesoHasta == DateTime.MinValue)
+            {
+                return false;
+            }
+
+            if (DateTime.Now < BloquearAccesoHasta)
             {
                 return true;
             }
 
-            if (Bloqueado_hasta.HasValue)
-            {
-                Bloqueado_hasta = null;
-                Intentos_fallidos = 0;
-            }
+            BloquearAccesoHasta = DateTime.MinValue;
+            IntentosErroneos = 0;
 
             return false;
         }
@@ -46,23 +52,23 @@ namespace Nucleo.Modelos
                 return;
             }
 
-            Intentos_fallidos++;
+            IntentosErroneos++;
 
-            if (Intentos_fallidos >= 3)
+            if (IntentosErroneos >= 3)
             {
-                Bloqueado_hasta = DateTime.Now.AddMinutes(5);
+                BloquearAccesoHasta = DateTime.Now.AddMinutes(5);
             }
         }
 
         public void RegistrarExito()
         {
-            Intentos_fallidos = 0;
-            Bloqueado_hasta = null;
+            IntentosErroneos = 0;
+            BloquearAccesoHasta = DateTime.MinValue;
         }
 
         public bool CompruebaPassword(string password)
         {
-            if (EstaBloqueado() || SinContraseña)
+            if (EstaBloqueado() || !TieneCredencialesConfiguradas)
             {
                 return false;
             }
@@ -74,22 +80,23 @@ namespace Nucleo.Modelos
             }
 
             RegistrarExito();
-            Fecha_ultimo_acceso = Fecha_acceso_actual;
-            Fecha_acceso_actual = DateTime.Now;
+            FechaUltimoAcceso = FechaAccesoActual;
+            FechaAccesoActual = DateTime.Now;
 
             return true;
         }
 
         public bool CambiaPassword(string nueva)
         {
-            if (!SinContraseña || string.IsNullOrWhiteSpace(nueva))
+            if (TieneCredencialesConfiguradas ||
+                string.IsNullOrWhiteSpace(nueva))
             {
                 return false;
             }
 
             Password = ServicioHash.Generar(nueva);
-            Ultimo_cambio_password = DateTime.Now;
-            SinContraseña = false;
+            UltimoCambioPassword = DateTime.Now;
+            TieneCredencialesConfiguradas = true;
 
             if (_listaPasswords.Count > 10)
             {
@@ -123,7 +130,7 @@ namespace Nucleo.Modelos
 
             ResultadoHash passwordActual = Password;
             Password = ServicioHash.Generar(nueva);
-            Ultimo_cambio_password = DateTime.Now;
+            UltimoCambioPassword = DateTime.Now;
 
             if (_listaPasswords.Count > 10)
             {
@@ -138,7 +145,5 @@ namespace Nucleo.Modelos
         {
             return $"Usuario {{ IdUsuario: {IdUsuario}, Nombre_usuario: {Nombre_usuario}, Mail: {Mail} }}";
         }
-
-        
     }
 }

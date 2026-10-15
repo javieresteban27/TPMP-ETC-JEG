@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nucleo.Modelos;
 using Nucleo.Seguridad;
 
@@ -9,25 +8,49 @@ namespace NucleoTest.Modelos
     public class UsuarioTest
     {
         [TestMethod]
-        public void UsuarioNuevo_NoEstaBloqueado()
+        public void UsuarioNuevo_InicializaFechasYEstadoEsperados()
         {
             Usuario usuario = CrearUsuario();
 
-            Assert.IsFalse(usuario.EstaBloqueado());
-            Assert.AreEqual(0, usuario.Intentos_fallidos);
-            Assert.IsNull(usuario.Bloqueado_hasta);
+            Assert.IsTrue(usuario.Activa);
+            Assert.AreEqual(0, usuario.IntentosErroneos);
+            Assert.AreEqual(DateTime.MinValue, usuario.FechaUltimoAcceso);
+            Assert.AreEqual(DateTime.MinValue, usuario.FechaAccesoActual);
+            Assert.AreEqual(DateTime.MinValue, usuario.UltimoCambioPassword);
+            Assert.AreEqual(DateTime.MinValue, usuario.BloquearAccesoHasta);
+            Assert.AreEqual(DateTime.MinValue, usuario.CaducidadCuenta);
+            Assert.AreEqual(0, usuario.ListaPasswordsCount);
         }
 
         [TestMethod]
-        public void EstaBloqueado_BloqueoVencido_LimpiaElBloqueoYLosIntentos()
+        public void EstaBloqueado_SinBloqueoActivo_DevuelveFalse()
         {
             Usuario usuario = CrearUsuario();
-            usuario.Intentos_fallidos = 3;
-            usuario.Bloqueado_hasta = DateTime.Now.AddMinutes(-1);
 
             Assert.IsFalse(usuario.EstaBloqueado());
-            Assert.AreEqual(0, usuario.Intentos_fallidos);
-            Assert.IsNull(usuario.Bloqueado_hasta);
+            Assert.AreEqual(0, usuario.IntentosErroneos);
+            Assert.AreEqual(DateTime.MinValue, usuario.BloquearAccesoHasta);
+        }
+
+        [TestMethod]
+        public void EstaBloqueado_BloqueoVigente_DevuelveTrue()
+        {
+            Usuario usuario = CrearUsuario();
+            usuario.BloquearAccesoHasta = DateTime.Now.AddMinutes(1);
+
+            Assert.IsTrue(usuario.EstaBloqueado());
+        }
+
+        [TestMethod]
+        public void EstaBloqueado_BloqueoVencido_LimpiaBloqueoEIntentos()
+        {
+            Usuario usuario = CrearUsuario();
+            usuario.IntentosErroneos = 3;
+            usuario.BloquearAccesoHasta = DateTime.Now.AddMinutes(-1);
+
+            Assert.IsFalse(usuario.EstaBloqueado());
+            Assert.AreEqual(0, usuario.IntentosErroneos);
+            Assert.AreEqual(DateTime.MinValue, usuario.BloquearAccesoHasta);
         }
 
         [TestMethod]
@@ -38,7 +61,7 @@ namespace NucleoTest.Modelos
             usuario.RegistrarFallo();
             usuario.RegistrarFallo();
 
-            Assert.AreEqual(2, usuario.Intentos_fallidos);
+            Assert.AreEqual(2, usuario.IntentosErroneos);
             Assert.IsFalse(usuario.EstaBloqueado());
         }
 
@@ -54,9 +77,9 @@ namespace NucleoTest.Modelos
 
             DateTime despues = DateTime.Now;
 
-            Assert.AreEqual(3, usuario.Intentos_fallidos);
-            Assert.IsTrue(usuario.Bloqueado_hasta >= antes.AddMinutes(5));
-            Assert.IsTrue(usuario.Bloqueado_hasta <= despues.AddMinutes(5));
+            Assert.AreEqual(3, usuario.IntentosErroneos);
+            Assert.IsTrue(usuario.BloquearAccesoHasta >= antes.AddMinutes(5));
+            Assert.IsTrue(usuario.BloquearAccesoHasta <= despues.AddMinutes(5));
             Assert.IsTrue(usuario.EstaBloqueado());
         }
 
@@ -64,12 +87,12 @@ namespace NucleoTest.Modelos
         public void RegistrarFallo_CuentaBloqueada_NoIncrementaIntentos()
         {
             Usuario usuario = CrearUsuario();
-            usuario.Intentos_fallidos = 3;
-            usuario.Bloqueado_hasta = DateTime.Now.AddMinutes(5);
+            usuario.IntentosErroneos = 3;
+            usuario.BloquearAccesoHasta = DateTime.Now.AddMinutes(5);
 
             usuario.RegistrarFallo();
 
-            Assert.AreEqual(3, usuario.Intentos_fallidos);
+            Assert.AreEqual(3, usuario.IntentosErroneos);
             Assert.IsTrue(usuario.EstaBloqueado());
         }
 
@@ -77,153 +100,177 @@ namespace NucleoTest.Modelos
         public void RegistrarExito_RestableceIntentosYBloqueo()
         {
             Usuario usuario = CrearUsuario();
-            usuario.Intentos_fallidos = 3;
-            usuario.Bloqueado_hasta = DateTime.Now.AddMinutes(5);
+            usuario.IntentosErroneos = 3;
+            usuario.BloquearAccesoHasta = DateTime.Now.AddMinutes(5);
 
             usuario.RegistrarExito();
 
-            Assert.AreEqual(0, usuario.Intentos_fallidos);
-            Assert.IsNull(usuario.Bloqueado_hasta);
+            Assert.AreEqual(0, usuario.IntentosErroneos);
+            Assert.AreEqual(DateTime.MinValue, usuario.BloquearAccesoHasta);
             Assert.IsFalse(usuario.EstaBloqueado());
+        }
+
+        [TestMethod]
+        public void CompruebaPassword_CuentaSinCredenciales_NoIncrementaIntentos()
+        {
+            Usuario usuario = CrearUsuario(credencialesConfiguradas: false);
+
+            bool resultado = usuario.CompruebaPassword("ClaveInicial123!");
+
+            Assert.IsFalse(resultado);
+            Assert.AreEqual(0, usuario.IntentosErroneos);
         }
 
         [TestMethod]
         public void CompruebaPassword_ContraseñaIncorrecta_IncrementaIntentos()
         {
-            Usuario usuario = CrearUsuario("ClaveCorrecta123!");
+            Usuario usuario = CrearUsuario();
 
             bool resultado = usuario.CompruebaPassword("ClaveIncorrecta123!");
 
             Assert.IsFalse(resultado);
-            Assert.AreEqual(1, usuario.Intentos_fallidos);
+            Assert.AreEqual(1, usuario.IntentosErroneos);
         }
 
         [TestMethod]
         public void CompruebaPassword_ContraseñaCorrecta_RestableceIntentosYActualizaAccesos()
         {
-            Usuario usuario = CrearUsuario("ClaveCorrecta123!");
-            DateTime accesoAnterior = DateTime.Now.AddDays(-1);
-            DateTime antesDeComprobar = DateTime.Now;
-            usuario.Intentos_fallidos = 2;
-            usuario.Fecha_acceso_actual = accesoAnterior;
-
-            bool resultado = usuario.CompruebaPassword("ClaveCorrecta123!");
-
-            DateTime despuesDeComprobar = DateTime.Now;
-
-            Assert.IsTrue(resultado);
-            Assert.AreEqual(0, usuario.Intentos_fallidos);
-            Assert.IsNull(usuario.Bloqueado_hasta);
-            Assert.AreEqual(accesoAnterior, usuario.Fecha_ultimo_acceso);
-            Assert.IsTrue(usuario.Fecha_acceso_actual >= antesDeComprobar);
-            Assert.IsTrue(usuario.Fecha_acceso_actual <= despuesDeComprobar);
-        }
-
-        [TestMethod]
-        public void CompruebaPassword_CuentaSinContraseña_NoVerificaLaContraseña()
-        {
-            Usuario usuario = CrearUsuario("ClaveCorrecta123!");
-            usuario.SinContraseña = true;
-
-            bool resultado = usuario.CompruebaPassword("ClaveCorrecta123!");
-
-            Assert.IsFalse(resultado);
-            Assert.AreEqual(0, usuario.Intentos_fallidos);
-        }
-
-        [TestMethod]
-        public void CompruebaPassword_CuentaBloqueada_NoVerificaLaContraseña()
-        {
-            Usuario usuario = CrearUsuario("ClaveCorrecta123!");
-            usuario.Intentos_fallidos = 3;
-            usuario.Bloqueado_hasta = DateTime.Now.AddMinutes(5);
-
-            bool resultado = usuario.CompruebaPassword("ClaveCorrecta123!");
-
-            Assert.IsFalse(resultado);
-            Assert.AreEqual(3, usuario.Intentos_fallidos);
-        }
-
-        [TestMethod]
-        public void CambiaPassword_SinContraseñaYContraseñaValida_CambiaLaContraseña()
-        {
             Usuario usuario = CrearUsuario();
-            usuario.SinContraseña = true;
+            DateTime accesoAnterior = DateTime.Now.AddDays(-1);
             DateTime antes = DateTime.Now;
+            usuario.IntentosErroneos = 2;
+            usuario.FechaAccesoActual = accesoAnterior;
 
-            bool resultado = usuario.CambiaPassword("NuevaClave123!");
+            bool resultado = usuario.CompruebaPassword("ClaveInicial123!");
 
             DateTime despues = DateTime.Now;
 
             Assert.IsTrue(resultado);
-            Assert.IsFalse(usuario.SinContraseña);
-            Assert.IsTrue(ServicioHash.Verificar("NuevaClave123!", usuario.Password));
-            Assert.IsTrue(usuario.Ultimo_cambio_password >= antes);
-            Assert.IsTrue(usuario.Ultimo_cambio_password <= despues);
+            Assert.AreEqual(0, usuario.IntentosErroneos);
+            Assert.AreEqual(DateTime.MinValue, usuario.BloquearAccesoHasta);
+            Assert.AreEqual(accesoAnterior, usuario.FechaUltimoAcceso);
+            Assert.IsTrue(usuario.FechaAccesoActual >= antes);
+            Assert.IsTrue(usuario.FechaAccesoActual <= despues);
         }
 
         [TestMethod]
-        public void CambiaPassword_SinContraseñaYTextoVacio_NoCambiaLaContraseña()
+        public void CompruebaPassword_CuentaBloqueada_NoCompruebaLaContraseña()
         {
             Usuario usuario = CrearUsuario();
-            usuario.SinContraseña = true;
+            usuario.IntentosErroneos = 3;
+            usuario.BloquearAccesoHasta = DateTime.Now.AddMinutes(5);
+
+            bool resultado = usuario.CompruebaPassword("ClaveInicial123!");
+
+            Assert.IsFalse(resultado);
+            Assert.AreEqual(3, usuario.IntentosErroneos);
+        }
+
+        [TestMethod]
+        public void CambiaPassword_CuentaSinCredencialesYClaveValida_ConfiguraLaContraseña()
+        {
+            Usuario usuario = CrearUsuario(credencialesConfiguradas: false);
+            DateTime antes = DateTime.Now;
+
+            bool resultado = usuario.CambiaPassword("ClaveNueva456!");
+
+            DateTime despues = DateTime.Now;
+
+            Assert.IsTrue(resultado);
+            Assert.IsTrue(usuario.TieneCredencialesConfiguradas);
+            Assert.IsTrue(ServicioHash.Verificar("ClaveNueva456!", usuario.Password));
+            Assert.IsTrue(usuario.UltimoCambioPassword >= antes);
+            Assert.IsTrue(usuario.UltimoCambioPassword <= despues);
+            Assert.AreEqual(1, usuario.ListaPasswordsCount);
+        }
+
+        [TestMethod]
+        public void CambiaPassword_CuentaSinCredencialesYClaveVacia_NoConfiguraLaContraseña()
+        {
+            Usuario usuario = CrearUsuario(credencialesConfiguradas: false);
 
             Assert.IsFalse(usuario.CambiaPassword(""));
             Assert.IsFalse(usuario.CambiaPassword("   "));
-            Assert.IsTrue(usuario.SinContraseña);
+            Assert.IsFalse(usuario.TieneCredencialesConfiguradas);
+            Assert.AreEqual(0, usuario.ListaPasswordsCount);
         }
 
         [TestMethod]
-        public void CambiaPassword_ConContraseñaAnteriorCorrecta_CambiaLaContraseña()
+        public void CambiaPassword_CuentaConCredenciales_NoPermiteLaSobrecargaDeConfiguracionInicial()
         {
-            Usuario usuario = CrearUsuario("ClaveAnterior123!");
+            Usuario usuario = CrearUsuario();
+
+            bool resultado = usuario.CambiaPassword("ClaveNueva456!");
+
+            Assert.IsFalse(resultado);
+            Assert.IsTrue(ServicioHash.Verificar("ClaveInicial123!", usuario.Password));
+        }
+
+        [TestMethod]
+        public void CambiaPassword_ContraseñaAnteriorCorrecta_CambiaLaContraseña()
+        {
+            Usuario usuario = CrearUsuario();
             DateTime antes = DateTime.Now;
 
             bool resultado = usuario.CambiaPassword(
-                "ClaveAnterior123!",
+                "ClaveInicial123!",
                 "ClaveNueva456!");
 
             DateTime despues = DateTime.Now;
 
             Assert.IsTrue(resultado);
             Assert.IsTrue(ServicioHash.Verificar("ClaveNueva456!", usuario.Password));
-            Assert.IsFalse(ServicioHash.Verificar("ClaveAnterior123!", usuario.Password));
-            Assert.IsTrue(usuario.Ultimo_cambio_password >= antes);
-            Assert.IsTrue(usuario.Ultimo_cambio_password <= despues);
+            Assert.IsFalse(ServicioHash.Verificar("ClaveInicial123!", usuario.Password));
+            Assert.IsTrue(usuario.UltimoCambioPassword >= antes);
+            Assert.IsTrue(usuario.UltimoCambioPassword <= despues);
+            Assert.AreEqual(1, usuario.ListaPasswordsCount);
         }
 
         [TestMethod]
-        public void CambiaPassword_ContraseñaNuevaIgualALaAnterior_NoLaCambia()
+        public void CambiaPassword_NuevaIgualALaAnterior_NoCambiaLaContraseña()
         {
-            Usuario usuario = CrearUsuario("ClaveActual123!");
+            Usuario usuario = CrearUsuario();
 
             bool resultado = usuario.CambiaPassword(
-                "ClaveActual123!",
-                "ClaveActual123!");
+                "ClaveInicial123!",
+                "ClaveInicial123!");
 
             Assert.IsFalse(resultado);
-            Assert.IsTrue(ServicioHash.Verificar("ClaveActual123!", usuario.Password));
+            Assert.IsTrue(ServicioHash.Verificar("ClaveInicial123!", usuario.Password));
         }
 
         [TestMethod]
-        public void CambiaPassword_ContraseñaAnteriorIncorrecta_NoLaCambia()
+        public void CambiaPassword_NuevaVacia_NoCambiaLaContraseña()
         {
-            Usuario usuario = CrearUsuario("ClaveActual123!");
+            Usuario usuario = CrearUsuario();
+
+            Assert.IsFalse(usuario.CambiaPassword("ClaveInicial123!", ""));
+            Assert.IsFalse(usuario.CambiaPassword("ClaveInicial123!", "   "));
+            Assert.IsTrue(ServicioHash.Verificar("ClaveInicial123!", usuario.Password));
+        }
+
+        [TestMethod]
+        public void CambiaPassword_ContraseñaAnteriorIncorrecta_NoCambiaLaContraseña()
+        {
+            Usuario usuario = CrearUsuario();
 
             bool resultado = usuario.CambiaPassword(
                 "ClaveIncorrecta123!",
                 "ClaveNueva456!");
 
             Assert.IsFalse(resultado);
-            Assert.IsTrue(ServicioHash.Verificar("ClaveActual123!", usuario.Password));
-            Assert.AreEqual(1, usuario.Intentos_fallidos);
+            Assert.IsTrue(ServicioHash.Verificar("ClaveInicial123!", usuario.Password));
+            Assert.AreEqual(1, usuario.IntentosErroneos);
         }
 
         [TestMethod]
-        public void CambiaPassword_ReutilizaContraseñaAnterior_NoLaCambia()
+        public void CambiaPassword_ReutilizaLaContraseñaAnterior_NoLaCambia()
         {
-            Usuario usuario = CrearUsuario("ClaveInicial123!");
-            Assert.IsTrue(usuario.CambiaPassword("ClaveInicial123!", "ClaveNueva456!"));
+            Usuario usuario = CrearUsuario();
+
+            Assert.IsTrue(usuario.CambiaPassword(
+                "ClaveInicial123!",
+                "ClaveNueva456!"));
 
             bool resultado = usuario.CambiaPassword(
                 "ClaveNueva456!",
@@ -233,13 +280,53 @@ namespace NucleoTest.Modelos
             Assert.IsTrue(ServicioHash.Verificar("ClaveNueva456!", usuario.Password));
         }
 
-        private static Usuario CrearUsuario(string password = "ClaveInicial123!")
+        [TestMethod]
+        public void CambiaPassword_ReutilizaUnaContraseñaHistorica_NoLaCambia()
+        {
+            Usuario usuario = CrearUsuario();
+
+            Assert.IsTrue(usuario.CambiaPassword(
+                "ClaveInicial123!",
+                "ClaveNueva456!"));
+            Assert.IsTrue(usuario.CambiaPassword(
+                "ClaveNueva456!",
+                "ClaveOtra789!"));
+
+            bool resultado = usuario.CambiaPassword(
+                "ClaveOtra789!",
+                "ClaveInicial123!");
+
+            Assert.IsFalse(resultado);
+            Assert.IsTrue(ServicioHash.Verificar("ClaveOtra789!", usuario.Password));
+        }
+
+        [TestMethod]
+        public void ToString_IncluyeIdNombreDeUsuarioYCorreo()
+        {
+            Usuario usuario = CrearUsuario();
+            usuario.IdUsuario = 42;
+
+            string resultado = usuario.ToString();
+
+            Assert.AreEqual(
+                "Usuario { IdUsuario: 42, Nombre_usuario: usuario_test, Mail: usuario@test.com }",
+                resultado);
+        }
+
+        private static Usuario CrearUsuario(
+            string password = "ClaveInicial123!",
+            bool credencialesConfiguradas = true)
         {
             return new Usuario
             {
                 Nombre_usuario = "usuario_test",
+                Nombre = "Usuario",
+                Apellidos = "De Prueba",
                 Mail = "usuario@test.com",
-                Password = ServicioHash.Generar(password)
+                Password = credencialesConfiguradas
+                    ? ServicioHash.Generar(password)
+                    : new ResultadoHash(),
+                TieneCredencialesConfiguradas = credencialesConfiguradas
             };
         }
     }

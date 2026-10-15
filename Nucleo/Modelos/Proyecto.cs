@@ -10,7 +10,21 @@
 
     public class Proyecto
     {
-        public int Id { get; set; }
+        private int _id;
+        private DateTime _fechaCreacionUtc = DateTime.UtcNow;
+
+        public int IdProyecto
+        {
+            get => _id;
+            set => _id = value;
+        }
+
+        // Alias para mantener la compatibilidad con el código existente.
+        public int Id
+        {
+            get => _id;
+            set => _id = value;
+        }
 
         public required string Nombre { get; set; }
 
@@ -18,7 +32,20 @@
 
         public string? Codigo { get; set; }
 
-        public DateTime FechaCreacionUtc { get; init; } = DateTime.UtcNow;
+        public string? Siglas { get; set; }
+
+        public DateTime FechaCreacion
+        {
+            get => _fechaCreacionUtc;
+            init => _fechaCreacionUtc = value;
+        }
+
+        // Alias para mantener la compatibilidad con el código existente.
+        public DateTime FechaCreacionUtc
+        {
+            get => _fechaCreacionUtc;
+            init => _fechaCreacionUtc = value;
+        }
 
         public DateTime FechaInicioUtc { get; set; } = DateTime.UtcNow;
 
