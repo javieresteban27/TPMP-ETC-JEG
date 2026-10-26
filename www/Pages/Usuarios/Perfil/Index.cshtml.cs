@@ -18,7 +18,8 @@ public class IndexModel : PageModel
         _datos = datos;
     }
 
-    public string NombreUsuarioCabecera { get; private set; } = string.Empty;
+    public string NombreUsuarioCabecera { get; private set; }
+        = string.Empty;
 
     public string NombreProyectoActual { get; private set; }
         = "Sin proyecto seleccionado";
@@ -51,60 +52,83 @@ public class IndexModel : PageModel
         = "No consta";
 
     [BindProperty]
-    [Required(ErrorMessage = "Debe indicar el correo electrónico.")]
-    [EmailAddress(ErrorMessage = "El correo electrónico no es válido.")]
+    [Required(
+        ErrorMessage = "Debe indicar el correo electrónico.")]
+    [EmailAddress(
+        ErrorMessage = "El correo electrónico no es válido.")]
     [Display(Name = "Correo electrónico")]
-    public string EMail { get; set; } = string.Empty;
+    public string EMail { get; set; }
+        = string.Empty;
 
     [BindProperty]
-    [Required(ErrorMessage = "Debe indicar el nombre.")]
+    [Required(
+        ErrorMessage = "Debe indicar el nombre.")]
     [StringLength(
         100,
-        ErrorMessage = "El nombre no puede superar 100 caracteres.")]
+        ErrorMessage =
+            "El nombre no puede superar 100 caracteres.")]
     [Display(Name = "Nombre")]
-    public string Nombre { get; set; } = string.Empty;
+    public string Nombre { get; set; }
+        = string.Empty;
 
     [BindProperty]
-    [Required(ErrorMessage = "Debe indicar los apellidos.")]
+    [Required(
+        ErrorMessage = "Debe indicar los apellidos.")]
     [StringLength(
         150,
-        ErrorMessage = "Los apellidos no pueden superar 150 caracteres.")]
+        ErrorMessage =
+            "Los apellidos no pueden superar 150 caracteres.")]
     [Display(Name = "Apellidos")]
-    public string Apellidos { get; set; } = string.Empty;
+    public string Apellidos { get; set; }
+        = string.Empty;
 
     [BindProperty]
-    [Required(ErrorMessage = "Debe indicar la contraseña actual.")]
+    [Required(
+        ErrorMessage =
+            "Debe indicar la contraseña actual.")]
     [DataType(DataType.Password)]
     [Display(Name = "Contraseña actual")]
-    public string PasswordActual { get; set; } = string.Empty;
+    public string PasswordActual { get; set; }
+        = string.Empty;
 
     [BindProperty]
-    [Required(ErrorMessage = "Debe indicar la nueva contraseña.")]
+    [Required(
+        ErrorMessage =
+            "Debe indicar la nueva contraseña.")]
     [DataType(DataType.Password)]
     [StringLength(
         100,
         MinimumLength = 8,
-        ErrorMessage = "La contraseña debe tener al menos 8 caracteres.")]
+        ErrorMessage =
+            "La contraseña debe tener al menos 8 caracteres.")]
     [Display(Name = "Nueva contraseña")]
-    public string PasswordNueva { get; set; } = string.Empty;
+    public string PasswordNueva { get; set; }
+        = string.Empty;
 
     [BindProperty]
-    [Required(ErrorMessage = "Debe repetir la nueva contraseña.")]
+    [Required(
+        ErrorMessage =
+            "Debe repetir la nueva contraseña.")]
     [DataType(DataType.Password)]
     [Compare(
         nameof(PasswordNueva),
-        ErrorMessage = "Las nuevas contraseñas no coinciden.")]
+        ErrorMessage =
+            "Las nuevas contraseñas no coinciden.")]
     [Display(Name = "Repetir nueva contraseña")]
-    public string ConfirmacionPassword { get; set; } = string.Empty;
+    public string ConfirmacionPassword { get; set; }
+        = string.Empty;
 
     public IActionResult OnGet()
     {
-        UsuarioModelo? usuario = ObtenerUsuarioActual();
+        UsuarioModelo? usuario =
+            ObtenerUsuarioActual();
 
         if (usuario is null)
         {
             LimpiarSesion();
-            return RedirectToPage("/Login/Index");
+
+            return RedirectToPage(
+                "/Login/Index");
         }
 
         CargarCabecera(usuario);
@@ -116,12 +140,15 @@ public class IndexModel : PageModel
 
     public IActionResult OnPostGuardarPerfil()
     {
-        UsuarioModelo? usuario = ObtenerUsuarioActual();
+        UsuarioModelo? usuario =
+            ObtenerUsuarioActual();
 
         if (usuario is null)
         {
             LimpiarSesion();
-            return RedirectToPage("/Login/Index");
+
+            return RedirectToPage(
+                "/Login/Index");
         }
 
         CargarCabecera(usuario);
@@ -133,13 +160,16 @@ public class IndexModel : PageModel
             return Page();
         }
 
-        string emailNormalizado = EMail.Trim();
+        string emailNormalizado =
+            EMail.Trim();
 
         UsuarioModelo? usuarioConMismoEmail =
-            _datos.LeerUsuario(emailNormalizado);
+            _datos.LeerUsuario(
+                emailNormalizado);
 
         if (usuarioConMismoEmail is not null &&
-            usuarioConMismoEmail.IdUsuario != usuario.IdUsuario)
+            usuarioConMismoEmail.IdUsuario !=
+            usuario.IdUsuario)
         {
             ModelState.AddModelError(
                 nameof(EMail),
@@ -148,11 +178,17 @@ public class IndexModel : PageModel
             return Page();
         }
 
-        usuario.Mail = emailNormalizado;
-        usuario.Nombre = Nombre.Trim();
-        usuario.Apellidos = Apellidos.Trim();
+        usuario.Mail =
+            emailNormalizado;
 
-        _datos.GuardarUsuario(usuario);
+        usuario.Nombre =
+            Nombre.Trim();
+
+        usuario.Apellidos =
+            Apellidos.Trim();
+
+        _datos.GuardarUsuario(
+            usuario);
 
         TempData["MensajePerfil"] =
             "Los datos del perfil se han actualizado.";
@@ -162,12 +198,15 @@ public class IndexModel : PageModel
 
     public IActionResult OnPostCambiarPassword()
     {
-        UsuarioModelo? usuario = ObtenerUsuarioActual();
+        UsuarioModelo? usuario =
+            ObtenerUsuarioActual();
 
         if (usuario is null)
         {
             LimpiarSesion();
-            return RedirectToPage("/Login/Index");
+
+            return RedirectToPage(
+                "/Login/Index");
         }
 
         CargarCabecera(usuario);
@@ -180,7 +219,8 @@ public class IndexModel : PageModel
             return Page();
         }
 
-        if (!usuario.CompruebaPassword(PasswordActual))
+        if (!usuario.CompruebaPassword(
+            PasswordActual))
         {
             ModelState.AddModelError(
                 nameof(PasswordActual),
@@ -189,9 +229,10 @@ public class IndexModel : PageModel
             return Page();
         }
 
-        bool cambioCorrecto = usuario.CambiaPassword(
-            PasswordActual,
-            PasswordNueva);
+        bool cambioCorrecto =
+            usuario.CambiaPassword(
+                PasswordActual,
+                PasswordNueva);
 
         if (!cambioCorrecto)
         {
@@ -202,7 +243,8 @@ public class IndexModel : PageModel
             return Page();
         }
 
-        _datos.GuardarUsuario(usuario);
+        _datos.GuardarUsuario(
+            usuario);
 
         TempData["MensajePassword"] =
             "La contraseña se ha cambiado correctamente.";
@@ -212,8 +254,9 @@ public class IndexModel : PageModel
 
     private Usuario? ObtenerUsuarioActual()
     {
-        int? idUsuario = HttpContext.Session.GetInt32(
-            ClavesSesion.UsuarioId);
+        int? idUsuario =
+            HttpContext.Session.GetInt32(
+                ClavesSesion.UsuarioId);
 
         if (idUsuario is not int id)
         {
@@ -223,40 +266,71 @@ public class IndexModel : PageModel
         return _datos.LeerUsuario(id);
     }
 
-    private void CargarDatosEditables(Usuario usuario)
+    private void CargarDatosEditables(
+        Usuario usuario)
     {
-        EMail = usuario.Mail;
-        Nombre = usuario.Nombre;
-        Apellidos = usuario.Apellidos;
+        EMail =
+            usuario.Mail;
+
+        Nombre =
+            usuario.Nombre;
+
+        Apellidos =
+            usuario.Apellidos;
     }
 
-    private void CargarDatosCuenta(Usuario usuario)
+    private void CargarDatosCuenta(
+        Usuario usuario)
     {
-        IdUsuario = usuario.IdUsuario;
-        SinPassword = usuario.TieneCredencialesConfiguradas;
-        CuentaActiva = usuario.Activa;
-        Rol = 0;
-        IntentosErroneos = usuario.IntentosErroneos;
-        NumeroPasswordsAnteriores = usuario.ListaPasswordsCount;
+        IdUsuario =
+            usuario.IdUsuario;
 
-        FechaUltimoAccesoTexto = Formatos.FormatearFecha(usuario.FechaUltimoAcceso);
+        SinPassword =
+            !usuario.TieneCredencialesConfiguradas;
 
-        FechaAccesoActualTexto = Formatos.FormatearFecha(usuario.FechaUltimoAcceso);
+        CuentaActiva =
+            usuario.Activa;
 
-        UltimoCambioPasswordTexto = Formatos.FormatearFecha(usuario.UltimoCambioPassword);
+        Rol =
+            0;
 
-        BloquearAccesoHastaTexto = Formatos.FormatearFecha(usuario.BloquearAccesoHasta);
+        IntentosErroneos =
+            usuario.IntentosErroneos;
 
-        CaducidadCuentaTexto = Formatos.FormatearFecha(usuario.CaducidadCuenta);
+        NumeroPasswordsAnteriores =
+            usuario.ListaPasswordsCount;
+
+        FechaUltimoAccesoTexto =
+            Formatos.FormatearFecha(
+                usuario.FechaUltimoAcceso);
+
+        FechaAccesoActualTexto =
+            Formatos.FormatearFecha(
+                usuario.FechaAccesoActual);
+
+        UltimoCambioPasswordTexto =
+            Formatos.FormatearFecha(
+                usuario.UltimoCambioPassword);
+
+        BloquearAccesoHastaTexto =
+            Formatos.FormatearFecha(
+                usuario.BloquearAccesoHasta);
+
+        CaducidadCuentaTexto =
+            Formatos.FormatearFecha(
+                usuario.CaducidadCuenta);
     }
 
-    private void CargarCabecera(Usuario usuario)
+    private void CargarCabecera(
+        Usuario usuario)
     {
         NombreUsuarioCabecera =
-            $"{usuario.Nombre} {usuario.Apellidos}".Trim();
+            $"{usuario.Nombre} {usuario.Apellidos}"
+                .Trim();
 
-        int? idProyecto = HttpContext.Session.GetInt32(
-            ClavesSesion.ProyectoActualId);
+        int? idProyecto =
+            HttpContext.Session.GetInt32(
+                ClavesSesion.ProyectoActualId);
 
         if (idProyecto is not int id)
         {
@@ -266,9 +340,11 @@ public class IndexModel : PageModel
             return;
         }
 
-        Proyecto? proyecto = _datos.LeerProyecto(id);
+        Proyecto? proyecto =
+            _datos.LeerProyecto(id);
 
-        if (proyecto is null || !proyecto.Activo)
+        if (proyecto is null ||
+            !proyecto.Activo)
         {
             HttpContext.Session.Remove(
                 ClavesSesion.ProyectoActualId);
@@ -279,31 +355,44 @@ public class IndexModel : PageModel
             return;
         }
 
-        NombreProyectoActual = proyecto.Nombre;
+        NombreProyectoActual =
+            proyecto.Nombre;
     }
 
-    private static string FormatearFecha(DateTime fecha)
+    private static string FormatearFecha(
+        DateTime fecha)
     {
         if (fecha == default)
         {
             return "No consta";
         }
 
-        return fecha.ToString("dd/MM/yyyy HH:mm:ss");
+        return fecha.ToString(
+            "dd/MM/yyyy HH:mm:ss");
     }
 
     private void QuitarValidacionPassword()
     {
-        ModelState.Remove(nameof(PasswordActual));
-        ModelState.Remove(nameof(PasswordNueva));
-        ModelState.Remove(nameof(ConfirmacionPassword));
+        ModelState.Remove(
+            nameof(PasswordActual));
+
+        ModelState.Remove(
+            nameof(PasswordNueva));
+
+        ModelState.Remove(
+            nameof(ConfirmacionPassword));
     }
 
     private void QuitarValidacionPerfil()
     {
-        ModelState.Remove(nameof(EMail));
-        ModelState.Remove(nameof(Nombre));
-        ModelState.Remove(nameof(Apellidos));
+        ModelState.Remove(
+            nameof(EMail));
+
+        ModelState.Remove(
+            nameof(Nombre));
+
+        ModelState.Remove(
+            nameof(Apellidos));
     }
 
     private void LimpiarSesion()

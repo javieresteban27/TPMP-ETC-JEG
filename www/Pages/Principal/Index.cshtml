@@ -1,11 +1,34 @@
-﻿@page 
-@model www.Pages.Principal.IndexModel 
-@{ 
-    ViewData["Title"] = "Principal";
-    ViewData["NombreProyecto"] = "-";
-    ViewData["TituloCabecera"] = "Página principal";
-    ViewData["MostrarMenuUsuario"] = true;
-    ViewData["NombreUsuario"] = Model.NombreUsuario;
+﻿Contenido dpublic IActionResult OnGet()
+{
+int? idUsuario =
+HttpContext.Session.GetInt32(
+ClavesSesion.UsuarioId);
+
+if (idUsuario is not int id || id <= 0)
+{
+EliminarDatosSesion();
+
+return RedirectToPage(
+"/Login/Index");
 }
-<h1 class="h3">Zona de trabajo </h1>
-<p> Contenido de la página principal. </p>
+
+UsuarioActual =
+_datos.LeerUsuario(id);
+
+if (UsuarioActual is null)
+{
+EliminarDatosSesion();
+
+return RedirectToPage(
+"/Login/Index");
+}
+
+NombreUsuario =
+$"{UsuarioActual.Nombre} " +
+$"{UsuarioActual.Apellidos}";
+
+NombreUsuario =
+NombreUsuario.Trim();
+
+return Page();
+}e la página principal. </p>

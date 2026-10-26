@@ -20,7 +20,9 @@ public class Index2Model : PageModel
     [Required(ErrorMessage = "Debe indicar una contraseña.")]
     [DataType(DataType.Password)]
     public string Contraseña { get; set; } = "";
+
     public string EMail { get; set; } = "";
+
     public IActionResult OnGet()
     {
         EMail = ObtenerEmailPendiente();
@@ -35,7 +37,8 @@ public class Index2Model : PageModel
 
     public IActionResult OnPostAtras()
     {
-        HttpContext.Session.Remove(ClavesSesion.EmailPendiente);
+        HttpContext.Session.Remove(
+            ClavesSesion.EmailPendiente);
 
         return RedirectToPage("/Login/Index");
     }
@@ -54,23 +57,25 @@ public class Index2Model : PageModel
             return Page();
         }
 
-        Usuario? usuario = _datos.LeerUsuario(EMail);
+        Usuario? usuario =
+            _datos.LeerUsuario(EMail);
 
         if (usuario is null)
         {
             ModelState.AddModelError(
-                "Contraseña",
+                nameof(Contraseña),
                 "Usuario o contraseña incorrectos.");
 
             return Page();
         }
 
-        bool contraseñaCorrecta = usuario.CompruebaPassword(Contraseña);
+        bool contraseñaCorrecta =
+            usuario.CompruebaPassword(Contraseña);
 
         if (!contraseñaCorrecta)
         {
             ModelState.AddModelError(
-                "Contraseña",
+                nameof(Contraseña),
                 "Usuario o contraseña incorrectos.");
 
             return Page();
@@ -84,12 +89,13 @@ public class Index2Model : PageModel
             ClavesSesion.UsuarioId,
             usuario.IdUsuario);
 
-        return RedirectToPage("/Principal/Index");
+        return RedirectToPage(
+            "/Principal/Index");
     }
+
     private string ObtenerEmailPendiente()
     {
         return HttpContext.Session.GetString(
             ClavesSesion.EmailPendiente) ?? "";
     }
-
 }
