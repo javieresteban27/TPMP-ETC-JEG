@@ -30,7 +30,9 @@ namespace BackEnd
                 Nombre = "Usuario",
                 Apellidos = "de prueba",
                 Mail = "usuario@test.com",
-                Password = ServicioHash.Generar("Clave123!")
+                Password = ServicioHash.Generar("Clave123!"),
+                TieneCredencialesConfiguradas = true
+
             };
 
             Usuarios.Add(usuarioPrueba.IdUsuario, usuarioPrueba);
