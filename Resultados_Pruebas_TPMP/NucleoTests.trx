@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b6828aa0-3bf4-4cfa-bfb3-fba0abbbdb73" name="Eva@VALENTE 2026-10-27 09:27:13.9251164" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-27T09:27:11.9458124Z" queuing="2026-10-27T09:27:11.9458124Z" start="2026-10-27T09:27:11.9458124Z" finish="2026-10-27T09:27:13.9308007Z" />
+  <TestSettings name="default" id="5f2914d7-37b0-40b9-9d4e-1fd86122c85f">
+    <Deployment runDeploymentRoot="Eva_VALENTE_2026-10-27_09_27_13.9251164" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="e7c52098-6be9-48c2-9e1a-ae167bea188e" testId="1ee7f1a0-4d4c-879c-a8f7-274b8f8ff81b" testName="Descripcion_PuedeSerNull" computerName="VALENTE" duration="00:00:00.0148736" startTime="2026-10-27T09:27:12.1399608+00:00" endTime="2026-10-27T09:27:12.1876782+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="e7c52098-6be9-48c2-9e1a-ae167bea188e" />
+    <UnitTestResult executionId="0620e7f1-ec54-4c5e-8d62-33fca6709b1d" testId="1374580f-67a9-8793-ad75-a5b159c71469" testName="ToString_DevuelveNombre" computerName="VALENTE" duration="00:00:00.0148203" startTime="2026-10-27T09:27:12.1399836+00:00" endTime="2026-10-27T09:27:12.1876905+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="0620e7f1-ec54-4c5e-8d62-33fca6709b1d" />
+    <UnitTestResult executionId="d11510aa-8eaf-42e3-888b-08cb415368fa" testId="15d7caeb-0811-8c86-b33f-8159e773e8dd" testName="Activar_SetsActivoTrue_WhenInitiallyFalse" computerName="VALENTE" duration="00:00:00.0148703" startTime="2026-10-27T09:27:12.1399609+00:00" endTime="2026-10-27T09:27:12.1877471+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="d11510aa-8eaf-42e3-888b-08cb415368fa" />
+    <UnitTestResult executionId="adf7038f-3f50-4f3a-abbf-2efb4daf85e2" testId="1a8d6f1b-6fbb-8579-be80-d1da3239f9b4" testName="Desactivar_SetsActivoFalse" computerName="VALENTE" duration="00:00:00.0149076" startTime="2026-10-27T09:27:12.1400610+00:00" endTime="2026-10-27T09:27:12.1876749+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="adf7038f-3f50-4f3a-abbf-2efb4daf85e2" />
+    <UnitTestResult executionId="376e9651-4b99-4d20-bb57-49128883a2e8" testId="1735faf5-37ff-825e-9cd9-79d064d56479" testName="Constructor_InicializaValoresPredeterminados" computerName="VALENTE" duration="00:00:00.0148763" startTime="2026-10-27T09:27:12.1400849+00:00" endTime="2026-10-27T09:27:12.1876819+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="376e9651-4b99-4d20-bb57-49128883a2e8" />
+    <UnitTestResult executionId="7edcab1e-a053-444b-937f-f15d9cb4c61d" testId="1b7f028a-8733-8df8-a715-944f95817039" testName="NuevoRol_InicializaValoresCorrectamente" computerName="VALENTE" duration="00:00:00.0148533" startTime="2026-10-27T09:27:12.1400709+00:00" endTime="2026-10-27T09:27:12.1877224+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="7edcab1e-a053-444b-937f-f15d9cb4c61d" />
+    <UnitTestResult executionId="307cff24-5eee-4b19-8c33-4512f0d1851f" testId="1eb1c9ea-0df9-81cd-84b5-bc2bb438d7f7" testName="Finalizar_MarcaElProyectoComoFinalizado" computerName="VALENTE" duration="00:00:00.0148465" startTime="2026-10-27T09:27:12.1400018+00:00" endTime="2026-10-27T09:27:12.1876798+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="307cff24-5eee-4b19-8c33-4512f0d1851f" />
+    <UnitTestResult executionId="707e7175-d949-43a0-8d7a-74e0b88f042c" testId="119e6b1b-f99f-8ca3-afa5-f8be2d96d225" testName="Activar_LeavesActivoTrue_WhenAlreadyTrue" computerName="VALENTE" duration="00:00:00.0149227" startTime="2026-10-27T09:27:12.1399940+00:00" endTime="2026-10-27T09:27:12.1877330+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="707e7175-d949-43a0-8d7a-74e0b88f042c" />
+    <UnitTestResult executionId="e574c62d-6bd0-4390-b565-91d9610cd84b" testId="1d1fa290-8312-8b61-80d6-2968434aff81" testName="IdYIdProyecto_CompartenElMismoValor" computerName="VALENTE" duration="00:00:00.0149097" startTime="2026-10-27T09:27:12.1399719+00:00" endTime="2026-10-27T09:27:12.1877012+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="e574c62d-6bd0-4390-b565-91d9610cd84b" />
+    <UnitTestResult executionId="8ef4086c-e322-40b9-aef3-64f3ae8a5819" testId="1aa07baf-8df5-8200-a320-6672e5f8a4ae" testName="FechaCreacionYFechaCreacionUtc_CompartenElMismoValor" computerName="VALENTE" duration="00:00:00.0148551" startTime="2026-10-27T09:27:12.1399613+00:00" endTime="2026-10-27T09:27:12.1877161+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="8ef4086c-e322-40b9-aef3-64f3ae8a5819" />
+    <UnitTestResult executionId="ae155a0b-6613-474f-b95a-981fb3cba753" testId="1a27e820-d8f1-84c2-b636-d12638f339cb" testName="Cancelar_MarcaElProyectoComoCancelado" computerName="VALENTE" duration="00:00:00.0148458" startTime="2026-10-27T09:27:12.1400115+00:00" endTime="2026-10-27T09:27:12.1877379+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="ae155a0b-6613-474f-b95a-981fb3cba753" />
+    <UnitTestResult executionId="0bdeea99-04f3-440b-98cf-fea063473e37" testId="183eebd9-699e-8734-b6d0-3b511b50e5b8" testName="Iniciar_ActivaElProyectoYLimpiaLaFechaFin" computerName="VALENTE" duration="00:00:00.0148636" startTime="2026-10-27T09:27:12.1400745+00:00" endTime="2026-10-27T09:27:12.1876749+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="0bdeea99-04f3-440b-98cf-fea063473e37" />
+    <UnitTestResult executionId="3e42ae4e-fc23-4038-9ddf-dc5ec8084f8e" testId="14f42cf4-b99d-83fe-b03b-f31bd76dbeb4" testName="Equals_SameReference_ReturnsTrue" computerName="VALENTE" duration="00:00:00.0009783" startTime="2026-10-27T09:27:12.1977261+00:00" endTime="2026-10-27T09:27:12.1988656+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="3e42ae4e-fc23-4038-9ddf-dc5ec8084f8e" />
+    <UnitTestResult executionId="c1617700-43d2-45e4-832e-36c7d1d65799" testId="13ad7d3c-e1a7-8614-b845-8d9e9a61cfd1" testName="ToString_DevuelveElNombre" computerName="VALENTE" duration="00:00:00.0003955" startTime="2026-10-27T09:27:12.1977291+00:00" endTime="2026-10-27T09:27:12.1991521+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="c1617700-43d2-45e4-832e-36c7d1d65799" />
+    <UnitTestResult executionId="254ebbdf-49aa-4647-a577-9d41b7a50072" testId="1ad1e63a-dc86-84e5-979a-7e6ebb8335d9" testName="Equals_Null_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0005666" startTime="2026-10-27T09:27:12.1977124+00:00" endTime="2026-10-27T09:27:12.1993103+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="254ebbdf-49aa-4647-a577-9d41b7a50072" />
+    <UnitTestResult executionId="ee288ba9-1f01-457b-972d-51ae3200c585" testId="12e4fdf9-60aa-8f1c-b15c-54d8da395b51" testName="EstaFinalizado_DevuelveTrueSoloCuandoElEstadoEsFinalizado" computerName="VALENTE" duration="00:00:00.0005051" startTime="2026-10-27T09:27:12.1982220+00:00" endTime="2026-10-27T09:27:12.1993368+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="ee288ba9-1f01-457b-972d-51ae3200c585" />
+    <UnitTestResult executionId="ed3f7868-d155-432e-b920-c3c9b6b649e9" testId="10c44b22-10f9-8816-9693-53d6736f9450" testName="Reactivar_ActivaElProyectoYEliminaLaFechaFin" computerName="VALENTE" duration="00:00:00.0006103" startTime="2026-10-27T09:27:12.1977041+00:00" endTime="2026-10-27T09:27:12.1993730+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="ed3f7868-d155-432e-b920-c3c9b6b649e9" />
+    <UnitTestResult executionId="2758e5b0-3d98-4d07-ac73-83a3bb9dff4e" testId="1410b325-d9f9-89bd-8d1e-7f7dd578679e" testName="Equals_ObjectNull_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0006728" startTime="2026-10-27T09:27:12.1981991+00:00" endTime="2026-10-27T09:27:12.1994778+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="2758e5b0-3d98-4d07-ac73-83a3bb9dff4e" />
+    <UnitTestResult executionId="814bff5a-26e0-4d57-af19-2772c54977c6" testId="1611810c-74c3-8cc2-b430-ad3148884bb8" testName="Equals_ObjectDifferentType_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0007213" startTime="2026-10-27T09:27:12.1982081+00:00" endTime="2026-10-27T09:27:12.1995196+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="814bff5a-26e0-4d57-af19-2772c54977c6" />
+    <UnitTestResult executionId="a5f9e64e-0b38-42f6-9a50-a8d4f5191ca5" testId="1c75cd33-b41f-8ea5-8b3f-6891053c4517" testName="Equals_ObjectSameValues_ReturnsTrue" computerName="VALENTE" duration="00:00:00.0008748" startTime="2026-10-27T09:27:12.1977261+00:00" endTime="2026-10-27T09:27:12.1996591+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="a5f9e64e-0b38-42f6-9a50-a8d4f5191ca5" />
+    <UnitTestResult executionId="6eb74bc2-fea8-45b6-bd2f-e702a595abb5" testId="1ba5da7a-58a0-8eb4-9b79-0a69347115ca" testName="Equals_DifferentSal_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0009122" startTime="2026-10-27T09:27:12.1977261+00:00" endTime="2026-10-27T09:27:12.1996806+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="6eb74bc2-fea8-45b6-bd2f-e702a595abb5" />
+    <UnitTestResult executionId="4543d636-3e08-4874-8d6d-770f14da3c31" testId="1575f32f-9083-8197-add7-e9001f8a68a1" testName="OperatorEquality_BothNull_ReturnsTrue" computerName="VALENTE" duration="00:00:00.0006343" startTime="2026-10-27T09:27:12.1989699+00:00" endTime="2026-10-27T09:27:12.1996806+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="4543d636-3e08-4874-8d6d-770f14da3c31" />
+    <UnitTestResult executionId="12379ddb-dc42-443c-bd4b-f697b3b89e90" testId="17697ec6-085b-88a4-9aab-8f839e6ea7fa" testName="Equals_DifferentHash_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0008657" startTime="2026-10-27T09:27:12.1982380+00:00" endTime="2026-10-27T09:27:12.1996831+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="12379ddb-dc42-443c-bd4b-f697b3b89e90" />
+    <UnitTestResult executionId="ce872cc0-d463-4dd2-89e1-178a07ee1220" testId="11d15586-5b4d-88fe-a630-ee9a7ad2baea" testName="GetHashCode_EqualObjects_SameHashCode" computerName="VALENTE" duration="00:00:00.0009475" startTime="2026-10-27T09:27:12.1977017+00:00" endTime="2026-10-27T09:27:12.1996933+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="ce872cc0-d463-4dd2-89e1-178a07ee1220" />
+    <UnitTestResult executionId="8b97daf0-91e7-4793-954b-9fde70e7697d" testId="179accd1-8a0f-816d-bd38-94f1b15eebb5" testName="OperatorEquality_LeftNullRightNotNull_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0003983" startTime="2026-10-27T09:27:12.1992719+00:00" endTime="2026-10-27T09:27:12.1997392+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="8b97daf0-91e7-4793-954b-9fde70e7697d" />
+    <UnitTestResult executionId="1a8af42e-cd70-4dea-9fe8-171f2bfd6961" testId="16fd35ce-199c-85b9-8713-46abab6f5a7a" testName="Equals_SameHashAndSalDifferentCreacion_ReturnsTrue" computerName="VALENTE" duration="00:00:00.0010663" startTime="2026-10-27T09:27:12.1982479+00:00" endTime="2026-10-27T09:27:12.1998936+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="1a8af42e-cd70-4dea-9fe8-171f2bfd6961" />
+    <UnitTestResult executionId="478b2e8d-7ee9-44f8-bf2b-577b01c7e94d" testId="1ce47aff-5c0b-87c8-9ef5-15dc6fdfab98" testName="OperatorEquality_RightNullLeftNotNull_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0004100" startTime="2026-10-27T09:27:12.1994183+00:00" endTime="2026-10-27T09:27:12.1998972+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="478b2e8d-7ee9-44f8-bf2b-577b01c7e94d" />
+    <UnitTestResult executionId="76f4281d-5dca-4c2f-9a61-642b39f5be04" testId="16a213d4-a50b-8004-bee4-6f47941c60c0" testName="ValoresPorDefecto_HashYSalSonCadenasVacias" computerName="VALENTE" duration="00:00:00.0002684" startTime="2026-10-27T09:27:12.1995817+00:00" endTime="2026-10-27T09:27:12.1999218+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="76f4281d-5dca-4c2f-9a61-642b39f5be04" />
+    <UnitTestResult executionId="d094e061-b357-44d2-afac-a5947008ad1a" testId="19db37ff-a70b-8436-9323-c29b3a785600" testName="Creacion_PorDefecto_SeInicializaConFechaActual" computerName="VALENTE" duration="00:00:00.0004620" startTime="2026-10-27T09:27:12.1994298+00:00" endTime="2026-10-27T09:27:12.1999794+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="d094e061-b357-44d2-afac-a5947008ad1a" />
+    <UnitTestResult executionId="0f663f44-9b7c-4d9d-bb01-88ea82a1e4d8" testId="1187fbcd-b205-8579-a4b7-b0f8c0a40087" testName="Creacion_ValorAsignado_SeConserva" computerName="VALENTE" duration="00:00:00.0004426" startTime="2026-10-27T09:27:12.1994761+00:00" endTime="2026-10-27T09:27:12.1999840+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="0f663f44-9b7c-4d9d-bb01-88ea82a1e4d8" />
+    <UnitTestResult executionId="84a64001-25ee-4a22-83c2-67be40217a68" testId="153abdb7-0a80-85fc-808e-7706aa5126da" testName="GenerarClave_RetornaBase64De32Bytes" computerName="VALENTE" duration="00:00:00.0017570" startTime="2026-10-27T09:27:12.1996100+00:00" endTime="2026-10-27T09:27:12.2015453+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="84a64001-25ee-4a22-83c2-67be40217a68" />
+    <UnitTestResult executionId="89ff74dd-d708-4f96-9794-3c71f4cfc534" testId="1536d8e8-b4c6-848d-a496-7a8cd2219788" testName="GenerarClave_DosLlamadas_GeneranClavesDistintas" computerName="VALENTE" duration="00:00:00.0022978" startTime="2026-10-27T09:27:12.1997494+00:00" endTime="2026-10-27T09:27:12.2021144+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="89ff74dd-d708-4f96-9794-3c71f4cfc534" />
+    <UnitTestResult executionId="1e0e8934-572d-41e6-bb54-a4d2caa36e06" testId="1f95ae02-5a42-8191-835e-48a82def1c4a" testName="Cifrar_ClaveFormatoInvalido_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0011850" startTime="2026-10-27T09:27:12.2016254+00:00" endTime="2026-10-27T09:27:12.2028736+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="1e0e8934-572d-41e6-bb54-a4d2caa36e06" />
+    <UnitTestResult executionId="1d99f767-c5e4-4f45-9669-8917a025b2a6" testId="10bfc6e3-2a6f-81b8-a91c-240f86e5da62" testName="Cifrar_ClaveEspacio_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0027243" startTime="2026-10-27T09:27:12.2000681+00:00" endTime="2026-10-27T09:27:12.2028715+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="1d99f767-c5e4-4f45-9669-8917a025b2a6" />
+    <UnitTestResult executionId="ca5c3ef4-52cf-4e84-bf53-74584a504c57" testId="1bcb9710-7251-845f-8704-75d228683aea" testName="Cifrar_TextoNulo_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0030249" startTime="2026-10-27T09:27:12.1998116+00:00" endTime="2026-10-27T09:27:12.2028930+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="ca5c3ef4-52cf-4e84-bf53-74584a504c57" />
+    <UnitTestResult executionId="15caef98-ac91-474b-a565-1afc6de44d9f" testId="19096c32-25ed-8043-9fe7-8962cdea097a" testName="Cifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0006161" startTime="2026-10-27T09:27:12.2021982+00:00" endTime="2026-10-27T09:27:12.2028916+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="15caef98-ac91-474b-a565-1afc6de44d9f" />
+    <UnitTestResult executionId="c9ae6ca6-d9f3-4a46-856d-4efc5e62f885" testId="1eab7a08-6b11-8690-823a-b82875046e0d" testName="Cifrar_ClaveTabulador_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0027587" startTime="2026-10-27T09:27:12.2000707+00:00" endTime="2026-10-27T09:27:12.2029065+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="c9ae6ca6-d9f3-4a46-856d-4efc5e62f885" />
+    <UnitTestResult executionId="f1cc052b-aad8-4ce4-98d5-d7be63a7ea41" testId="13351ffb-768e-8e15-af38-77cb74561b6e" testName="Cifrar_TextoVacio_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0030330" startTime="2026-10-27T09:27:12.1998160+00:00" endTime="2026-10-27T09:27:12.2029135+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="f1cc052b-aad8-4ce4-98d5-d7be63a7ea41" />
+    <UnitTestResult executionId="8906e2f5-a3d9-4c40-989d-62c35e24986f" testId="15b65f9d-5975-855c-bf4f-68427159512f" testName="Cifrar_ClaveNula_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0028307" startTime="2026-10-27T09:27:12.2000159+00:00" endTime="2026-10-27T09:27:12.2029179+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="8906e2f5-a3d9-4c40-989d-62c35e24986f" />
+    <UnitTestResult executionId="6123cdb9-70d4-4c90-a262-9d7f57b594ec" testId="18b7717e-a19c-8872-9d4c-ad25aacb81f3" testName="Cifrar_TextoTabulador_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0028836" startTime="2026-10-27T09:27:12.1999827+00:00" endTime="2026-10-27T09:27:12.2029329+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="6123cdb9-70d4-4c90-a262-9d7f57b594ec" />
+    <UnitTestResult executionId="ce834942-1a58-4572-bdf9-537638e5cc4d" testId="16e89621-757c-8f01-9010-17bae6718c48" testName="Cifrar_ClaveVacia_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0030030" startTime="2026-10-27T09:27:12.2000178+00:00" endTime="2026-10-27T09:27:12.2030935+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="ce834942-1a58-4572-bdf9-537638e5cc4d" />
+    <UnitTestResult executionId="df5d093b-2f9e-47ee-89a8-ba8e9002e4bb" testId="14b74387-7218-8523-94e8-2a4da1d34f15" testName="Cifrar_TextoEspacio_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0033495" startTime="2026-10-27T09:27:12.1998507+00:00" endTime="2026-10-27T09:27:12.2032753+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="df5d093b-2f9e-47ee-89a8-ba8e9002e4bb" />
+    <UnitTestResult executionId="a7cec672-d066-4726-bd0c-4e0c06a4cd08" testId="1dc4bd12-4204-8007-bcba-d35d6f3d9846" testName="Cifrar_MismoTextoDosVeces_GeneraResultadosDistintos" computerName="VALENTE" duration="00:00:00.0038107" startTime="2026-10-27T09:27:12.1998069+00:00" endTime="2026-10-27T09:27:12.2036704+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="a7cec672-d066-4726-bd0c-4e0c06a4cd08" />
+    <UnitTestResult executionId="dcbcab94-f52f-4466-913d-b78b73e368b5" testId="197526f0-da21-81a7-bc23-ac96cdac4a9e" testName="Descifrar_ContenidoNulo_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009606" startTime="2026-10-27T09:27:12.2029622+00:00" endTime="2026-10-27T09:27:12.2039878+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="dcbcab94-f52f-4466-913d-b78b73e368b5" />
+    <UnitTestResult executionId="455f3303-7387-4b69-8fe8-f2cd2067fa23" testId="148d16e3-8635-83ca-ba69-7b94774ccc58" testName="Descifrar_ContenidoVacio_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009458" startTime="2026-10-27T09:27:12.2029914+00:00" endTime="2026-10-27T09:27:12.2040131+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="455f3303-7387-4b69-8fe8-f2cd2067fa23" />
+    <UnitTestResult executionId="b7aa4dbe-0734-4e31-817a-964d99290913" testId="1edd3d79-d7b2-8e85-9c90-f2d837cece4c" testName="Descifrar_ContenidoEspacio_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009456" startTime="2026-10-27T09:27:12.2029983+00:00" endTime="2026-10-27T09:27:12.2040188+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="b7aa4dbe-0734-4e31-817a-964d99290913" />
+    <UnitTestResult executionId="7fe38260-0281-4f68-aaf5-8e120e45383e" testId="13212c2c-2652-8633-b8e8-ef85d7b030f6" testName="Descifrar_ContenidoTabulador_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009656" startTime="2026-10-27T09:27:12.2029983+00:00" endTime="2026-10-27T09:27:12.2040328+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="7fe38260-0281-4f68-aaf5-8e120e45383e" />
+    <UnitTestResult executionId="377217cc-7956-4a81-a957-defb8e80f047" testId="18bb8951-0582-82c0-989e-56cc6d0c7689" testName="Descifrar_ClaveNula_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009563" startTime="2026-10-27T09:27:12.2030269+00:00" endTime="2026-10-27T09:27:12.2040523+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="377217cc-7956-4a81-a957-defb8e80f047" />
+    <UnitTestResult executionId="38fa6666-0f0a-491e-8b6b-2676cddda79f" testId="133be522-9fa2-8930-a485-57ca69a062b9" testName="Descifrar_ContenidoDemasiadoCorto_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009631" startTime="2026-10-27T09:27:12.2030052+00:00" endTime="2026-10-27T09:27:12.2040318+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="38fa6666-0f0a-491e-8b6b-2676cddda79f" />
+    <UnitTestResult executionId="90621c72-bdb5-40be-9e7c-eb8e55b950b5" testId="12ed192d-cae6-84c4-99da-a9d2d1a19904" testName="Descifrar_ContenidoNoBase64_LanzaFormatException" computerName="VALENTE" duration="00:00:00.0009833" startTime="2026-10-27T09:27:12.2030034+00:00" endTime="2026-10-27T09:27:12.2040634+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="90621c72-bdb5-40be-9e7c-eb8e55b950b5" />
+    <UnitTestResult executionId="23e967b0-c348-4924-a6c3-88e9142cd41e" testId="1eb661a7-a926-80af-b812-dacde1cf65a0" testName="Descifrar_ContenidoConSoloNonceYEtiqueta_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009747" startTime="2026-10-27T09:27:12.2030193+00:00" endTime="2026-10-27T09:27:12.2040693+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="23e967b0-c348-4924-a6c3-88e9142cd41e" />
+    <UnitTestResult executionId="2b7f32e4-5fd3-46fc-bfad-a2624a3ba191" testId="1f3facf7-197a-8963-8257-aafdc4324235" testName="Descifrar_ClaveTabulador_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0003457" startTime="2026-10-27T09:27:12.2037425+00:00" endTime="2026-10-27T09:27:12.2041358+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="2b7f32e4-5fd3-46fc-bfad-a2624a3ba191" />
+    <UnitTestResult executionId="c37013b0-c2f8-4d61-9032-635a5d1d7396" testId="1fb469ce-3373-84ae-8347-618f70ba91ad" testName="CifrarYDescifrar_RetornaTextoOriginal" computerName="VALENTE" duration="00:00:00.0042567" startTime="2026-10-27T09:27:12.1997903+00:00" endTime="2026-10-27T09:27:12.2041332+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="c37013b0-c2f8-4d61-9032-635a5d1d7396" />
+    <UnitTestResult executionId="945ecc5f-684e-42d1-a12f-1cb89c15400f" testId="1b77376e-d19c-8194-a3f5-4bbd713ba40a" testName="Descifrar_ClaveVacia_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0010858" startTime="2026-10-27T09:27:12.2031791+00:00" endTime="2026-10-27T09:27:12.2043439+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="945ecc5f-684e-42d1-a12f-1cb89c15400f" />
+    <UnitTestResult executionId="3bfee92c-5f49-4b9d-a934-608ffab889f9" testId="131998f7-f1d4-8113-868a-e1b50603945e" testName="Descifrar_ClaveEspacio_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0009007" startTime="2026-10-27T09:27:12.2033835+00:00" endTime="2026-10-27T09:27:12.2043575+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="3bfee92c-5f49-4b9d-a934-608ffab889f9" />
+    <UnitTestResult executionId="f0c450a3-96d4-489f-98f2-2bcd91a3b4c5" testId="1d4b6998-4fa1-83ea-95a4-e853daac0fb4" testName="Descifrar_ClaveFormatoInvalido_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0005119" startTime="2026-10-27T09:27:12.2041317+00:00" endTime="2026-10-27T09:27:12.2047159+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="f0c450a3-96d4-489f-98f2-2bcd91a3b4c5" />
+    <UnitTestResult executionId="e8251b81-d312-4d11-8688-8d60d45ed8d3" testId="1dae03e7-1f4a-81f3-b35a-633e76575c93" testName="Descifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0005408" startTime="2026-10-27T09:27:12.2041458+00:00" endTime="2026-10-27T09:27:12.2047596+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="e8251b81-d312-4d11-8688-8d60d45ed8d3" />
+    <UnitTestResult executionId="2c893844-47d2-4060-8010-1a784470e634" testId="172287de-087a-8cd1-a2e4-a6790c107db0" testName="EsValida_WhitespaceOnly_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0009979" startTime="2026-10-27T09:27:12.2041844+00:00" endTime="2026-10-27T09:27:12.2052876+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="2c893844-47d2-4060-8010-1a784470e634" />
+    <UnitTestResult executionId="27bdc6ae-7504-4cbf-aa53-9fdbcd728f56" testId="12898be2-1fc9-80b0-861a-6658c1dfaeda" testName="EsValida_Null_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0010123" startTime="2026-10-27T09:27:12.2041647+00:00" endTime="2026-10-27T09:27:12.2052913+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="27bdc6ae-7504-4cbf-aa53-9fdbcd728f56" />
+    <UnitTestResult executionId="a5a9a1fd-1681-4311-a44e-5df4c1d961ef" testId="1f7827dc-71b3-8148-a5cb-c1417691c880" testName="EsValida_TooShort_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0010130" startTime="2026-10-27T09:27:12.2041901+00:00" endTime="2026-10-27T09:27:12.2053305+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="a5a9a1fd-1681-4311-a44e-5df4c1d961ef" />
+    <UnitTestResult executionId="04d03c0a-59b2-4f7b-9489-3f30ae58c168" testId="15678332-210e-80a6-923f-3f399f576a01" testName="EsValida_MissingUppercase_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0011356" startTime="2026-10-27T09:27:12.2042067+00:00" endTime="2026-10-27T09:27:12.2054629+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="04d03c0a-59b2-4f7b-9489-3f30ae58c168" />
+    <UnitTestResult executionId="643ce4a4-434b-4fdc-98b8-ef0ebc28432b" testId="1e25eeba-bbed-8422-838d-a795385e1f86" testName="EsValida_MissingDigit_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0011248" startTime="2026-10-27T09:27:12.2042213+00:00" endTime="2026-10-27T09:27:12.2054693+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="643ce4a4-434b-4fdc-98b8-ef0ebc28432b" />
+    <UnitTestResult executionId="5bc12303-fa1c-4777-a08c-08ccb703e8c1" testId="1532093c-3a67-825a-9419-9592f5e68a88" testName="EsValida_MissingLowercase_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0011812" startTime="2026-10-27T09:27:12.2042213+00:00" endTime="2026-10-27T09:27:12.2054693+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="5bc12303-fa1c-4777-a08c-08ccb703e8c1" />
+    <UnitTestResult executionId="6b74f664-1ac3-42c7-a8c3-d20f0f2a67b7" testId="161ca288-22c4-8cba-b51e-8991b35e4b65" testName="Generar_TextoNuloOBlanco_LanzaArgumentException" computerName="VALENTE" duration="00:00:00.0007307" startTime="2026-10-27T09:27:12.2048602+00:00" endTime="2026-10-27T09:27:12.2057130+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="6b74f664-1ac3-42c7-a8c3-d20f0f2a67b7" />
+    <UnitTestResult executionId="a7f3912e-f991-4d9d-a71a-bea13997da72" testId="18d4af63-965d-8235-b973-fa26a6b5529e" testName="EsValida_Valid_MinLength8_ReturnsTrue" computerName="VALENTE" duration="00:00:00.0013893" startTime="2026-10-27T09:27:12.2044610+00:00" endTime="2026-10-27T09:27:12.2059233+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="a7f3912e-f991-4d9d-a71a-bea13997da72" />
+    <UnitTestResult executionId="d61b53e9-d9fd-4e26-aa94-62b70fd1acc6" testId="1e25e3fd-bcf4-857e-aaff-25ad9127fd7c" testName="EsValida_Valid_Example_ReturnsTrue" computerName="VALENTE" duration="00:00:00.0010648" startTime="2026-10-27T09:27:12.2047942+00:00" endTime="2026-10-27T09:27:12.2059232+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="d61b53e9-d9fd-4e26-aa94-62b70fd1acc6" />
+    <UnitTestResult executionId="4a9314a9-405d-4485-93d0-a6f8eb3b7b35" testId="15edfc36-4b70-8a25-ae3f-de849f290f98" testName="EsValida_MissingSpecialChar_ReturnsFalse" computerName="VALENTE" duration="00:00:00.0013979" startTime="2026-10-27T09:27:12.2044508+00:00" endTime="2026-10-27T09:27:12.2059210+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="4a9314a9-405d-4485-93d0-a6f8eb3b7b35" />
+    <UnitTestResult executionId="eb808151-1f39-4240-92e8-0d34b2a4170d" testId="164e7ace-961c-8894-8e31-5a40f8ad4e81" testName="Descifrar_DatosCorruptos_LanzaAuthenticationTagMismatchException" computerName="VALENTE" duration="00:00:00.0017569" startTime="2026-10-27T09:27:12.2041526+00:00" endTime="2026-10-27T09:27:12.2059754+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="eb808151-1f39-4240-92e8-0d34b2a4170d" />
+    <UnitTestResult executionId="7ac13c98-000d-4d38-b3a2-23940424f8dc" testId="135d2160-c622-8673-9c38-18d6d91054f6" testName="Descifrar_ClaveDistinta_LanzaAuthenticationTagMismatchException" computerName="VALENTE" duration="00:00:00.0017270" startTime="2026-10-27T09:27:12.2041702+00:00" endTime="2026-10-27T09:27:12.2059831+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="7ac13c98-000d-4d38-b3a2-23940424f8dc" />
+    <UnitTestResult executionId="43dd1811-9974-4f0f-9fb4-d80391802e15" testId="13468be3-5021-8b9b-a369-0def9984b756" testName="Verificar_HashOSalNoBase64_DevuelveFalse" computerName="VALENTE" duration="00:00:00.0010920" startTime="2026-10-27T09:27:12.2055587+00:00" endTime="2026-10-27T09:27:12.2067123+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="43dd1811-9974-4f0f-9fb4-d80391802e15" />
+    <UnitTestResult executionId="b599f52d-8023-4cc1-899e-13f2f167ba76" testId="120a1c04-4383-847a-8058-3103bfb038da" testName="Propiedades_PermitenActualizarLosValores" computerName="VALENTE" duration="00:00:00.0016255" startTime="2026-10-27T09:27:12.2060183+00:00" endTime="2026-10-27T09:27:12.2077144+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="b599f52d-8023-4cc1-899e-13f2f167ba76" />
+    <UnitTestResult executionId="7e87232f-e780-4ded-845e-0e0d35766dec" testId="1fddb1eb-1399-8c90-a32a-4de6dc084087" testName="ConstructorConMensaje_InicializaLosValoresPredeterminados" computerName="VALENTE" duration="00:00:00.0018000" startTime="2026-10-27T09:27:12.2057973+00:00" endTime="2026-10-27T09:27:12.2077144+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="7e87232f-e780-4ded-845e-0e0d35766dec" />
+    <UnitTestResult executionId="f01b90b1-a6b9-42df-8b36-4f174a50e256" testId="10a62f18-1f49-8a33-81c8-67d503c6de4d" testName="ToString_ConUsuario_IncluyeSuRepresentacion" computerName="VALENTE" duration="00:00:00.0020572" startTime="2026-10-27T09:27:12.2060422+00:00" endTime="2026-10-27T09:27:12.2081652+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="f01b90b1-a6b9-42df-8b36-4f174a50e256" />
+    <UnitTestResult executionId="8c0bc487-3c0c-488c-b534-13fa51c4ce97" testId="17b6a22c-36b2-8a5a-b999-46dc4afded9a" testName="ToString_SinUsuario_IndicaSistema" computerName="VALENTE" duration="00:00:00.0121551" startTime="2026-10-27T09:27:12.2060184+00:00" endTime="2026-10-27T09:27:12.2182386+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="8c0bc487-3c0c-488c-b534-13fa51c4ce97" />
+    <UnitTestResult executionId="173f6cf7-f8e9-4acf-9425-a35918e6d218" testId="16c2a5c3-fadf-8427-9d79-8737e32a99a0" testName="RegistrarFallo_DosIntentos_NoBloqueaLaCuenta" computerName="VALENTE" duration="00:00:00.2056115" startTime="2026-10-27T09:27:12.2078112+00:00" endTime="2026-10-27T09:27:12.4135502+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="173f6cf7-f8e9-4acf-9425-a35918e6d218" />
+    <UnitTestResult executionId="2174a222-09c1-4c61-b971-723bebf8045a" testId="1e178506-92a0-823d-95dc-c064458bc3cf" testName="EstaBloqueado_SinBloqueoActivo_DevuelveFalse" computerName="VALENTE" duration="00:00:00.2198284" startTime="2026-10-27T09:27:12.2060821+00:00" endTime="2026-10-27T09:27:12.4260733+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="2174a222-09c1-4c61-b971-723bebf8045a" />
+    <UnitTestResult executionId="709745a6-cb90-4d78-b849-dee0503c2095" testId="1ec149b1-f113-8b62-9fbf-578ef9ecc8d5" testName="CompruebaPassword_CuentaSinCredenciales_NoIncrementaIntentos" computerName="VALENTE" duration="00:00:00.0006646" startTime="2026-10-27T09:27:12.4262002+00:00" endTime="2026-10-27T09:27:12.4269610+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="709745a6-cb90-4d78-b849-dee0503c2095" />
+    <UnitTestResult executionId="75343504-cf04-4440-95e0-39943d016063" testId="12f9a4e2-1312-82b8-8f05-a5aecd367072" testName="EstaBloqueado_BloqueoVigente_DevuelveTrue" computerName="VALENTE" duration="00:00:00.2227466" startTime="2026-10-27T09:27:12.2068171+00:00" endTime="2026-10-27T09:27:12.4296351+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="75343504-cf04-4440-95e0-39943d016063" />
+    <UnitTestResult executionId="74c2189a-4372-40a8-be28-9a1cd530bb33" testId="129cab15-ae86-87af-ade5-39d5903965d2" testName="RegistrarFallo_TercerIntento_BloqueaLaCuentaDuranteCincoMinutos" computerName="VALENTE" duration="00:00:00.2213409" startTime="2026-10-27T09:27:12.2082536+00:00" endTime="2026-10-27T09:27:12.4296671+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="74c2189a-4372-40a8-be28-9a1cd530bb33" />
+    <UnitTestResult executionId="56ef1ad3-9bcd-4cdd-8a41-36caed3b0f87" testId="1f2373dc-7dff-840e-9558-01c99ed5c61b" testName="Generar_TextoValido_RetornaHashYSalNoVacios" computerName="VALENTE" duration="00:00:00.2423180" startTime="2026-10-27T09:27:12.2053825+00:00" endTime="2026-10-27T09:27:12.4477705+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="56ef1ad3-9bcd-4cdd-8a41-36caed3b0f87" />
+    <UnitTestResult executionId="2a43c49c-3c01-4025-8496-e0e3f5e61e74" testId="1049d832-17fa-83e9-8d77-febd7cc65289" testName="Verificar_EntradasNulasOBlancas_DevuelveFalse" computerName="VALENTE" duration="00:00:00.2615359" startTime="2026-10-27T09:27:12.2055474+00:00" endTime="2026-10-27T09:27:12.4671734+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="2a43c49c-3c01-4025-8496-e0e3f5e61e74" />
+    <UnitTestResult executionId="310b8ef0-e6b4-46bf-bb30-9ffb2ec66139" testId="17b885de-aff5-8256-b168-f6e29d5c83e9" testName="CambiaPassword_CuentaSinCredencialesYClaveVacia_NoConfiguraLaContraseña" computerName="VALENTE" duration="00:00:00.0004665" startTime="2026-10-27T09:27:12.4672753+00:00" endTime="2026-10-27T09:27:12.4678255+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="310b8ef0-e6b4-46bf-bb30-9ffb2ec66139" />
+    <UnitTestResult executionId="57e675d6-e259-4c7f-af21-54f8890d597a" testId="10c89975-b7de-82c7-b25b-f01f2d367add" testName="EstaBloqueado_BloqueoVencido_LimpiaBloqueoEIntentos" computerName="VALENTE" duration="00:00:00.2655347" startTime="2026-10-27T09:27:12.2078112+00:00" endTime="2026-10-27T09:27:12.4734120+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="57e675d6-e259-4c7f-af21-54f8890d597a" />
+    <UnitTestResult executionId="de383739-ab07-42ad-9fd8-ad4ddd023930" testId="1cd20c22-33d9-877e-8bb2-e0f6f805b4c4" testName="RegistrarFallo_CuentaBloqueada_NoIncrementaIntentos" computerName="VALENTE" duration="00:00:00.2632476" startTime="2026-10-27T09:27:12.2183337+00:00" endTime="2026-10-27T09:27:12.4816463+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="de383739-ab07-42ad-9fd8-ad4ddd023930" />
+    <UnitTestResult executionId="b85c1503-736f-443d-90e7-a3a35c9ec66e" testId="149e09bf-02b2-8731-b3d8-9bbbc9ebc0a1" testName="UsuarioNuevo_InicializaFechasYEstadoEsperados" computerName="VALENTE" duration="00:00:00.2827616" startTime="2026-10-27T09:27:12.2060726+00:00" endTime="2026-10-27T09:27:12.4889880+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="b85c1503-736f-443d-90e7-a3a35c9ec66e" />
+    <UnitTestResult executionId="b418f241-32c9-4a67-9558-010d8eb3429c" testId="161c9d21-64e0-8db5-9664-d134fe7d3884" testName="RegistrarExito_RestableceIntentosYBloqueo" computerName="VALENTE" duration="00:00:00.2289123" startTime="2026-10-27T09:27:12.4137607+00:00" endTime="2026-10-27T09:27:12.6428072+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="b418f241-32c9-4a67-9558-010d8eb3429c" />
+    <UnitTestResult executionId="3e3de1a2-be8a-4e3a-90cc-bcf07d81d300" testId="14d5cfa1-5c5c-83f1-89d2-c761bbbe259e" testName="CompruebaPassword_CuentaBloqueada_NoCompruebaLaContraseña" computerName="VALENTE" duration="00:00:00.2199789" startTime="2026-10-27T09:27:12.4297933+00:00" endTime="2026-10-27T09:27:12.6498537+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="3e3de1a2-be8a-4e3a-90cc-bcf07d81d300" />
+    <UnitTestResult executionId="f53e1521-fb61-4200-933f-dd9997c581f7" testId="1f682250-edec-8085-9ba8-d8b54dae6dd2" testName="Generar_MismoTexto_DiferentesSaltYHash" computerName="VALENTE" duration="00:00:00.4446781" startTime="2026-10-27T09:27:12.2055545+00:00" endTime="2026-10-27T09:27:12.6503109+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="f53e1521-fb61-4200-933f-dd9997c581f7" />
+    <UnitTestResult executionId="a8f0a7bd-c554-4ddd-b413-10ee48552d17" testId="151c6909-66b9-861a-8749-55b9bfb01ba7" testName="Verificar_ConTextoIncorrecto_DevuelveFalse" computerName="VALENTE" duration="00:00:00.6508162" startTime="2026-10-27T09:27:12.2054098+00:00" endTime="2026-10-27T09:27:12.8563415+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="a8f0a7bd-c554-4ddd-b413-10ee48552d17" />
+    <UnitTestResult executionId="2c1bae5a-dd42-4439-b116-f387433119dd" testId="1528ac46-b6c5-8880-ace2-1d2e1ae65998" testName="CompruebaPassword_ContraseñaIncorrecta_IncrementaIntentos" computerName="VALENTE" duration="00:00:00.4321689" startTime="2026-10-27T09:27:12.4270673+00:00" endTime="2026-10-27T09:27:12.8593284+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="2c1bae5a-dd42-4439-b116-f387433119dd" />
+    <UnitTestResult executionId="290c78cd-65fe-4fc6-9e5f-97fffd64d118" testId="12eb94a0-7a83-8ea4-9da2-bd79be6051e6" testName="CompruebaPassword_ContraseñaCorrecta_RestableceIntentosYActualizaAccesos" computerName="VALENTE" duration="00:00:00.4449288" startTime="2026-10-27T09:27:12.4297503+00:00" endTime="2026-10-27T09:27:12.8747866+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="290c78cd-65fe-4fc6-9e5f-97fffd64d118" />
+    <UnitTestResult executionId="04d9cfbc-e0c2-4544-a7a3-726f8d1daafa" testId="173e1519-f7b9-8951-99b7-338234faafd3" testName="CambiaPassword_CuentaSinCredencialesYClaveValida_ConfiguraLaContraseña" computerName="VALENTE" duration="00:00:00.4312051" startTime="2026-10-27T09:27:12.4478746+00:00" endTime="2026-10-27T09:27:12.8791834+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="04d9cfbc-e0c2-4544-a7a3-726f8d1daafa" />
+    <UnitTestResult executionId="bcf544ce-36b1-42b8-b994-841283f3e381" testId="115fdfa8-de53-84e8-aca1-c5e8bc6cf31c" testName="CambiaPassword_NuevaVacia_NoCambiaLaContraseña" computerName="VALENTE" duration="00:00:00.4907322" startTime="2026-10-27T09:27:12.4891120+00:00" endTime="2026-10-27T09:27:12.9799415+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="bcf544ce-36b1-42b8-b994-841283f3e381" />
+    <UnitTestResult executionId="4a2e62aa-349d-4876-98f0-9f61eb72938f" testId="1c7f8bab-aba7-89c8-811f-72cfbd6fa6db" testName="CambiaPassword_NuevaIgualALaAnterior_NoCambiaLaContraseña" computerName="VALENTE" duration="00:00:00.5020729" startTime="2026-10-27T09:27:12.4817572+00:00" endTime="2026-10-27T09:27:12.9839242+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="4a2e62aa-349d-4876-98f0-9f61eb72938f" />
+    <UnitTestResult executionId="ae8c2751-808e-4656-8c5a-190d99614f74" testId="17c51961-5bff-8b7d-85de-50c0e601f739" testName="Verificar_ConHashYSalCorrectos_DevuelveTrue" computerName="VALENTE" duration="00:00:00.7804818" startTime="2026-10-27T09:27:12.2053818+00:00" endTime="2026-10-27T09:27:12.9859298+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="ae8c2751-808e-4656-8c5a-190d99614f74" />
+    <UnitTestResult executionId="fa64d00a-5183-418a-b4a3-9e4f33936626" testId="1a4b1965-ae33-88ec-82c5-9d98a5e6f015" testName="CambiaPassword_CuentaConCredenciales_NoPermiteLaSobrecargaDeConfiguracionInicial" computerName="VALENTE" duration="00:00:00.5210283" startTime="2026-10-27T09:27:12.4679568+00:00" endTime="2026-10-27T09:27:12.9890617+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="fa64d00a-5183-418a-b4a3-9e4f33936626" />
+    <UnitTestResult executionId="6419d97d-e71c-4620-a305-8127bc28ed4c" testId="155f06ec-1b28-8468-87e8-f290d9d0429a" testName="ToString_IncluyeIdNombreDeUsuarioYCorreo" computerName="VALENTE" duration="00:00:00.1587360" startTime="2026-10-27T09:27:12.8565471+00:00" endTime="2026-10-27T09:27:13.0154037+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="6419d97d-e71c-4620-a305-8127bc28ed4c" />
+    <UnitTestResult executionId="64b41c17-88b5-45f6-8319-dd7c1d865df7" testId="105014f9-2ec5-806c-a7f0-4767d5dd662e" testName="CambiaPassword_ContraseñaAnteriorIncorrecta_NoCambiaLaContraseña" computerName="VALENTE" duration="00:00:00.5457319" startTime="2026-10-27T09:27:12.6429757+00:00" endTime="2026-10-27T09:27:13.1888425+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="64b41c17-88b5-45f6-8319-dd7c1d865df7" />
+    <UnitTestResult executionId="0236ec8b-7772-48e0-8971-6e90222e3412" testId="153e49ca-e597-896b-bf38-b481994c5430" testName="CambiaPassword_ContraseñaAnteriorCorrecta_CambiaLaContraseña" computerName="VALENTE" duration="00:00:00.8328523" startTime="2026-10-27T09:27:12.4735426+00:00" endTime="2026-10-27T09:27:13.3064901+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="0236ec8b-7772-48e0-8971-6e90222e3412" />
+    <UnitTestResult executionId="fd089539-0c14-46db-9e69-e9d1a134a729" testId="1830dea1-9757-82e2-8aca-830a72c5eed3" testName="CambiaPassword_ReutilizaLaContraseñaAnterior_NoLaCambia" computerName="VALENTE" duration="00:00:00.8126719" startTime="2026-10-27T09:27:12.6499748+00:00" endTime="2026-10-27T09:27:13.4627931+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="fd089539-0c14-46db-9e69-e9d1a134a729" />
+    <UnitTestResult executionId="d034ebde-c9a0-4c72-a0c4-ba5f6430a94b" testId="139d6e98-8682-893e-b128-03d8df722d3c" testName="CambiaPassword_ReutilizaUnaContraseñaHistorica_NoLaCambia" computerName="VALENTE" duration="00:00:01.2484503" startTime="2026-10-27T09:27:12.6504102+00:00" endTime="2026-10-27T09:27:13.9003681+00:00" testType="13CDC9D9-DDB5-4fa4-A97D-D965CCFC6D4B" outcome="Passed" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" relativeResultsDirectory="d034ebde-c9a0-4c72-a0c4-ba5f6430a94b" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Descripcion_PuedeSerNull" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1ee7f1a0-4d4c-879c-a8f7-274b8f8ff81b">
+      <Execution id="e7c52098-6be9-48c2-9e1a-ae167bea188e" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Modelos.Tests.RolTests" name="Descripcion_PuedeSerNull" />
+    </UnitTest>
+    <UnitTest name="ToString_DevuelveNombre" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1374580f-67a9-8793-ad75-a5b159c71469">
+      <Execution id="0620e7f1-ec54-4c5e-8d62-33fca6709b1d" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Modelos.Tests.RolTests" name="ToString_DevuelveNombre" />
+    </UnitTest>
+    <UnitTest name="Activar_SetsActivoTrue_WhenInitiallyFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="15d7caeb-0811-8c86-b33f-8159e773e8dd">
+      <Execution id="d11510aa-8eaf-42e3-888b-08cb415368fa" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Modelos.Tests.RolTests" name="Activar_SetsActivoTrue_WhenInitiallyFalse" />
+    </UnitTest>
+    <UnitTest name="Desactivar_SetsActivoFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1a8d6f1b-6fbb-8579-be80-d1da3239f9b4">
+      <Execution id="adf7038f-3f50-4f3a-abbf-2efb4daf85e2" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Modelos.Tests.RolTests" name="Desactivar_SetsActivoFalse" />
+    </UnitTest>
+    <UnitTest name="Constructor_InicializaValoresPredeterminados" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1735faf5-37ff-825e-9cd9-79d064d56479">
+      <Execution id="376e9651-4b99-4d20-bb57-49128883a2e8" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="Constructor_InicializaValoresPredeterminados" />
+    </UnitTest>
+    <UnitTest name="NuevoRol_InicializaValoresCorrectamente" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1b7f028a-8733-8df8-a715-944f95817039">
+      <Execution id="7edcab1e-a053-444b-937f-f15d9cb4c61d" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Modelos.Tests.RolTests" name="NuevoRol_InicializaValoresCorrectamente" />
+    </UnitTest>
+    <UnitTest name="Finalizar_MarcaElProyectoComoFinalizado" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1eb1c9ea-0df9-81cd-84b5-bc2bb438d7f7">
+      <Execution id="307cff24-5eee-4b19-8c33-4512f0d1851f" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="Finalizar_MarcaElProyectoComoFinalizado" />
+    </UnitTest>
+    <UnitTest name="Activar_LeavesActivoTrue_WhenAlreadyTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="119e6b1b-f99f-8ca3-afa5-f8be2d96d225">
+      <Execution id="707e7175-d949-43a0-8d7a-74e0b88f042c" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Modelos.Tests.RolTests" name="Activar_LeavesActivoTrue_WhenAlreadyTrue" />
+    </UnitTest>
+    <UnitTest name="IdYIdProyecto_CompartenElMismoValor" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1d1fa290-8312-8b61-80d6-2968434aff81">
+      <Execution id="e574c62d-6bd0-4390-b565-91d9610cd84b" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="IdYIdProyecto_CompartenElMismoValor" />
+    </UnitTest>
+    <UnitTest name="FechaCreacionYFechaCreacionUtc_CompartenElMismoValor" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1aa07baf-8df5-8200-a320-6672e5f8a4ae">
+      <Execution id="8ef4086c-e322-40b9-aef3-64f3ae8a5819" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="FechaCreacionYFechaCreacionUtc_CompartenElMismoValor" />
+    </UnitTest>
+    <UnitTest name="Cancelar_MarcaElProyectoComoCancelado" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1a27e820-d8f1-84c2-b636-d12638f339cb">
+      <Execution id="ae155a0b-6613-474f-b95a-981fb3cba753" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="Cancelar_MarcaElProyectoComoCancelado" />
+    </UnitTest>
+    <UnitTest name="Iniciar_ActivaElProyectoYLimpiaLaFechaFin" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="183eebd9-699e-8734-b6d0-3b511b50e5b8">
+      <Execution id="0bdeea99-04f3-440b-98cf-fea063473e37" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="Iniciar_ActivaElProyectoYLimpiaLaFechaFin" />
+    </UnitTest>
+    <UnitTest name="Equals_SameReference_ReturnsTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="14f42cf4-b99d-83fe-b03b-f31bd76dbeb4">
+      <Execution id="3e42ae4e-fc23-4038-9ddf-dc5ec8084f8e" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_SameReference_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="ToString_DevuelveElNombre" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="13ad7d3c-e1a7-8614-b845-8d9e9a61cfd1">
+      <Execution id="c1617700-43d2-45e4-832e-36c7d1d65799" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="ToString_DevuelveElNombre" />
+    </UnitTest>
+    <UnitTest name="Equals_Null_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1ad1e63a-dc86-84e5-979a-7e6ebb8335d9">
+      <Execution id="254ebbdf-49aa-4647-a577-9d41b7a50072" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_Null_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="EstaFinalizado_DevuelveTrueSoloCuandoElEstadoEsFinalizado" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="12e4fdf9-60aa-8f1c-b15c-54d8da395b51">
+      <Execution id="ee288ba9-1f01-457b-972d-51ae3200c585" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="EstaFinalizado_DevuelveTrueSoloCuandoElEstadoEsFinalizado" />
+    </UnitTest>
+    <UnitTest name="Reactivar_ActivaElProyectoYEliminaLaFechaFin" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="10c44b22-10f9-8816-9693-53d6736f9450">
+      <Execution id="ed3f7868-d155-432e-b920-c3c9b6b649e9" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="Nucleo.Tests.Modelos.ProyectoTests" name="Reactivar_ActivaElProyectoYEliminaLaFechaFin" />
+    </UnitTest>
+    <UnitTest name="Equals_ObjectNull_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1410b325-d9f9-89bd-8d1e-7f7dd578679e">
+      <Execution id="2758e5b0-3d98-4d07-ac73-83a3bb9dff4e" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_ObjectNull_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="Equals_ObjectDifferentType_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1611810c-74c3-8cc2-b430-ad3148884bb8">
+      <Execution id="814bff5a-26e0-4d57-af19-2772c54977c6" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_ObjectDifferentType_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="Equals_ObjectSameValues_ReturnsTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1c75cd33-b41f-8ea5-8b3f-6891053c4517">
+      <Execution id="a5f9e64e-0b38-42f6-9a50-a8d4f5191ca5" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_ObjectSameValues_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="Equals_DifferentSal_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1ba5da7a-58a0-8eb4-9b79-0a69347115ca">
+      <Execution id="6eb74bc2-fea8-45b6-bd2f-e702a595abb5" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_DifferentSal_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="OperatorEquality_BothNull_ReturnsTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1575f32f-9083-8197-add7-e9001f8a68a1">
+      <Execution id="4543d636-3e08-4874-8d6d-770f14da3c31" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="OperatorEquality_BothNull_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="Equals_DifferentHash_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="17697ec6-085b-88a4-9aab-8f839e6ea7fa">
+      <Execution id="12379ddb-dc42-443c-bd4b-f697b3b89e90" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_DifferentHash_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="GetHashCode_EqualObjects_SameHashCode" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="11d15586-5b4d-88fe-a630-ee9a7ad2baea">
+      <Execution id="ce872cc0-d463-4dd2-89e1-178a07ee1220" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="GetHashCode_EqualObjects_SameHashCode" />
+    </UnitTest>
+    <UnitTest name="OperatorEquality_LeftNullRightNotNull_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="179accd1-8a0f-816d-bd38-94f1b15eebb5">
+      <Execution id="8b97daf0-91e7-4793-954b-9fde70e7697d" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="OperatorEquality_LeftNullRightNotNull_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="Equals_SameHashAndSalDifferentCreacion_ReturnsTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="16fd35ce-199c-85b9-8713-46abab6f5a7a">
+      <Execution id="1a8af42e-cd70-4dea-9fe8-171f2bfd6961" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Equals_SameHashAndSalDifferentCreacion_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="OperatorEquality_RightNullLeftNotNull_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1ce47aff-5c0b-87c8-9ef5-15dc6fdfab98">
+      <Execution id="478b2e8d-7ee9-44f8-bf2b-577b01c7e94d" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="OperatorEquality_RightNullLeftNotNull_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="ValoresPorDefecto_HashYSalSonCadenasVacias" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="16a213d4-a50b-8004-bee4-6f47941c60c0">
+      <Execution id="76f4281d-5dca-4c2f-9a61-642b39f5be04" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="ValoresPorDefecto_HashYSalSonCadenasVacias" />
+    </UnitTest>
+    <UnitTest name="Creacion_PorDefecto_SeInicializaConFechaActual" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="19db37ff-a70b-8436-9323-c29b3a785600">
+      <Execution id="d094e061-b357-44d2-afac-a5947008ad1a" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Creacion_PorDefecto_SeInicializaConFechaActual" />
+    </UnitTest>
+    <UnitTest name="Creacion_ValorAsignado_SeConserva" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1187fbcd-b205-8579-a4b7-b0f8c0a40087">
+      <Execution id="0f663f44-9b7c-4d9d-bb01-88ea82a1e4d8" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ResultadoHashTest" name="Creacion_ValorAsignado_SeConserva" />
+    </UnitTest>
+    <UnitTest name="GenerarClave_RetornaBase64De32Bytes" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="153abdb7-0a80-85fc-808e-7706aa5126da">
+      <Execution id="84a64001-25ee-4a22-83c2-67be40217a68" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="GenerarClave_RetornaBase64De32Bytes" />
+    </UnitTest>
+    <UnitTest name="GenerarClave_DosLlamadas_GeneranClavesDistintas" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1536d8e8-b4c6-848d-a496-7a8cd2219788">
+      <Execution id="89ff74dd-d708-4f96-9794-3c71f4cfc534" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="GenerarClave_DosLlamadas_GeneranClavesDistintas" />
+    </UnitTest>
+    <UnitTest name="Cifrar_ClaveFormatoInvalido_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1f95ae02-5a42-8191-835e-48a82def1c4a">
+      <Execution id="1e0e8934-572d-41e6-bb54-a4d2caa36e06" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_ClaveFormatoInvalido_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_ClaveEspacio_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="10bfc6e3-2a6f-81b8-a91c-240f86e5da62">
+      <Execution id="1d99f767-c5e4-4f45-9669-8917a025b2a6" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_ClaveEspacio_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_TextoNulo_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1bcb9710-7251-845f-8704-75d228683aea">
+      <Execution id="ca5c3ef4-52cf-4e84-bf53-74584a504c57" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_TextoNulo_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="19096c32-25ed-8043-9fe7-8962cdea097a">
+      <Execution id="15caef98-ac91-474b-a565-1afc6de44d9f" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_ClaveTabulador_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1eab7a08-6b11-8690-823a-b82875046e0d">
+      <Execution id="c9ae6ca6-d9f3-4a46-856d-4efc5e62f885" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_ClaveTabulador_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_TextoVacio_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="13351ffb-768e-8e15-af38-77cb74561b6e">
+      <Execution id="f1cc052b-aad8-4ce4-98d5-d7be63a7ea41" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_TextoVacio_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_ClaveNula_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="15b65f9d-5975-855c-bf4f-68427159512f">
+      <Execution id="8906e2f5-a3d9-4c40-989d-62c35e24986f" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_ClaveNula_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_TextoTabulador_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="18b7717e-a19c-8872-9d4c-ad25aacb81f3">
+      <Execution id="6123cdb9-70d4-4c90-a262-9d7f57b594ec" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_TextoTabulador_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_ClaveVacia_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="16e89621-757c-8f01-9010-17bae6718c48">
+      <Execution id="ce834942-1a58-4572-bdf9-537638e5cc4d" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_ClaveVacia_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_TextoEspacio_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="14b74387-7218-8523-94e8-2a4da1d34f15">
+      <Execution id="df5d093b-2f9e-47ee-89a8-ba8e9002e4bb" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_TextoEspacio_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Cifrar_MismoTextoDosVeces_GeneraResultadosDistintos" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1dc4bd12-4204-8007-bcba-d35d6f3d9846">
+      <Execution id="a7cec672-d066-4726-bd0c-4e0c06a4cd08" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Cifrar_MismoTextoDosVeces_GeneraResultadosDistintos" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ContenidoNulo_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="197526f0-da21-81a7-bc23-ac96cdac4a9e">
+      <Execution id="dcbcab94-f52f-4466-913d-b78b73e368b5" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ContenidoNulo_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ContenidoVacio_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="148d16e3-8635-83ca-ba69-7b94774ccc58">
+      <Execution id="455f3303-7387-4b69-8fe8-f2cd2067fa23" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ContenidoVacio_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ContenidoEspacio_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1edd3d79-d7b2-8e85-9c90-f2d837cece4c">
+      <Execution id="b7aa4dbe-0734-4e31-817a-964d99290913" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ContenidoEspacio_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ContenidoTabulador_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="13212c2c-2652-8633-b8e8-ef85d7b030f6">
+      <Execution id="7fe38260-0281-4f68-aaf5-8e120e45383e" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ContenidoTabulador_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ClaveNula_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="18bb8951-0582-82c0-989e-56cc6d0c7689">
+      <Execution id="377217cc-7956-4a81-a957-defb8e80f047" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ClaveNula_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ContenidoDemasiadoCorto_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="133be522-9fa2-8930-a485-57ca69a062b9">
+      <Execution id="38fa6666-0f0a-491e-8b6b-2676cddda79f" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ContenidoDemasiadoCorto_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ContenidoNoBase64_LanzaFormatException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="12ed192d-cae6-84c4-99da-a9d2d1a19904">
+      <Execution id="90621c72-bdb5-40be-9e7c-eb8e55b950b5" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ContenidoNoBase64_LanzaFormatException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ContenidoConSoloNonceYEtiqueta_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1eb661a7-a926-80af-b812-dacde1cf65a0">
+      <Execution id="23e967b0-c348-4924-a6c3-88e9142cd41e" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ContenidoConSoloNonceYEtiqueta_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ClaveTabulador_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1f3facf7-197a-8963-8257-aafdc4324235">
+      <Execution id="2b7f32e4-5fd3-46fc-bfad-a2624a3ba191" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ClaveTabulador_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="CifrarYDescifrar_RetornaTextoOriginal" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1fb469ce-3373-84ae-8347-618f70ba91ad">
+      <Execution id="c37013b0-c2f8-4d61-9032-635a5d1d7396" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="CifrarYDescifrar_RetornaTextoOriginal" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ClaveVacia_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1b77376e-d19c-8194-a3f5-4bbd713ba40a">
+      <Execution id="945ecc5f-684e-42d1-a12f-1cb89c15400f" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ClaveVacia_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ClaveEspacio_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="131998f7-f1d4-8113-868a-e1b50603945e">
+      <Execution id="3bfee92c-5f49-4b9d-a934-608ffab889f9" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ClaveEspacio_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ClaveFormatoInvalido_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1d4b6998-4fa1-83ea-95a4-e853daac0fb4">
+      <Execution id="f0c450a3-96d4-489f-98f2-2bcd91a3b4c5" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ClaveFormatoInvalido_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1dae03e7-1f4a-81f3-b35a-633e76575c93">
+      <Execution id="e8251b81-d312-4d11-8688-8d60d45ed8d3" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ClaveBase64ConLongitudIncorrecta_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="EsValida_WhitespaceOnly_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="172287de-087a-8cd1-a2e4-a6790c107db0">
+      <Execution id="2c893844-47d2-4060-8010-1a784470e634" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_WhitespaceOnly_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="EsValida_Null_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="12898be2-1fc9-80b0-861a-6658c1dfaeda">
+      <Execution id="27bdc6ae-7504-4cbf-aa53-9fdbcd728f56" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_Null_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="EsValida_TooShort_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1f7827dc-71b3-8148-a5cb-c1417691c880">
+      <Execution id="a5a9a1fd-1681-4311-a44e-5df4c1d961ef" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_TooShort_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="EsValida_MissingUppercase_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="15678332-210e-80a6-923f-3f399f576a01">
+      <Execution id="04d03c0a-59b2-4f7b-9489-3f30ae58c168" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_MissingUppercase_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="EsValida_MissingDigit_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1e25eeba-bbed-8422-838d-a795385e1f86">
+      <Execution id="643ce4a4-434b-4fdc-98b8-ef0ebc28432b" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_MissingDigit_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="EsValida_MissingLowercase_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1532093c-3a67-825a-9419-9592f5e68a88">
+      <Execution id="5bc12303-fa1c-4777-a08c-08ccb703e8c1" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_MissingLowercase_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="Generar_TextoNuloOBlanco_LanzaArgumentException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="161ca288-22c4-8cba-b51e-8991b35e4b65">
+      <Execution id="6b74f664-1ac3-42c7-a8c3-d20f0f2a67b7" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioHashTest" name="Generar_TextoNuloOBlanco_LanzaArgumentException" />
+    </UnitTest>
+    <UnitTest name="EsValida_Valid_MinLength8_ReturnsTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="18d4af63-965d-8235-b973-fa26a6b5529e">
+      <Execution id="a7f3912e-f991-4d9d-a71a-bea13997da72" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_Valid_MinLength8_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="EsValida_Valid_Example_ReturnsTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1e25e3fd-bcf4-857e-aaff-25ad9127fd7c">
+      <Execution id="d61b53e9-d9fd-4e26-aa94-62b70fd1acc6" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_Valid_Example_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="EsValida_MissingSpecialChar_ReturnsFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="15edfc36-4b70-8a25-ae3f-de849f290f98">
+      <Execution id="4a9314a9-405d-4485-93d0-a6f8eb3b7b35" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioContrasenasTest" name="EsValida_MissingSpecialChar_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="Descifrar_DatosCorruptos_LanzaAuthenticationTagMismatchException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="164e7ace-961c-8894-8e31-5a40f8ad4e81">
+      <Execution id="eb808151-1f39-4240-92e8-0d34b2a4170d" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_DatosCorruptos_LanzaAuthenticationTagMismatchException" />
+    </UnitTest>
+    <UnitTest name="Descifrar_ClaveDistinta_LanzaAuthenticationTagMismatchException" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="135d2160-c622-8673-9c38-18d6d91054f6">
+      <Execution id="7ac13c98-000d-4d38-b3a2-23940424f8dc" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioCifradoTest" name="Descifrar_ClaveDistinta_LanzaAuthenticationTagMismatchException" />
+    </UnitTest>
+    <UnitTest name="Verificar_HashOSalNoBase64_DevuelveFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="13468be3-5021-8b9b-a369-0def9984b756">
+      <Execution id="43dd1811-9974-4f0f-9fb4-d80391802e15" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioHashTest" name="Verificar_HashOSalNoBase64_DevuelveFalse" />
+    </UnitTest>
+    <UnitTest name="Propiedades_PermitenActualizarLosValores" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="120a1c04-4383-847a-8058-3103bfb038da">
+      <Execution id="b599f52d-8023-4cc1-899e-13f2f167ba76" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.EntradaLogSeleccionadaTests" name="Propiedades_PermitenActualizarLosValores" />
+    </UnitTest>
+    <UnitTest name="ConstructorConMensaje_InicializaLosValoresPredeterminados" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1fddb1eb-1399-8c90-a32a-4de6dc084087">
+      <Execution id="7e87232f-e780-4ded-845e-0e0d35766dec" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.EntradaLogSeleccionadaTests" name="ConstructorConMensaje_InicializaLosValoresPredeterminados" />
+    </UnitTest>
+    <UnitTest name="ToString_ConUsuario_IncluyeSuRepresentacion" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="10a62f18-1f49-8a33-81c8-67d503c6de4d">
+      <Execution id="f01b90b1-a6b9-42df-8b36-4f174a50e256" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.EntradaLogSeleccionadaTests" name="ToString_ConUsuario_IncluyeSuRepresentacion" />
+    </UnitTest>
+    <UnitTest name="ToString_SinUsuario_IndicaSistema" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="17b6a22c-36b2-8a5a-b999-46dc4afded9a">
+      <Execution id="8c0bc487-3c0c-488c-b534-13fa51c4ce97" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.EntradaLogSeleccionadaTests" name="ToString_SinUsuario_IndicaSistema" />
+    </UnitTest>
+    <UnitTest name="RegistrarFallo_DosIntentos_NoBloqueaLaCuenta" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="16c2a5c3-fadf-8427-9d79-8737e32a99a0">
+      <Execution id="173f6cf7-f8e9-4acf-9425-a35918e6d218" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="RegistrarFallo_DosIntentos_NoBloqueaLaCuenta" />
+    </UnitTest>
+    <UnitTest name="EstaBloqueado_SinBloqueoActivo_DevuelveFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1e178506-92a0-823d-95dc-c064458bc3cf">
+      <Execution id="2174a222-09c1-4c61-b971-723bebf8045a" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="EstaBloqueado_SinBloqueoActivo_DevuelveFalse" />
+    </UnitTest>
+    <UnitTest name="CompruebaPassword_CuentaSinCredenciales_NoIncrementaIntentos" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1ec149b1-f113-8b62-9fbf-578ef9ecc8d5">
+      <Execution id="709745a6-cb90-4d78-b849-dee0503c2095" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CompruebaPassword_CuentaSinCredenciales_NoIncrementaIntentos" />
+    </UnitTest>
+    <UnitTest name="EstaBloqueado_BloqueoVigente_DevuelveTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="12f9a4e2-1312-82b8-8f05-a5aecd367072">
+      <Execution id="75343504-cf04-4440-95e0-39943d016063" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="EstaBloqueado_BloqueoVigente_DevuelveTrue" />
+    </UnitTest>
+    <UnitTest name="RegistrarFallo_TercerIntento_BloqueaLaCuentaDuranteCincoMinutos" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="129cab15-ae86-87af-ade5-39d5903965d2">
+      <Execution id="74c2189a-4372-40a8-be28-9a1cd530bb33" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="RegistrarFallo_TercerIntento_BloqueaLaCuentaDuranteCincoMinutos" />
+    </UnitTest>
+    <UnitTest name="Generar_TextoValido_RetornaHashYSalNoVacios" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1f2373dc-7dff-840e-9558-01c99ed5c61b">
+      <Execution id="56ef1ad3-9bcd-4cdd-8a41-36caed3b0f87" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioHashTest" name="Generar_TextoValido_RetornaHashYSalNoVacios" />
+    </UnitTest>
+    <UnitTest name="Verificar_EntradasNulasOBlancas_DevuelveFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1049d832-17fa-83e9-8d77-febd7cc65289">
+      <Execution id="2a43c49c-3c01-4025-8496-e0e3f5e61e74" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioHashTest" name="Verificar_EntradasNulasOBlancas_DevuelveFalse" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_CuentaSinCredencialesYClaveVacia_NoConfiguraLaContraseña" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="17b885de-aff5-8256-b168-f6e29d5c83e9">
+      <Execution id="310b8ef0-e6b4-46bf-bb30-9ffb2ec66139" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_CuentaSinCredencialesYClaveVacia_NoConfiguraLaContraseña" />
+    </UnitTest>
+    <UnitTest name="EstaBloqueado_BloqueoVencido_LimpiaBloqueoEIntentos" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="10c89975-b7de-82c7-b25b-f01f2d367add">
+      <Execution id="57e675d6-e259-4c7f-af21-54f8890d597a" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="EstaBloqueado_BloqueoVencido_LimpiaBloqueoEIntentos" />
+    </UnitTest>
+    <UnitTest name="RegistrarFallo_CuentaBloqueada_NoIncrementaIntentos" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1cd20c22-33d9-877e-8bb2-e0f6f805b4c4">
+      <Execution id="de383739-ab07-42ad-9fd8-ad4ddd023930" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="RegistrarFallo_CuentaBloqueada_NoIncrementaIntentos" />
+    </UnitTest>
+    <UnitTest name="UsuarioNuevo_InicializaFechasYEstadoEsperados" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="149e09bf-02b2-8731-b3d8-9bbbc9ebc0a1">
+      <Execution id="b85c1503-736f-443d-90e7-a3a35c9ec66e" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="UsuarioNuevo_InicializaFechasYEstadoEsperados" />
+    </UnitTest>
+    <UnitTest name="RegistrarExito_RestableceIntentosYBloqueo" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="161c9d21-64e0-8db5-9664-d134fe7d3884">
+      <Execution id="b418f241-32c9-4a67-9558-010d8eb3429c" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="RegistrarExito_RestableceIntentosYBloqueo" />
+    </UnitTest>
+    <UnitTest name="CompruebaPassword_CuentaBloqueada_NoCompruebaLaContraseña" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="14d5cfa1-5c5c-83f1-89d2-c761bbbe259e">
+      <Execution id="3e3de1a2-be8a-4e3a-90cc-bcf07d81d300" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CompruebaPassword_CuentaBloqueada_NoCompruebaLaContraseña" />
+    </UnitTest>
+    <UnitTest name="Generar_MismoTexto_DiferentesSaltYHash" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1f682250-edec-8085-9ba8-d8b54dae6dd2">
+      <Execution id="f53e1521-fb61-4200-933f-dd9997c581f7" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioHashTest" name="Generar_MismoTexto_DiferentesSaltYHash" />
+    </UnitTest>
+    <UnitTest name="Verificar_ConTextoIncorrecto_DevuelveFalse" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="151c6909-66b9-861a-8749-55b9bfb01ba7">
+      <Execution id="a8f0a7bd-c554-4ddd-b413-10ee48552d17" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioHashTest" name="Verificar_ConTextoIncorrecto_DevuelveFalse" />
+    </UnitTest>
+    <UnitTest name="CompruebaPassword_ContraseñaIncorrecta_IncrementaIntentos" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1528ac46-b6c5-8880-ace2-1d2e1ae65998">
+      <Execution id="2c1bae5a-dd42-4439-b116-f387433119dd" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CompruebaPassword_ContraseñaIncorrecta_IncrementaIntentos" />
+    </UnitTest>
+    <UnitTest name="CompruebaPassword_ContraseñaCorrecta_RestableceIntentosYActualizaAccesos" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="12eb94a0-7a83-8ea4-9da2-bd79be6051e6">
+      <Execution id="290c78cd-65fe-4fc6-9e5f-97fffd64d118" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CompruebaPassword_ContraseñaCorrecta_RestableceIntentosYActualizaAccesos" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_CuentaSinCredencialesYClaveValida_ConfiguraLaContraseña" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="173e1519-f7b9-8951-99b7-338234faafd3">
+      <Execution id="04d9cfbc-e0c2-4544-a7a3-726f8d1daafa" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_CuentaSinCredencialesYClaveValida_ConfiguraLaContraseña" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_NuevaVacia_NoCambiaLaContraseña" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="115fdfa8-de53-84e8-aca1-c5e8bc6cf31c">
+      <Execution id="bcf544ce-36b1-42b8-b994-841283f3e381" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_NuevaVacia_NoCambiaLaContraseña" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_NuevaIgualALaAnterior_NoCambiaLaContraseña" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1c7f8bab-aba7-89c8-811f-72cfbd6fa6db">
+      <Execution id="4a2e62aa-349d-4876-98f0-9f61eb72938f" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_NuevaIgualALaAnterior_NoCambiaLaContraseña" />
+    </UnitTest>
+    <UnitTest name="Verificar_ConHashYSalCorrectos_DevuelveTrue" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="17c51961-5bff-8b7d-85de-50c0e601f739">
+      <Execution id="ae8c2751-808e-4656-8c5a-190d99614f74" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Seguridad.ServicioHashTest" name="Verificar_ConHashYSalCorrectos_DevuelveTrue" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_CuentaConCredenciales_NoPermiteLaSobrecargaDeConfiguracionInicial" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1a4b1965-ae33-88ec-82c5-9d98a5e6f015">
+      <Execution id="fa64d00a-5183-418a-b4a3-9e4f33936626" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_CuentaConCredenciales_NoPermiteLaSobrecargaDeConfiguracionInicial" />
+    </UnitTest>
+    <UnitTest name="ToString_IncluyeIdNombreDeUsuarioYCorreo" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="155f06ec-1b28-8468-87e8-f290d9d0429a">
+      <Execution id="6419d97d-e71c-4620-a305-8127bc28ed4c" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="ToString_IncluyeIdNombreDeUsuarioYCorreo" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_ContraseñaAnteriorIncorrecta_NoCambiaLaContraseña" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="105014f9-2ec5-806c-a7f0-4767d5dd662e">
+      <Execution id="64b41c17-88b5-45f6-8319-dd7c1d865df7" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_ContraseñaAnteriorIncorrecta_NoCambiaLaContraseña" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_ContraseñaAnteriorCorrecta_CambiaLaContraseña" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="153e49ca-e597-896b-bf38-b481994c5430">
+      <Execution id="0236ec8b-7772-48e0-8971-6e90222e3412" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_ContraseñaAnteriorCorrecta_CambiaLaContraseña" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_ReutilizaLaContraseñaAnterior_NoLaCambia" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="1830dea1-9757-82e2-8aca-830a72c5eed3">
+      <Execution id="fd089539-0c14-46db-9e69-e9d1a134a729" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_ReutilizaLaContraseñaAnterior_NoLaCambia" />
+    </UnitTest>
+    <UnitTest name="CambiaPassword_ReutilizaUnaContraseñaHistorica_NoLaCambia" storage="c:\users\eva\source\repos\tpmp-etc-jeg\nucleo.tests\bin\debug\net10.0\nucleotests.dll" id="139d6e98-8682-893e-b128-03d8df722d3c">
+      <Execution id="d034ebde-c9a0-4c72-a0c4-ba5f6430a94b" />
+      <TestMethod codeBase="C:\Users\Eva\source\repos\TPMP-ETC-JEG\Nucleo.Tests\bin\Debug\net10.0\NucleoTests.dll" adapterTypeName="executor://MSTest.Sdk/4.0.2" className="NucleoTest.Modelos.UsuarioTest" name="CambiaPassword_ReutilizaUnaContraseñaHistorica_NoLaCambia" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="1ee7f1a0-4d4c-879c-a8f7-274b8f8ff81b" executionId="e7c52098-6be9-48c2-9e1a-ae167bea188e" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1374580f-67a9-8793-ad75-a5b159c71469" executionId="0620e7f1-ec54-4c5e-8d62-33fca6709b1d" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="15d7caeb-0811-8c86-b33f-8159e773e8dd" executionId="d11510aa-8eaf-42e3-888b-08cb415368fa" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1a8d6f1b-6fbb-8579-be80-d1da3239f9b4" executionId="adf7038f-3f50-4f3a-abbf-2efb4daf85e2" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1735faf5-37ff-825e-9cd9-79d064d56479" executionId="376e9651-4b99-4d20-bb57-49128883a2e8" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1b7f028a-8733-8df8-a715-944f95817039" executionId="7edcab1e-a053-444b-937f-f15d9cb4c61d" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1eb1c9ea-0df9-81cd-84b5-bc2bb438d7f7" executionId="307cff24-5eee-4b19-8c33-4512f0d1851f" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="119e6b1b-f99f-8ca3-afa5-f8be2d96d225" executionId="707e7175-d949-43a0-8d7a-74e0b88f042c" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1d1fa290-8312-8b61-80d6-2968434aff81" executionId="e574c62d-6bd0-4390-b565-91d9610cd84b" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1aa07baf-8df5-8200-a320-6672e5f8a4ae" executionId="8ef4086c-e322-40b9-aef3-64f3ae8a5819" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1a27e820-d8f1-84c2-b636-d12638f339cb" executionId="ae155a0b-6613-474f-b95a-981fb3cba753" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="183eebd9-699e-8734-b6d0-3b511b50e5b8" executionId="0bdeea99-04f3-440b-98cf-fea063473e37" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="14f42cf4-b99d-83fe-b03b-f31bd76dbeb4" executionId="3e42ae4e-fc23-4038-9ddf-dc5ec8084f8e" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="13ad7d3c-e1a7-8614-b845-8d9e9a61cfd1" executionId="c1617700-43d2-45e4-832e-36c7d1d65799" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1ad1e63a-dc86-84e5-979a-7e6ebb8335d9" executionId="254ebbdf-49aa-4647-a577-9d41b7a50072" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="12e4fdf9-60aa-8f1c-b15c-54d8da395b51" executionId="ee288ba9-1f01-457b-972d-51ae3200c585" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="10c44b22-10f9-8816-9693-53d6736f9450" executionId="ed3f7868-d155-432e-b920-c3c9b6b649e9" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1410b325-d9f9-89bd-8d1e-7f7dd578679e" executionId="2758e5b0-3d98-4d07-ac73-83a3bb9dff4e" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1611810c-74c3-8cc2-b430-ad3148884bb8" executionId="814bff5a-26e0-4d57-af19-2772c54977c6" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1c75cd33-b41f-8ea5-8b3f-6891053c4517" executionId="a5f9e64e-0b38-42f6-9a50-a8d4f5191ca5" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1ba5da7a-58a0-8eb4-9b79-0a69347115ca" executionId="6eb74bc2-fea8-45b6-bd2f-e702a595abb5" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1575f32f-9083-8197-add7-e9001f8a68a1" executionId="4543d636-3e08-4874-8d6d-770f14da3c31" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="17697ec6-085b-88a4-9aab-8f839e6ea7fa" executionId="12379ddb-dc42-443c-bd4b-f697b3b89e90" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="11d15586-5b4d-88fe-a630-ee9a7ad2baea" executionId="ce872cc0-d463-4dd2-89e1-178a07ee1220" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="179accd1-8a0f-816d-bd38-94f1b15eebb5" executionId="8b97daf0-91e7-4793-954b-9fde70e7697d" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="16fd35ce-199c-85b9-8713-46abab6f5a7a" executionId="1a8af42e-cd70-4dea-9fe8-171f2bfd6961" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1ce47aff-5c0b-87c8-9ef5-15dc6fdfab98" executionId="478b2e8d-7ee9-44f8-bf2b-577b01c7e94d" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="16a213d4-a50b-8004-bee4-6f47941c60c0" executionId="76f4281d-5dca-4c2f-9a61-642b39f5be04" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="19db37ff-a70b-8436-9323-c29b3a785600" executionId="d094e061-b357-44d2-afac-a5947008ad1a" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1187fbcd-b205-8579-a4b7-b0f8c0a40087" executionId="0f663f44-9b7c-4d9d-bb01-88ea82a1e4d8" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="153abdb7-0a80-85fc-808e-7706aa5126da" executionId="84a64001-25ee-4a22-83c2-67be40217a68" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1536d8e8-b4c6-848d-a496-7a8cd2219788" executionId="89ff74dd-d708-4f96-9794-3c71f4cfc534" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1f95ae02-5a42-8191-835e-48a82def1c4a" executionId="1e0e8934-572d-41e6-bb54-a4d2caa36e06" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="10bfc6e3-2a6f-81b8-a91c-240f86e5da62" executionId="1d99f767-c5e4-4f45-9669-8917a025b2a6" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1bcb9710-7251-845f-8704-75d228683aea" executionId="ca5c3ef4-52cf-4e84-bf53-74584a504c57" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="19096c32-25ed-8043-9fe7-8962cdea097a" executionId="15caef98-ac91-474b-a565-1afc6de44d9f" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1eab7a08-6b11-8690-823a-b82875046e0d" executionId="c9ae6ca6-d9f3-4a46-856d-4efc5e62f885" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="13351ffb-768e-8e15-af38-77cb74561b6e" executionId="f1cc052b-aad8-4ce4-98d5-d7be63a7ea41" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="15b65f9d-5975-855c-bf4f-68427159512f" executionId="8906e2f5-a3d9-4c40-989d-62c35e24986f" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="18b7717e-a19c-8872-9d4c-ad25aacb81f3" executionId="6123cdb9-70d4-4c90-a262-9d7f57b594ec" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="16e89621-757c-8f01-9010-17bae6718c48" executionId="ce834942-1a58-4572-bdf9-537638e5cc4d" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="14b74387-7218-8523-94e8-2a4da1d34f15" executionId="df5d093b-2f9e-47ee-89a8-ba8e9002e4bb" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1dc4bd12-4204-8007-bcba-d35d6f3d9846" executionId="a7cec672-d066-4726-bd0c-4e0c06a4cd08" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="197526f0-da21-81a7-bc23-ac96cdac4a9e" executionId="dcbcab94-f52f-4466-913d-b78b73e368b5" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="148d16e3-8635-83ca-ba69-7b94774ccc58" executionId="455f3303-7387-4b69-8fe8-f2cd2067fa23" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1edd3d79-d7b2-8e85-9c90-f2d837cece4c" executionId="b7aa4dbe-0734-4e31-817a-964d99290913" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="13212c2c-2652-8633-b8e8-ef85d7b030f6" executionId="7fe38260-0281-4f68-aaf5-8e120e45383e" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="18bb8951-0582-82c0-989e-56cc6d0c7689" executionId="377217cc-7956-4a81-a957-defb8e80f047" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="133be522-9fa2-8930-a485-57ca69a062b9" executionId="38fa6666-0f0a-491e-8b6b-2676cddda79f" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="12ed192d-cae6-84c4-99da-a9d2d1a19904" executionId="90621c72-bdb5-40be-9e7c-eb8e55b950b5" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1eb661a7-a926-80af-b812-dacde1cf65a0" executionId="23e967b0-c348-4924-a6c3-88e9142cd41e" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1f3facf7-197a-8963-8257-aafdc4324235" executionId="2b7f32e4-5fd3-46fc-bfad-a2624a3ba191" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1fb469ce-3373-84ae-8347-618f70ba91ad" executionId="c37013b0-c2f8-4d61-9032-635a5d1d7396" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1b77376e-d19c-8194-a3f5-4bbd713ba40a" executionId="945ecc5f-684e-42d1-a12f-1cb89c15400f" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="131998f7-f1d4-8113-868a-e1b50603945e" executionId="3bfee92c-5f49-4b9d-a934-608ffab889f9" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1d4b6998-4fa1-83ea-95a4-e853daac0fb4" executionId="f0c450a3-96d4-489f-98f2-2bcd91a3b4c5" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1dae03e7-1f4a-81f3-b35a-633e76575c93" executionId="e8251b81-d312-4d11-8688-8d60d45ed8d3" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="172287de-087a-8cd1-a2e4-a6790c107db0" executionId="2c893844-47d2-4060-8010-1a784470e634" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="12898be2-1fc9-80b0-861a-6658c1dfaeda" executionId="27bdc6ae-7504-4cbf-aa53-9fdbcd728f56" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1f7827dc-71b3-8148-a5cb-c1417691c880" executionId="a5a9a1fd-1681-4311-a44e-5df4c1d961ef" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="15678332-210e-80a6-923f-3f399f576a01" executionId="04d03c0a-59b2-4f7b-9489-3f30ae58c168" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1e25eeba-bbed-8422-838d-a795385e1f86" executionId="643ce4a4-434b-4fdc-98b8-ef0ebc28432b" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1532093c-3a67-825a-9419-9592f5e68a88" executionId="5bc12303-fa1c-4777-a08c-08ccb703e8c1" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="161ca288-22c4-8cba-b51e-8991b35e4b65" executionId="6b74f664-1ac3-42c7-a8c3-d20f0f2a67b7" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="18d4af63-965d-8235-b973-fa26a6b5529e" executionId="a7f3912e-f991-4d9d-a71a-bea13997da72" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1e25e3fd-bcf4-857e-aaff-25ad9127fd7c" executionId="d61b53e9-d9fd-4e26-aa94-62b70fd1acc6" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="15edfc36-4b70-8a25-ae3f-de849f290f98" executionId="4a9314a9-405d-4485-93d0-a6f8eb3b7b35" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="164e7ace-961c-8894-8e31-5a40f8ad4e81" executionId="eb808151-1f39-4240-92e8-0d34b2a4170d" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="135d2160-c622-8673-9c38-18d6d91054f6" executionId="7ac13c98-000d-4d38-b3a2-23940424f8dc" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="13468be3-5021-8b9b-a369-0def9984b756" executionId="43dd1811-9974-4f0f-9fb4-d80391802e15" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="120a1c04-4383-847a-8058-3103bfb038da" executionId="b599f52d-8023-4cc1-899e-13f2f167ba76" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1fddb1eb-1399-8c90-a32a-4de6dc084087" executionId="7e87232f-e780-4ded-845e-0e0d35766dec" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="10a62f18-1f49-8a33-81c8-67d503c6de4d" executionId="f01b90b1-a6b9-42df-8b36-4f174a50e256" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="17b6a22c-36b2-8a5a-b999-46dc4afded9a" executionId="8c0bc487-3c0c-488c-b534-13fa51c4ce97" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="16c2a5c3-fadf-8427-9d79-8737e32a99a0" executionId="173f6cf7-f8e9-4acf-9425-a35918e6d218" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1e178506-92a0-823d-95dc-c064458bc3cf" executionId="2174a222-09c1-4c61-b971-723bebf8045a" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1ec149b1-f113-8b62-9fbf-578ef9ecc8d5" executionId="709745a6-cb90-4d78-b849-dee0503c2095" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="12f9a4e2-1312-82b8-8f05-a5aecd367072" executionId="75343504-cf04-4440-95e0-39943d016063" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="129cab15-ae86-87af-ade5-39d5903965d2" executionId="74c2189a-4372-40a8-be28-9a1cd530bb33" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1f2373dc-7dff-840e-9558-01c99ed5c61b" executionId="56ef1ad3-9bcd-4cdd-8a41-36caed3b0f87" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1049d832-17fa-83e9-8d77-febd7cc65289" executionId="2a43c49c-3c01-4025-8496-e0e3f5e61e74" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="17b885de-aff5-8256-b168-f6e29d5c83e9" executionId="310b8ef0-e6b4-46bf-bb30-9ffb2ec66139" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="10c89975-b7de-82c7-b25b-f01f2d367add" executionId="57e675d6-e259-4c7f-af21-54f8890d597a" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1cd20c22-33d9-877e-8bb2-e0f6f805b4c4" executionId="de383739-ab07-42ad-9fd8-ad4ddd023930" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="149e09bf-02b2-8731-b3d8-9bbbc9ebc0a1" executionId="b85c1503-736f-443d-90e7-a3a35c9ec66e" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="161c9d21-64e0-8db5-9664-d134fe7d3884" executionId="b418f241-32c9-4a67-9558-010d8eb3429c" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="14d5cfa1-5c5c-83f1-89d2-c761bbbe259e" executionId="3e3de1a2-be8a-4e3a-90cc-bcf07d81d300" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1f682250-edec-8085-9ba8-d8b54dae6dd2" executionId="f53e1521-fb61-4200-933f-dd9997c581f7" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="151c6909-66b9-861a-8749-55b9bfb01ba7" executionId="a8f0a7bd-c554-4ddd-b413-10ee48552d17" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1528ac46-b6c5-8880-ace2-1d2e1ae65998" executionId="2c1bae5a-dd42-4439-b116-f387433119dd" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="12eb94a0-7a83-8ea4-9da2-bd79be6051e6" executionId="290c78cd-65fe-4fc6-9e5f-97fffd64d118" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="173e1519-f7b9-8951-99b7-338234faafd3" executionId="04d9cfbc-e0c2-4544-a7a3-726f8d1daafa" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="115fdfa8-de53-84e8-aca1-c5e8bc6cf31c" executionId="bcf544ce-36b1-42b8-b994-841283f3e381" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1c7f8bab-aba7-89c8-811f-72cfbd6fa6db" executionId="4a2e62aa-349d-4876-98f0-9f61eb72938f" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="17c51961-5bff-8b7d-85de-50c0e601f739" executionId="ae8c2751-808e-4656-8c5a-190d99614f74" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1a4b1965-ae33-88ec-82c5-9d98a5e6f015" executionId="fa64d00a-5183-418a-b4a3-9e4f33936626" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="155f06ec-1b28-8468-87e8-f290d9d0429a" executionId="6419d97d-e71c-4620-a305-8127bc28ed4c" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="105014f9-2ec5-806c-a7f0-4767d5dd662e" executionId="64b41c17-88b5-45f6-8319-dd7c1d865df7" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="153e49ca-e597-896b-bf38-b481994c5430" executionId="0236ec8b-7772-48e0-8971-6e90222e3412" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="1830dea1-9757-82e2-8aca-830a72c5eed3" executionId="fd089539-0c14-46db-9e69-e9d1a134a729" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestEntry testId="139d6e98-8682-893e-b128-03d8df722d3c" executionId="d034ebde-c9a0-4c72-a0c4-ba5f6430a94b" testListId="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8C84FA94-04C1-424b-9868-57A2D4851A1D" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="101" executed="101" passed="101" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>
