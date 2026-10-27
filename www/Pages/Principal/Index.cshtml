@@ -1,34 +1,14 @@
-﻿Contenido dpublic IActionResult OnGet()
-{
-int? idUsuario =
-HttpContext.Session.GetInt32(
-ClavesSesion.UsuarioId);
+﻿@page
+@model www.Pages.Principal.IndexModel
 
-if (idUsuario is not int id || id <= 0)
-{
-EliminarDatosSesion();
-
-return RedirectToPage(
-"/Login/Index");
+@{
+    ViewData["Title"] = "Principal";
+    ViewData["NombreProyecto"] = "-";
+    ViewData["TituloCabecera"] = "Página principal";
+    ViewData["MostrarMenuUsuario"] = true;
+    ViewData["NombreUsuario"] = Model.NombreUsuario;
 }
 
-UsuarioActual =
-_datos.LeerUsuario(id);
+<h1 class="h3">Zona de trabajo</h1>
 
-if (UsuarioActual is null)
-{
-EliminarDatosSesion();
-
-return RedirectToPage(
-"/Login/Index");
-}
-
-NombreUsuario =
-$"{UsuarioActual.Nombre} " +
-$"{UsuarioActual.Apellidos}";
-
-NombreUsuario =
-NombreUsuario.Trim();
-
-return Page();
-}e la página principal. </p>
+<p>Contenido de la página principal.</p>

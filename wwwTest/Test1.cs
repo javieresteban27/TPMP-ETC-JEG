@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -35,7 +36,7 @@ namespace wwwTest
             driver.Manage()
                 .Timeouts()
                 .ImplicitWait =
-                TimeSpan.FromSeconds(5);
+                TimeSpan.FromSeconds(2);
         }
 
 
@@ -56,6 +57,9 @@ namespace wwwTest
         {
             IrALogin();
 
+            EsperarTexto(
+                "Identifícate");
+
             Assert.IsTrue(
                 driver.PageSource.Contains(
                     "Identifícate"));
@@ -68,7 +72,7 @@ namespace wwwTest
             IrALogin();
 
             IWebElement campo =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("txtUsuario"));
 
             Assert.IsNotNull(campo);
@@ -82,7 +86,7 @@ namespace wwwTest
             IrALogin();
 
             IWebElement boton =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("btnSiguiente"));
 
             Assert.IsNotNull(boton);
@@ -97,14 +101,20 @@ namespace wwwTest
             IrAPaginaPassword(
                 EmailCorrecto);
 
-            Assert.IsTrue(
-                driver.Url.Contains(
-                    "/Login/Index2"));
+            IWebElement password =
+                EsperarElemento(
+                    By.Id("txtContraseña"));
+
+            EsperarUrlContenga(
+                "/Login/Index2");
 
             Assert.IsTrue(
-                driver.FindElement(
-                    By.Id("txtContraseña"))
-                    .Displayed);
+                password.Displayed);
+
+            Assert.IsTrue(
+                driver.Url.Contains(
+                    "/Login/Index2"),
+                $"URL actual: {driver.Url}");
         }
 
 
@@ -116,6 +126,9 @@ namespace wwwTest
             driver.FindElement(
                 By.Id("btnSiguiente"))
                 .Click();
+
+            EsperarElemento(
+                By.Id("txtUsuario"));
 
             Assert.IsTrue(
                 driver.Url.Contains(
@@ -138,12 +151,17 @@ namespace wwwTest
                 driver.FindElement(
                     By.Id("txtUsuario"));
 
+            usuario.Clear();
+
             usuario.SendKeys(
                 "correo-incorrecto");
 
             driver.FindElement(
                 By.Id("btnSiguiente"))
                 .Click();
+
+            EsperarElemento(
+                By.Id("txtUsuario"));
 
             Assert.IsTrue(
                 driver.Url.Contains(
@@ -167,14 +185,19 @@ namespace wwwTest
             driver.Navigate().GoToUrl(
                 BaseUrl + "/Login/Index2");
 
+            IWebElement usuario =
+                EsperarElemento(
+                    By.Id("txtUsuario"));
+
+            EsperarUrlContenga(
+                "/Login");
+
             Assert.IsTrue(
                 driver.Url.Contains(
                     "/Login"));
 
             Assert.IsTrue(
-                driver.FindElement(
-                    By.Id("txtUsuario"))
-                    .Displayed);
+                usuario.Displayed);
         }
 
 
@@ -185,7 +208,7 @@ namespace wwwTest
                 EmailCorrecto);
 
             IWebElement password =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("txtContraseña"));
 
             Assert.IsNotNull(password);
@@ -200,11 +223,11 @@ namespace wwwTest
                 EmailCorrecto);
 
             IWebElement aceptar =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("btnAceptar"));
 
             IWebElement atras =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("btnAtras"));
 
             Assert.IsTrue(
@@ -231,14 +254,19 @@ namespace wwwTest
                 By.Id("btnAtras"))
                 .Click();
 
+            IWebElement usuario =
+                EsperarElemento(
+                    By.Id("txtUsuario"));
+
+            EsperarUrlContenga(
+                "/Login");
+
             Assert.IsTrue(
                 driver.Url.Contains(
                     "/Login"));
 
             Assert.IsTrue(
-                driver.FindElement(
-                    By.Id("txtUsuario"))
-                    .Displayed);
+                usuario.Displayed);
         }
 
 
@@ -249,8 +277,10 @@ namespace wwwTest
                 "noexiste@test.com");
 
             IWebElement password =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("txtContraseña"));
+
+            password.Clear();
 
             password.SendKeys(
                 "Clave123!");
@@ -259,9 +289,16 @@ namespace wwwTest
                 By.Id("btnAceptar"))
                 .Click();
 
+            EsperarTexto(
+                "incorrectos");
+
             Assert.IsTrue(
                 driver.PageSource.Contains(
                     "incorrectos"));
+
+            Assert.IsTrue(
+                driver.Url.Contains(
+                    "/Login/Index2"));
         }
 
 
@@ -272,8 +309,10 @@ namespace wwwTest
                 EmailCorrecto);
 
             IWebElement password =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("txtContraseña"));
+
+            password.Clear();
 
             password.SendKeys(
                 "PasswordIncorrecta");
@@ -282,14 +321,22 @@ namespace wwwTest
                 By.Id("btnAceptar"))
                 .Click();
 
+            EsperarTexto(
+                "incorrectos");
+
             Assert.IsTrue(
                 driver.PageSource.Contains(
                     "incorrectos"));
 
-            // Se entra correctamente después
-            // para restablecer los intentos fallidos.
+            Assert.IsTrue(
+                driver.Url.Contains(
+                    "/Login/Index2"));
+
+            // Entramos después correctamente para dejar
+            // los intentos erróneos otra vez a cero.
+
             password =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("txtContraseña"));
 
             password.Clear();
@@ -301,14 +348,18 @@ namespace wwwTest
                 By.Id("btnAceptar"))
                 .Click();
 
+            EsperarUrlContenga(
+                "/Principal");
+
             Assert.IsTrue(
                 driver.Url.Contains(
-                    "/Principal"));
+                    "/Principal"),
+                $"URL actual: {driver.Url}");
         }
 
 
         // =========================================================
-        // INICIO DE SESION CORRECTO
+        // LOGIN CORRECTO
         // =========================================================
 
         [TestMethod]
@@ -332,14 +383,20 @@ namespace wwwTest
             driver.Navigate().GoToUrl(
                 BaseUrl + "/Principal");
 
-            Assert.IsTrue(
-                driver.Url.Contains(
-                    "/Login"));
+            IWebElement usuario =
+                EsperarElemento(
+                    By.Id("txtUsuario"));
+
+            EsperarUrlContenga(
+                "/Login");
 
             Assert.IsTrue(
-                driver.FindElement(
-                    By.Id("txtUsuario"))
-                    .Displayed);
+                driver.Url.Contains(
+                    "/Login"),
+                $"URL actual: {driver.Url}");
+
+            Assert.IsTrue(
+                usuario.Displayed);
         }
 
 
@@ -347,6 +404,9 @@ namespace wwwTest
         public void Test15_Principal_ConSesion_MuestraZonaTrabajo()
         {
             IniciarSesion();
+
+            EsperarTexto(
+                "Zona de trabajo");
 
             Assert.IsTrue(
                 driver.PageSource.Contains(
@@ -364,7 +424,7 @@ namespace wwwTest
             IniciarSesion();
 
             IWebElement menu =
-                driver.FindElement(
+                EsperarElemento(
                     By.CssSelector(
                         ".dropdown-toggle"));
 
@@ -377,23 +437,29 @@ namespace wwwTest
 
 
         // =========================================================
-        // PERFIL DE USUARIO
+        // PERFIL
         // =========================================================
 
         [TestMethod]
         public void Test17_Perfil_SinSesion_RedireccionaLogin()
         {
             driver.Navigate().GoToUrl(
-                BaseUrl + "/Usuarios/Perfil");
+                BaseUrl +
+                "/Usuarios/Perfil");
+
+            IWebElement usuario =
+                EsperarElemento(
+                    By.Id("txtUsuario"));
+
+            EsperarUrlContenga(
+                "/Login");
 
             Assert.IsTrue(
                 driver.Url.Contains(
                     "/Login"));
 
             Assert.IsTrue(
-                driver.FindElement(
-                    By.Id("txtUsuario"))
-                    .Displayed);
+                usuario.Displayed);
         }
 
 
@@ -403,35 +469,42 @@ namespace wwwTest
             IniciarSesion();
 
             driver.Navigate().GoToUrl(
-                BaseUrl + "/Usuarios/Perfil");
+                BaseUrl +
+                "/Usuarios/Perfil");
+
+            IWebElement email =
+                EsperarElemento(
+                    By.Id("EMail"));
+
+            IWebElement nombre =
+                EsperarElemento(
+                    By.Id("Nombre"));
+
+            IWebElement apellidos =
+                EsperarElemento(
+                    By.Id("Apellidos"));
+
+            EsperarTexto(
+                "Mi perfil");
 
             Assert.IsTrue(
                 driver.PageSource.Contains(
                     "Mi perfil"));
 
-            IWebElement email =
-                driver.FindElement(
-                    By.Id("EMail"));
-
-            IWebElement nombre =
-                driver.FindElement(
-                    By.Id("Nombre"));
-
-            IWebElement apellidos =
-                driver.FindElement(
-                    By.Id("Apellidos"));
-
             Assert.AreEqual(
                 EmailCorrecto,
-                email.GetAttribute("value"));
+                email.GetAttribute(
+                    "value"));
 
             Assert.AreEqual(
                 "Usuario",
-                nombre.GetAttribute("value"));
+                nombre.GetAttribute(
+                    "value"));
 
             Assert.AreEqual(
                 "de prueba",
-                apellidos.GetAttribute("value"));
+                apellidos.GetAttribute(
+                    "value"));
         }
 
 
@@ -446,14 +519,19 @@ namespace wwwTest
                 BaseUrl +
                 "/Proyectos/Seleccionar");
 
+            IWebElement usuario =
+                EsperarElemento(
+                    By.Id("txtUsuario"));
+
+            EsperarUrlContenga(
+                "/Login");
+
             Assert.IsTrue(
                 driver.Url.Contains(
                     "/Login"));
 
             Assert.IsTrue(
-                driver.FindElement(
-                    By.Id("txtUsuario"))
-                    .Displayed);
+                usuario.Displayed);
         }
 
 
@@ -466,21 +544,24 @@ namespace wwwTest
                 BaseUrl +
                 "/Proyectos/Seleccionar");
 
-            Assert.IsTrue(
-                driver.PageSource.Contains(
-                    "Gestión de proyectos"));
-
             IWebElement nombre =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("Nombre"));
 
             IWebElement siglas =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("Siglas"));
 
             IWebElement descripcion =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("Descripcion"));
+
+            EsperarTexto(
+                "Gestión de proyectos");
+
+            Assert.IsTrue(
+                driver.PageSource.Contains(
+                    "Gestión de proyectos"));
 
             Assert.IsTrue(
                 nombre.Displayed);
@@ -505,6 +586,9 @@ namespace wwwTest
         {
             driver.Navigate().GoToUrl(
                 BaseUrl + "/Login");
+
+            EsperarElemento(
+                By.Id("txtUsuario"));
         }
 
 
@@ -514,15 +598,23 @@ namespace wwwTest
             IrALogin();
 
             IWebElement usuario =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("txtUsuario"));
 
             usuario.Clear();
-            usuario.SendKeys(email);
+
+            usuario.SendKeys(
+                email);
 
             driver.FindElement(
                 By.Id("btnSiguiente"))
                 .Click();
+
+            EsperarElemento(
+                By.Id("txtContraseña"));
+
+            EsperarUrlContenga(
+                "/Login/Index2");
         }
 
 
@@ -532,7 +624,7 @@ namespace wwwTest
                 EmailCorrecto);
 
             IWebElement password =
-                driver.FindElement(
+                EsperarElemento(
                     By.Id("txtContraseña"));
 
             password.Clear();
@@ -544,10 +636,129 @@ namespace wwwTest
                 By.Id("btnAceptar"))
                 .Click();
 
+            EsperarUrlContenga(
+                "/Principal");
+
+            EsperarTexto(
+                "Zona de trabajo");
+
             Assert.IsTrue(
                 driver.Url.Contains(
                     "/Principal"),
-                "No se ha accedido a la página Principal.");
+                "No se ha accedido a Principal. " +
+                $"URL actual: {driver.Url}");
+        }
+
+
+        // =========================================================
+        // ESPERAS
+        // =========================================================
+
+        private IWebElement EsperarElemento(
+            By localizador)
+        {
+            IWebElement? encontrado = null;
+
+            EsperarHasta(
+                () =>
+                {
+                    try
+                    {
+                        IWebElement elemento =
+                            driver.FindElement(
+                                localizador);
+
+                        if (elemento.Displayed)
+                        {
+                            encontrado =
+                                elemento;
+
+                            return true;
+                        }
+                    }
+                    catch (
+                        NoSuchElementException)
+                    {
+                    }
+                    catch (
+                        StaleElementReferenceException)
+                    {
+                    }
+
+                    return false;
+                });
+
+            if (encontrado is null)
+            {
+                Assert.Fail(
+                    $"No se encontró el elemento {localizador}. " +
+                    $"URL actual: {driver.Url}");
+            }
+
+            return encontrado!;
+        }
+
+
+        private void EsperarUrlContenga(
+            string texto)
+        {
+            bool correcto =
+                EsperarHasta(
+                    () =>
+                        driver.Url.Contains(
+                            texto,
+                            StringComparison
+                                .OrdinalIgnoreCase));
+
+            Assert.IsTrue(
+                correcto,
+                $"La URL no contiene '{texto}'. " +
+                $"URL actual: {driver.Url}");
+        }
+
+
+        private void EsperarTexto(
+            string texto)
+        {
+            bool correcto =
+                EsperarHasta(
+                    () =>
+                        driver.PageSource.Contains(
+                            texto,
+                            StringComparison
+                                .OrdinalIgnoreCase));
+
+            Assert.IsTrue(
+                correcto,
+                $"No se encontró el texto '{texto}'. " +
+                $"URL actual: {driver.Url}");
+        }
+
+
+        private bool EsperarHasta(
+            Func<bool> condicion)
+        {
+            DateTime limite =
+                DateTime.Now.AddSeconds(10);
+
+            while (DateTime.Now < limite)
+            {
+                try
+                {
+                    if (condicion())
+                    {
+                        return true;
+                    }
+                }
+                catch (
+                    WebDriverException)
+                {
+                }
+
+                Thread.Sleep(100);
+            }
+
+            return false;
         }
     }
 }
