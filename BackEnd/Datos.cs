@@ -38,7 +38,18 @@ namespace BackEnd
             Usuarios.Add(usuarioPrueba.IdUsuario, usuarioPrueba);
 
             SiguienteIdUsuario = 2;
+
+            var proyectoPrueba = new Proyecto
+            { 
+                Id = 1,
+                Nombre = "Proyecto test",
+                Descripcion = "Este es un proyecto almacenado en la base de datos.",
+                Siglas = "PT",
+            };
+
+            Proyectos.Add(proyectoPrueba.Id, proyectoPrueba);
         }
+
         #region USUARIOS
 
         public Usuario? GuardarUsuario(Usuario usuario)
