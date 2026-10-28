@@ -56,7 +56,7 @@ namespace Nucleo.Modelos
 
             if (IntentosErroneos >= 3)
             {
-                BloquearAccesoHasta = DateTime.Now.AddMinutes(5);
+                BloquearAccesoHasta = DateTime.Now.AddMinutes(1);
             }
         }
 
@@ -89,7 +89,7 @@ namespace Nucleo.Modelos
         public bool CambiaPassword(string nueva)
         {
             if (TieneCredencialesConfiguradas ||
-                string.IsNullOrWhiteSpace(nueva))
+                !ServicioContrasenas.EsValida(nueva))
             {
                 return false;
             }
@@ -109,7 +109,7 @@ namespace Nucleo.Modelos
 
         public bool CambiaPassword(string anterior, string nueva)
         {
-            if (string.IsNullOrWhiteSpace(nueva) ||
+            if (!ServicioContrasenas.EsValida(nueva) ||
                 anterior == nueva ||
                 !CompruebaPassword(anterior))
             {
