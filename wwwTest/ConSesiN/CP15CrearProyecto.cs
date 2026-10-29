@@ -1,16 +1,18 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
     [TestClass]
-    public class CP07UsuarioInexistente
+    [ExcludeFromCodeCoverage]
+    public class CP15CrearProyecto
     {
         private static IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -20,7 +22,7 @@ namespace SeleniumTests
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             baseURL = "https://www.google.com/";
         }
         
@@ -52,28 +54,32 @@ namespace SeleniumTests
         }
         
         [TestMethod]
-        public void TheCP07UsuarioInexistenteTest()
+        public void TheCP15CrearProyectoTest()
         {
             driver.Navigate().GoToUrl("https://localhost:7056/Login");
             driver.FindElement(By.Id("txtUsuario")).Click();
             driver.FindElement(By.Id("txtUsuario")).Clear();
-            driver.FindElement(By.Id("txtUsuario")).SendKeys("noexiste@test.com");
+            driver.FindElement(By.Id("txtUsuario")).SendKeys("usuario@test.com");
             driver.FindElement(By.Id("btnSiguiente")).Click();
             driver.FindElement(By.Id("txtContraseña")).Click();
             driver.FindElement(By.Id("txtContraseña")).Clear();
             driver.FindElement(By.Id("txtContraseña")).SendKeys("Clave123!");
             driver.FindElement(By.Id("btnAceptar")).Click();
-            Assert.AreEqual("Usuario o contraseña incorrectos.", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::span[1]")).Text);
-            for (int second = 0;; second++) {
-                if (second >= 60) Assert.Fail("timeout");
-                try
-                {
-                    if (IsElementPresent(By.Id("txtContraseña"))) break;
-                }
-                catch (Exception)
-                {}
-                Thread.Sleep(1000);
-            }
+            driver.FindElement(By.XPath("//button[@type='button']")).Click();
+            driver.FindElement(By.LinkText("Seleccionar proyecto")).Click();
+            driver.FindElement(By.Id("Nombre")).Click();
+            driver.FindElement(By.Id("Nombre")).Clear();
+            driver.FindElement(By.Id("Nombre")).SendKeys("Proyecto de prueba");
+            driver.FindElement(By.Id("Siglas")).Click();
+            driver.FindElement(By.Id("Siglas")).Clear();
+            driver.FindElement(By.Id("Siglas")).SendKeys("PdP");
+            driver.FindElement(By.Id("Descripcion")).Click();
+            driver.FindElement(By.Id("Descripcion")).Clear();
+            driver.FindElement(By.Id("Descripcion")).SendKeys("Este es un proyecto de prueba");
+            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Descripción'])[1]/following::button[1]")).Click();
+            Assert.AreEqual("Proyecto de prueba", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Proyectos disponibles'])[1]/following::h3[1]")).Text);
+            Assert.AreEqual("PDP", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Proyecto de prueba'])[2]/following::span[1]")).Text);
+            Assert.AreEqual("Este es un proyecto de prueba", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Proyecto actual'])[1]/following::p[1]")).Text);
         }
         private bool IsElementPresent(By by)
         {

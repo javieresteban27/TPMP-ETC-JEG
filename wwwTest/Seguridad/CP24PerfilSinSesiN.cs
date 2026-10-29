@@ -1,16 +1,18 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
     [TestClass]
-    public class CP09LoginCorrecto
+    [ExcludeFromCodeCoverage]
+    public class CP24PerfilSinSesiN
     {
         private static IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -20,7 +22,7 @@ namespace SeleniumTests
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             baseURL = "https://www.google.com/";
         }
         
@@ -52,25 +54,16 @@ namespace SeleniumTests
         }
         
         [TestMethod]
-        public void TheCP09LoginCorrectoTest()
+        public void TheCP24PerfilSinSesiNTest()
         {
             driver.Navigate().GoToUrl("https://localhost:7056/Login");
-            driver.FindElement(By.Id("txtUsuario")).Click();
-            driver.FindElement(By.Id("txtUsuario")).Clear();
-            driver.FindElement(By.Id("txtUsuario")).SendKeys("usuario@test.com");
-            driver.FindElement(By.Id("btnSiguiente")).Click();
-            driver.FindElement(By.Id("txtContraseña")).Click();
-            driver.FindElement(By.Id("txtContraseña")).Clear();
-            driver.FindElement(By.Id("txtContraseña")).SendKeys("Clave123!");
-            driver.FindElement(By.Id("btnAceptar")).Click();
-            driver.Navigate().GoToUrl("https://localhost:7056/Principal");
-            Assert.AreEqual("Zona de trabajo", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Cerrar sesión'])[1]/following::h1[1]")).Text);
-            Assert.AreEqual("Página principal", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)=']'])[1]/following::div[1]")).Text);
+            driver.Navigate().GoToUrl("https://localhost:7056/Usuarios/Perfil");
+            Assert.AreEqual("Identifícate", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Identificación-Validación'])[1]/following::h1[1]")).Text);
             for (int second = 0;; second++) {
                 if (second >= 60) Assert.Fail("timeout");
                 try
                 {
-                    if (IsElementPresent(By.XPath("//button[@type='button']"))) break;
+                    if (IsElementPresent(By.Id("txtUsuario"))) break;
                 }
                 catch (Exception)
                 {}

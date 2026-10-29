@@ -1,16 +1,18 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
     [TestClass]
-    public class CPXXCambiaNombreUsuarioInvLido
+    [ExcludeFromCodeCoverage]
+    public class CP20CambiaApellidoUsuarioInvLido
     {
         private static IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -20,7 +22,7 @@ namespace SeleniumTests
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             baseURL = "https://www.google.com/";
         }
         
@@ -52,7 +54,7 @@ namespace SeleniumTests
         }
         
         [TestMethod]
-        public void TheCPXXCambiaNombreUsuarioInvLidoTest()
+        public void TheCP20CambiaApellidoUsuarioInvLidoTest()
         {
             driver.Navigate().GoToUrl("https://localhost:7056/Login");
             driver.FindElement(By.Id("txtUsuario")).Click();
@@ -67,12 +69,11 @@ namespace SeleniumTests
             driver.FindElement(By.XPath("//button[@type='button']")).Click();
             driver.FindElement(By.LinkText("Ver perfil")).Click();
             driver.Navigate().GoToUrl("https://localhost:7056/Usuarios/Perfil");
-            driver.FindElement(By.Id("Nombre")).Click();
-            driver.FindElement(By.Id("Nombre")).Clear();
-            driver.FindElement(By.Id("Nombre")).SendKeys("");
+            driver.FindElement(By.Id("Apellidos")).Click();
+            driver.FindElement(By.Id("Apellidos")).Clear();
+            driver.FindElement(By.Id("Apellidos")).SendKeys("");
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Apellidos'])[1]/following::button[1]")).Click();
-            driver.Navigate().GoToUrl("https://localhost:7056/Usuarios/Perfil?handler=GuardarPerfil");
-            Assert.AreEqual("Debe indicar el nombre.", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Nombre'])[1]/following::span[1]")).Text);
+            Assert.AreEqual("Debe indicar los apellidos.", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Apellidos'])[1]/following::span[1]")).Text);
         }
         private bool IsElementPresent(By by)
         {

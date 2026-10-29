@@ -1,15 +1,17 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class CP05BotNAtrS
     {
         private static IWebDriver driver;
@@ -20,7 +22,7 @@ namespace SeleniumTests
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             baseURL = "https://www.google.com/";
         }
         
@@ -61,16 +63,6 @@ namespace SeleniumTests
             driver.FindElement(By.Id("btnSiguiente")).Click();
             driver.FindElement(By.Id("btnAtras")).Click();
             Assert.AreEqual("Identifícate", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Identificación-Validación'])[1]/following::h1[1]")).Text);
-            for (int second = 0;; second++) {
-                if (second >= 60) Assert.Fail("timeout");
-                try
-                {
-                    if (IsElementPresent(By.Id("txtUsuario"))) break;
-                }
-                catch (Exception)
-                {}
-                Thread.Sleep(1000);
-            }
         }
         private bool IsElementPresent(By by)
         {

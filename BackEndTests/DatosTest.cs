@@ -7,13 +7,13 @@ namespace Nucleo.Tests;
 public class DatosTests
 {
     [TestMethod]
-    public void Constructor_CreaUsuarioDePruebaYColeccionesVacias()
+    public void Constructor_CreaUsuarioDePruebaYUnProyecto()
     {
         var datos = new Datos();
 
         Assert.AreEqual(1, datos.Usuarios.Count);
         Assert.AreEqual(0, datos.Roles.Count);
-        Assert.AreEqual(0, datos.Proyectos.Count);
+        Assert.AreEqual(1, datos.Proyectos.Count);
         Assert.AreEqual(0, datos.Logs.Count);
 
         Usuario usuario = datos.LeerUsuario(1)!;

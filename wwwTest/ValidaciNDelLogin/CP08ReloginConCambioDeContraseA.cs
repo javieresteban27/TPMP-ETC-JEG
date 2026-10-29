@@ -1,16 +1,18 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
     [TestClass]
-    public class CPXXCerrarSesiN
+    [ExcludeFromCodeCoverage]
+    public class CP08ReloginConCambioDeContraseA
     {
         private static IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -20,7 +22,7 @@ namespace SeleniumTests
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             baseURL = "https://www.google.com/";
         }
         
@@ -52,33 +54,40 @@ namespace SeleniumTests
         }
         
         [TestMethod]
-        public void TheCPXXCerrarSesiNTest()
+        public void TheCP08ReloginConCambioDeContraseATest()
         {
+            driver.Navigate().GoToUrl("https://localhost:7056/Login");
             driver.Navigate().GoToUrl("https://localhost:7056/Login");
             driver.FindElement(By.Id("txtUsuario")).Click();
             driver.FindElement(By.Id("txtUsuario")).Clear();
             driver.FindElement(By.Id("txtUsuario")).SendKeys("usuario@test.com");
             driver.FindElement(By.Id("btnSiguiente")).Click();
-            driver.FindElement(By.Id("txtContraseña")).Click();
             driver.FindElement(By.Id("txtContraseña")).Clear();
             driver.FindElement(By.Id("txtContraseña")).SendKeys("Clave123!");
             driver.FindElement(By.Id("btnAceptar")).Click();
             driver.Navigate().GoToUrl("https://localhost:7056/Principal");
-            Assert.AreEqual("Zona de trabajo", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Cerrar sesión'])[1]/following::h1[1]")).Text);
+            driver.FindElement(By.XPath("//button[@type='button']")).Click();
+            driver.FindElement(By.LinkText("Ver perfil")).Click();
+            driver.Navigate().GoToUrl("https://localhost:7056/Usuarios/Perfil");
+            driver.FindElement(By.Id("PasswordActual")).Clear();
+            driver.FindElement(By.Id("PasswordActual")).SendKeys("Clave123!");
+            driver.FindElement(By.Id("PasswordNueva")).Clear();
+            driver.FindElement(By.Id("PasswordNueva")).SendKeys("Clave1234!");
+            driver.FindElement(By.Id("ConfirmacionPassword")).Clear();
+            driver.FindElement(By.Id("ConfirmacionPassword")).SendKeys("Clave1234!");
+            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Repetir nueva contraseña'])[1]/following::button[1]")).Click();
+            Assert.AreEqual("La contraseña se ha cambiado correctamente.", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Volver'])[1]/following::div[1]")).Text);
             driver.FindElement(By.XPath("//button[@type='button']")).Click();
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
             driver.Navigate().GoToUrl("https://localhost:7056/Login");
-            for (int second = 0;; second++) {
-                if (second >= 60) Assert.Fail("timeout");
-                try
-                {
-                    if (driver.FindElement(By.Id("txtUsuario")).Displayed) break;
-                }
-                catch (Exception)
-                {}
-                Thread.Sleep(1000);
-            }
-            Assert.AreEqual("Identifícate", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Identificación-Validación'])[1]/following::h1[1]")).Text);
+            driver.FindElement(By.Id("txtUsuario")).Clear();
+            driver.FindElement(By.Id("txtUsuario")).SendKeys("usuario@test.com");
+            driver.FindElement(By.Id("btnSiguiente")).Click();
+            driver.FindElement(By.Id("txtContraseña")).Clear();
+            driver.FindElement(By.Id("txtContraseña")).SendKeys("Clave1234!");
+            driver.FindElement(By.Id("btnAceptar")).Click();
+            driver.Navigate().GoToUrl("https://localhost:7056/Principal");
+            Assert.AreEqual("Zona de trabajo", driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Cerrar sesión'])[1]/following::h1[1]")).Text);
         }
         private bool IsElementPresent(By by)
         {

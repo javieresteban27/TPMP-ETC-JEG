@@ -1,16 +1,18 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
     [TestClass]
-    public class CPXXEsperaTras3IntentosFallidos
+    [ExcludeFromCodeCoverage]
+    public class CP07EsperaTras3IntentosFallidos
     {
         private static IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -20,7 +22,7 @@ namespace SeleniumTests
         [ClassInitialize]
         public static void InitializeClass(TestContext testContext)
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             baseURL = "https://www.google.com/";
         }
         
@@ -52,7 +54,7 @@ namespace SeleniumTests
         }
         
         [TestMethod]
-        public void TheCPXXEsperaTras3IntentosFallidosTest()
+        public void TheCP07EsperaTras3IntentosFallidosTest()
         {
             driver.Navigate().GoToUrl("https://localhost:7056/Login");
             driver.Navigate().GoToUrl("https://localhost:7056/Login");

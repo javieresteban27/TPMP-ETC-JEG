@@ -78,8 +78,8 @@ namespace NucleoTest.Modelos
             DateTime despues = DateTime.Now;
 
             Assert.AreEqual(3, usuario.IntentosErroneos);
-            Assert.IsTrue(usuario.BloquearAccesoHasta >= antes.AddMinutes(5));
-            Assert.IsTrue(usuario.BloquearAccesoHasta <= despues.AddMinutes(5));
+            Assert.IsTrue(usuario.BloquearAccesoHasta >= antes.AddMinutes(1));
+            Assert.IsTrue(usuario.BloquearAccesoHasta <= despues.AddMinutes(1));
             Assert.IsTrue(usuario.EstaBloqueado());
         }
 
@@ -158,7 +158,7 @@ namespace NucleoTest.Modelos
         {
             Usuario usuario = CrearUsuario();
             usuario.IntentosErroneos = 3;
-            usuario.BloquearAccesoHasta = DateTime.Now.AddMinutes(5);
+            usuario.BloquearAccesoHasta = DateTime.Now.AddMinutes(1);
 
             bool resultado = usuario.CompruebaPassword("ClaveInicial123!");
 
